@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ro"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LEVIO | Website-ul Afacerii Tale în 7 Zile</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dfd7e3",
+              "surface": "#fef7ff",
+              "surface-variant": "#e7e0eb",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#370e00",
+              "tertiary-fixed-dim": "#ffb599",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#7f2b00",
+              "tertiary-fixed": "#ffdbce",
+              "surface-bright": "#fef7ff",
+              "tertiary": "#9e421a",
+              "on-primary-fixed": "#370e00",
+              "surface-container": "#f3ebf7",
+              "on-secondary-fixed-variant": "#574239",
+              "background": "#fef7ff",
+              "error": "#ba1a1a",
+              "primary": "#a63b00",
+              "secondary-fixed-dim": "#ddc0b5",
+              "inverse-primary": "#ffb599",
+              "inverse-surface": "#322f37",
+              "on-secondary-container": "#765f56",
+              "outline": "#8d7166",
+              "surface-tint": "#a63b00",
+              "surface-container-highest": "#e7e0eb",
+              "inverse-on-surface": "#f6eefa",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#5b1d00",
+              "outline-variant": "#e2bfb3",
+              "surface-container-high": "#ede6f1",
+              "secondary-fixed": "#fbdcd0",
+              "on-surface": "#1d1a22",
+              "tertiary-container": "#e97b4e",
+              "on-tertiary-container": "#5c1c00",
+              "secondary": "#705a50",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#ff6b26",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#594138",
+              "on-tertiary-fixed-variant": "#7e2c03",
+              "on-background": "#1d1a22",
+              "secondary-container": "#fbdcd0",
+              "surface-container-low": "#f9f1fd",
+              "on-secondary-fixed": "#281811",
+              "primary-fixed": "#ffdbce",
+              "primary-fixed-dim": "#ffb599"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tonal-transition {
+        background: linear-gradient(180deg, rgba(254,247,255,1) 0%, rgba(243,235,247,1) 100%);
+      }
+      .peach-glow {
+        box-shadow: 0 20px 40px rgba(255, 107, 38, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-lg no-border tonal-transition shadow-[0_20px_40px_rgba(29,26,34,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-orange-600 dark:text-orange-500 tracking-tighter font-headline">LEVIO</div>
+<div class="hidden md:flex gap-8 font-plus-jakarta text-sm font-semibold tracking-tight">
+<a class="text-orange-600 dark:text-orange-400 font-bold border-b-2 border-orange-500 pb-1" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-orange-500 transition-colors" href="#proces">Process</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-orange-500 transition-colors" href="#servicii">Services</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-orange-500 transition-colors" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary rounded-full px-6 py-2.5 font-bold hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">
+                Get Started
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold tracking-widest uppercase mb-6">Programul România Digitală</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter text-on-surface mb-8">
+                    CONSTRUIM WEBSITE-UL AFACERII TALE LOCALE ÎN <span class="text-primary-container">7 ZILE</span> CU <span class="text-primary-container underline decoration-primary-container/30">0 RON</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-xl mb-10">
+                    Digitalizează-ți afacerea acum prin Programul România Digitală. Costuri de producție zero, prezență online instantanee și suport tehnic premium.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary rounded-full px-10 py-5 text-lg font-bold shadow-lg shadow-primary-container/25 hover:scale-105 transition-transform active:scale-95">
+                        APLICĂ ÎN PROGRAM
+                    </button>
+<button class="bg-secondary-container text-on-secondary-container rounded-full px-10 py-5 text-lg font-bold hover:bg-opacity-80 transition-all">
+                        VEZI PROIECTE
+                    </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary-container/10 rounded-xl blur-3xl group-hover:bg-primary-container/20 transition-all"></div>
+<div class="relative bg-surface-container-highest rounded-xl overflow-hidden aspect-video shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="clean professional tech dashboard interface displayed on a sleek laptop screen with soft ambient lighting and orange highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmxfBLq7vwN-0X8t8aU87DqMHSxJpJxkvLy3yYJO3SvO2JkRmbMrxrUxzh90no7EWe89w-Ifb6udsR6Ch7wzutLLIFaYNTjtulguCeM2gPRk5aJkeag4xuaqtBLBRPwDPoBDlVWtAotaBbuH39GzmaMcFXHvKSLqNKfnPt1gH5rgae9nyt2XJoJCzc5bY4sTkZK3DI2tLmfrvZJuBGP-Ig70rXgHge8espjnv8Ojdw_0WfqGWNf_ahB10fZYmcX72CckdnUMaamQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Value Prop / Pricing -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-on-surface">Transparență Totală</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Eliminăm barierele financiare pentru micii antreprenori.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-stretch">
+<!-- Classic Agency -->
+<div class="p-10 rounded-lg bg-surface-container-lowest border border-outline-variant/20 flex flex-col">
+<h3 class="font-headline text-2xl font-bold mb-6">Agenții Clasice</h3>
+<div class="space-y-4 mb-8 flex-grow">
+<div class="flex items-center gap-3 text-error">
+<span class="material-symbols-outlined">cancel</span>
+<span>Cost producție: 3.000 - 15.000 RON</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined">schedule</span>
+<span>Timp livrare: 45 - 90 zile</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined">support_agent</span>
+<span>Mentenanță: Extra cost per oră</span>
+</div>
+</div>
+<div class="text-3xl font-black text-on-surface-variant opacity-50">~5.000 RON +</div>
+</div>
+<!-- LEVIO -->
+<div class="p-10 rounded-lg bg-primary-container text-on-primary shadow-xl peach-glow flex flex-col transform md:scale-105 z-10">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-3xl font-black italic tracking-tighter">LEVIO</h3>
+<span class="bg-on-primary text-primary-container px-3 py-1 rounded-full text-xs font-bold">RECOMANDAT</span>
+</div>
+<div class="space-y-4 mb-8 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-bold">Cost producție: 0 RON</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">bolt</span>
+<span>Lansare: 7 Zile</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">verified</span>
+<span>Suport &amp; Mentenanță Incluse</span>
+</div>
+</div>
+<div>
+<div class="text-5xl font-black mb-1">97 RON</div>
+<div class="text-sm font-medium opacity-80">pe lună (abonament totul inclus)</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services / Why Now -->
+<section class="py-24 px-6" id="servicii">
+<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+<div class="group p-8 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 rounded-xl bg-primary-fixed mb-6 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">language</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">România Digitală</h4>
+<p class="text-on-surface-variant leading-relaxed">Peste 15 milioane de români sunt online. Dacă afacerea ta nu e acolo, practic nu exiști pentru ei.</p>
+</div>
+<div class="group p-8 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 rounded-xl bg-tertiary-fixed mb-6 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">Clienții sunt online</h4>
+<p class="text-on-surface-variant leading-relaxed">Clienții tăi caută deja serviciile tale pe Google. Te găsesc pe tine sau pe competitorul tău?</p>
+</div>
+<div class="group p-8 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 rounded-xl bg-secondary-fixed mb-6 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-4">No time for tech</h4>
+<p class="text-on-surface-variant leading-relaxed">Ne ocupăm noi de tot ce înseamnă tehnic, în timp ce tu te ocupi de creșterea afacerii tale.</p>
+</div>
+</div>
+</section>
+<!-- Process: Cum Funcționează -->
+<section class="py-24 px-6 bg-surface-container-highest" id="proces">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">CUM FUNCȚIONEAZĂ</h2>
+<div class="h-1.5 w-24 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<!-- Connector Line (Hidden on mobile) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 border-t-2 border-dashed border-outline-variant/40 -translate-y-1/2 -z-0"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest text-primary-container font-black text-3xl flex items-center justify-center shadow-lg mb-8 outline outline-4 outline-primary-container/10">1</div>
+<h3 class="font-headline text-xl font-bold mb-3">Aplică în program</h3>
+<p class="text-on-surface-variant">Completezi un formular simplu și un consultant te contactează în maximum 24h.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest text-primary-container font-black text-3xl flex items-center justify-center shadow-lg mb-8 outline outline-4 outline-primary-container/10">2</div>
+<h3 class="font-headline text-xl font-bold mb-3">Website în 7 zile</h3>
+<p class="text-on-surface-variant">Construim structura, design-ul și conținutul. Tu doar validezi rezultatul final.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest text-primary-container font-black text-3xl flex items-center justify-center shadow-lg mb-8 outline outline-4 outline-primary-container/10">3</div>
+<h3 class="font-headline text-xl font-bold mb-3">Crește afacerea</h3>
+<p class="text-on-surface-variant">Lansezi site-ul și începi să primești cereri de la clienți noi imediat.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Physical Package -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto bg-on-surface text-surface-container rounded-xl overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-12 p-12 lg:p-20 items-center">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-black mb-8 leading-tight">LEVIO: PACHETUL FIZIC</h2>
+<p class="text-lg text-surface-variant/80 mb-10 leading-relaxed">
+                        Nu doar online. Îți oferim uneltele necesare pentru a face legătura între lumea fizică și profilul tău digital.
+                    </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">qr_code_2</span>
+<div>
+<span class="block font-bold text-xl">Smart Tent Cards</span>
+<span class="text-surface-variant/60">Pentru recepție sau mesele din restaurant.</span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">contactless</span>
+<div>
+<span class="block font-bold text-xl">NFC Business Cards</span>
+<span class="text-surface-variant/60">Carduri de vizită inteligente care transferă datele instant.</span>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container">layers</span>
+<div>
+<span class="block font-bold text-xl">QR Stickers</span>
+<span class="text-surface-variant/60">Autocolante premium pentru vitrină sau ambalaje.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-lg bg-surface-container-highest/10 overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-110" data-alt="premium minimalist matte black NFC business cards and QR table stands arranged aesthetically on a wooden desk with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxSmlSJfGoOwrXEGISN3cGB7XPnBSOXB09Hhry7Jcz0qm64qKcFvAKHHosXAKE1YdEo5maBimB2bbpwWFSTrpp_LzsuNXGRgI_YpQYIeLIum1RIs6s1c5M6YoIDLqOyGgsxDvxa9GqUSGf4KhHrAn4m1Xw9zWUh9LwG8NvZqFDW9fcHv5fTzj4Y1UN5mybTJfFsOKOlcCN-2OZxRx4AewAmsOHJgx-RPsNLEPVk6zJFU_pGMGEtRm9CJmU9yCGdDuQIwzV1bI5Ng"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">PORTOFOLIU</h2>
+<p class="text-on-surface-variant mt-2 italic">Afaceri locale care au făcut pasul spre digital.</p>
+</div>
+<button class="hidden md:block text-primary font-bold hover:underline">Vezi tot portofoliul →</button>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern dental clinic website showcase with clean typography and professional medical imagery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9x8M48Y_XVpxPVRC-gZmOrdbpIB8KbONQYuagZyMJG0oTGchR_1afHAJxIaamfLeZi6IaQi81cl9G1ec-hHDAnMRde1Gr-J2QzVLsiN2odp0GkPqSgokrKTdIz1SItenrDAPGgLVg-qLXsa38w0Vs0kmZwYsYLEClFnRRGUUdsZELVVa38zQCPtBeIEVHdCLWjZ7UaYC4bSNZECUZIwrWZLuy16VnLbuSEbEbfkk6Awd3QB26uI1mqGJ74wjSVpdbumdA7TNfFw"/>
+</div>
+<div class="p-6">
+<h5 class="font-bold text-lg mb-2">Dentist Local Pro</h5>
+<p class="text-sm text-on-surface-variant">Lansat în 5 zile</p>
+</div>
+</div>
+<div class="group rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="artisanal coffee shop website with rustic aesthetic and high-quality product photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3iSQ1f4lmHLki-M2GM8JsAEvmGNmXx4g_dreKg3tN4XEp5UIosQyPltk5s9JH-oDdBVFdMx6kxgoVHcUpvSOooOBT8wg9V_XVFGkMUC1gtCb8VFl2p3gjhZsXDCGQzz3CgigptGfR7OJFmPQW2mFOb1jWdIz10MtSl2fbm8mC1bC_SnWsHKRCCWHrRdUSAJAhcUP3OGLtb4SNU6De8_sSFgVDiYumhqB3J10vjeRYi2MXz5NoRYKc7Zosm-5UG24whkPfXsp_ow"/>
+</div>
+<div class="p-6">
+<h5 class="font-bold text-lg mb-2">Artisan Coffee Hub</h5>
+<p class="text-sm text-on-surface-variant">Lansat în 7 zile</p>
+</div>
+</div>
+<div class="group rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="professional legal services website with authoritative dark theme and serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjaBGidLtKI6MgvyM9feWIgnninv1l7kvA2wmsV1sYRSY5Y4dW1ed_lux_TxpFJrjdZt4SR0jP9YNU_AvX-91SriNxanb0UnAp4sk35xRMC91mniuGzjCXq39vY2tiGUlK8_Aewb9Ap1Al1Z_F-vRxlLxzJomyBOtLacCStQGj_1h-qFzRMiHfv7z5yaPfiVFSZomNMfeA8V0EQCdDXFWDiKrveGr-q0_vKq8AvRNfi6Dz2dZZPDM5YQNH9aPbDtlopo-RsU904g"/>
+</div>
+<div class="p-6">
+<h5 class="font-bold text-lg mb-2">Avocat Partener</h5>
+<p class="text-sm text-on-surface-variant">Lansat în 6 zile</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="py-24 px-6 overflow-x-auto">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-3xl font-bold text-center mb-12">UN WEBSITE DE TOP vs AGENȚII CLASICE</h2>
+<table class="w-full border-separate border-spacing-y-4">
+<thead>
+<tr class="text-left text-on-surface-variant font-label text-sm uppercase tracking-widest">
+<th class="px-6 py-4">Caracteristică</th>
+<th class="px-6 py-4">Agenții Clasice</th>
+<th class="px-6 py-4 text-primary font-bold">Modelul LEVIO</th>
+</tr>
+</thead>
+<tbody class="font-medium">
+<tr class="bg-surface-container rounded-lg">
+<td class="px-6 py-5 rounded-l-lg">Cost Producție</td>
+<td class="px-6 py-5">Minim 1000€</td>
+<td class="px-6 py-5 text-primary-container font-black rounded-r-lg">0 RON</td>
+</tr>
+<tr class="bg-surface-container rounded-lg">
+<td class="px-6 py-5 rounded-l-lg">Lansare Site</td>
+<td class="px-6 py-5">2 - 3 luni</td>
+<td class="px-6 py-5 text-primary-container font-black rounded-r-lg">7 Zile</td>
+</tr>
+<tr class="bg-surface-container rounded-lg">
+<td class="px-6 py-5 rounded-l-lg">Găzduire &amp; Mentenanță</td>
+<td class="px-6 py-5 text-sm">Cont separat / Plăți extra</td>
+<td class="px-6 py-5 text-primary-container font-black rounded-r-lg">Incluse</td>
+</tr>
+<tr class="bg-surface-container rounded-lg">
+<td class="px-6 py-5 rounded-l-lg">Actualizări Conținut</td>
+<td class="px-6 py-5 text-sm">Plătite per oră</td>
+<td class="px-6 py-5 text-primary-container font-black rounded-r-lg">Nelimitate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl font-bold text-center mb-16">ÎNTREBĂRI FRECVENTE</h2>
+<div class="space-y-6">
+<div class="p-6 rounded-lg bg-surface-container-low border-l-4 border-primary-container">
+<h4 class="font-bold text-lg mb-2">Chiar este 0 RON costul de producție?</h4>
+<p class="text-on-surface-variant">Da, prin Programul România Digitală, LEVIO subvenționează complet design-ul și programarea. Tu plătești doar abonamentul lunar pentru mentenanță.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low">
+<h4 class="font-bold text-lg mb-2">Ce se întâmplă după cele 7 zile?</h4>
+<p class="text-on-surface-variant">Site-ul tău va fi live pe domeniul ales. Vom continua să monitorizăm performanța și să facem actualizările de care ai nevoie.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low">
+<h4 class="font-bold text-lg mb-2">Pot anula abonamentul oricând?</h4>
+<p class="text-on-surface-variant">Suntem siguri de calitatea serviciilor noastre, dar dacă decizi să pleci, contractul este flexibil după primele 12 luni.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-surface-container-low tonal-shift-no-lines">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-on-surface dark:text-on-surface-dark font-headline tracking-tighter">LEVIO</div>
+<p class="font-inter text-body-sm leading-relaxed text-on-surface-variant/70 dark:text-on-surface-variant-dark/70">
+                    Digitalizăm afacerile locale din România, una câte una. Performanță, viteză și design modern.
+                </p>
+</div>
+<div>
+<h6 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Servicii</h6>
+<ul class="space-y-4 font-inter text-body-sm">
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">Web Design</a></li>
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">Local SEO</a></li>
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">NFC Solutions</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Link-uri</h6>
+<ul class="space-y-4 font-inter text-body-sm">
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant/70 dark:text-on-surface-variant-dark/70 hover:text-orange-500 underline-offset-4 hover:underline transition-opacity" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-4" id="contact">
+<h6 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Contact</h6>
+<div class="flex items-center gap-3 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-orange-500">mail</span>
+<span>contact@levio.ro</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-orange-500">call</span>
+<span>+40 750 282 033</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-8 px-12 max-w-7xl mx-auto flex flex-col md:row justify-between items-center text-sm text-on-surface-variant/50 font-inter">
+<span>© 2024 Levio. All rights reserved.</span>
+<div class="flex gap-6 mt-4 md:mt-0">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">public</span>
+</div>
+</div>
+</footer>
+</body></html>
