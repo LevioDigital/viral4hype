@@ -44,7 +44,7 @@ export default function Home() {
         id="nav"
       >
         {" "}
-        <a href="/" className="nav-logo flex items-center" style={{ marginLeft: '100px' }} data-cursor="link">
+        <a href="/" className="nav-logo flex items-center" style={{ marginLeft: 'clamp(1rem, 5vw, 100px)' }} data-cursor="link">
           <img
             src="/images/logo_v4h.png"
             alt="viral4hype"
@@ -114,7 +114,8 @@ export default function Home() {
       </nav>{" "}
       {/*  Mobile menu  */}{" "}
       <div
-        className="mob-menu fixed inset-0 z-[999] bg-dark overflow-hidden opacity-0 pointer-events-none transition-opacity duration-400"
+        className="mob-menu fixed inset-0 z-[999] overflow-hidden opacity-0 pointer-events-none transition-opacity duration-400"
+        style={{ background: '#180A03' }}
         id="mob-menu"
       >
         {" "}
@@ -123,14 +124,14 @@ export default function Home() {
           className="absolute top-[-20%] right-[-20%] w-[90vw] h-[90vw] max-w-[500px] max-h-[500px] rounded-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, rgba(8,117,233,0.18) 0%, rgba(8,117,233,0.06) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(242,102,34,0.22) 0%, rgba(242,102,34,0.07) 40%, transparent 70%)",
           }}
         ></div>{" "}
         <div
           className="absolute bottom-[-15%] left-[-20%] w-[80vw] h-[80vw] max-w-[450px] max-h-[450px] rounded-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, rgba(131,9,238,0.14) 0%, rgba(131,9,238,0.04) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(242,102,34,0.15) 0%, rgba(242,102,34,0.04) 40%, transparent 70%)",
           }}
         ></div>{" "}
         {/*  Scrollable inner wrapper — handles landscape overflow independently  */}{" "}
@@ -1463,9 +1464,9 @@ export default function Home() {
             <span className="ben-dot slider-dot "></span>{" "}
           </div>{" "}
         </section>{" "}
-        <section className="about-section bg-white grid grid-cols-[1.1fr_1fr] max-lg:grid-cols-1 items-center">
+        <section className="about-section bg-white grid grid-cols-[1.1fr_1fr] max-lg:grid-cols-1 items-center max-lg:items-stretch">
           {" "}
-          <div className="about-img-col" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem 3rem 4rem' }}>
+          <div className="about-img-col lg:flex lg:items-center lg:justify-center lg:py-12 lg:pl-16 lg:pr-8 max-lg:self-stretch max-lg:h-[60vw] max-lg:overflow-hidden">
             {" "}
             <img
               src="/images/viral4hype_romania.png"
@@ -1473,8 +1474,7 @@ export default function Home() {
               loading="lazy"
               width="1600"
               height="1067"
-              className="about-img"
-              style={{ width: '100%', maxWidth: '840px', height: 'auto', borderRadius: '1rem' }}
+              className="about-img lg:w-full lg:max-w-[840px] lg:h-auto lg:rounded-2xl max-lg:w-full max-lg:h-full max-lg:object-cover"
             />{" "}
           </div>{" "}
           <div className="about-content-col py-[clamp(4rem,8vh,7rem)] px-[clamp(2rem,5vw,5rem)] flex flex-col justify-center">

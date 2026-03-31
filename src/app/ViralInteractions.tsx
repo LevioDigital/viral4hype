@@ -363,7 +363,7 @@ export default function ViralInteractions() {
     const benSection = document.querySelector<HTMLElement>('.ben-section');
     const benTrack = document.querySelector<HTMLElement>('.ben-track');
 
-    if (benSection && benTrack && window.matchMedia('(min-width: 1024px)').matches) {
+    if (benSection && benTrack) {
       const panels = Array.from(benTrack.querySelectorAll<HTMLElement>('.ben-panel'));
       const numPanels = panels.length;
       if (numPanels > 1) {
