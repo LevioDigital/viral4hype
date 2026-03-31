@@ -419,7 +419,6 @@ export default function ViralInteractions() {
         // Sync dots
         const dots = Array.from(document.querySelectorAll<HTMLElement>('.ben-dot'));
 
-        let rafId = 0;
         let lastTx = 0;
         let lastActiveIdx = -1;
         let cachedTotal = totalSlide();
@@ -453,11 +452,7 @@ export default function ViralInteractions() {
         };
 
         const syncSlider = () => {
-          if (rafId) return;
-          rafId = requestAnimationFrame(() => {
-            rafId = 0;
-            applySlider();
-          });
+          applySlider();
         };
 
         window.addEventListener('scroll', syncSlider, { passive: true });
@@ -480,7 +475,6 @@ export default function ViralInteractions() {
         cleanups.push(() => {
           window.removeEventListener('scroll', syncSlider);
           window.removeEventListener('resize', onResize);
-          if (rafId) cancelAnimationFrame(rafId);
         });
       }
     }
@@ -518,15 +512,10 @@ export default function ViralInteractions() {
     // ════════════════════════════════════════════════════════════════════════
     const progressBar = document.querySelector<HTMLElement>('.progress-bar');
     if (progressBar) {
-      let pbRafId = 0;
       let cachedMaxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
       
       const syncProgress = () => {
-        if (pbRafId) return;
-        pbRafId = requestAnimationFrame(() => {
-          pbRafId = 0;
-          progressBar.style.transform = `scaleX(${cachedMaxScroll > 0 ? window.scrollY / cachedMaxScroll : 0})`;
-        });
+        progressBar.style.transform = `scaleX(${cachedMaxScroll > 0 ? window.scrollY / cachedMaxScroll : 0})`;
       };
       
       const onPbResize = () => {
@@ -540,7 +529,6 @@ export default function ViralInteractions() {
       cleanups.push(() => {
         window.removeEventListener('scroll', syncProgress);
         window.removeEventListener('resize', onPbResize);
-        if (pbRafId) cancelAnimationFrame(pbRafId);
       });
     }
 
