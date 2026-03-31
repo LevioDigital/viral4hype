@@ -421,8 +421,10 @@ export default function ViralInteractions() {
 
         let rafId = 0;
         let lastTx = 0;
+        let lastActiveIdx = -1;
         let cachedTotal = totalSlide();
         let cachedSpacerTop = spacer.offsetTop;
+        let cachedInnerWidth = window.innerWidth;
 
         const applySlider = () => {
           const scrolledIn = window.scrollY - cachedSpacerTop;
@@ -430,17 +432,23 @@ export default function ViralInteractions() {
             if (lastTx !== 0) {
               benTrack.style.transform = 'translate3d(0,0,0)';
               lastTx = 0;
-              dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
+              if (lastActiveIdx !== 0) {
+                dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
+                lastActiveIdx = 0;
+              }
             }
             return;
           }
           const progress = Math.min(scrolledIn / cachedTotal, 1);
-          const tx = -(progress * (numPanels - 1) * window.innerWidth);
+          const tx = -(progress * (numPanels - 1) * cachedInnerWidth);
           if (Math.abs(tx - lastTx) > 0.1) {
             benTrack.style.transform = `translate3d(${tx}px,0,0)`;
             lastTx = tx;
             const activeIdx = Math.min(Math.round(progress * (numPanels - 1)), numPanels - 1);
-            dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === activeIdx));
+            if (activeIdx !== lastActiveIdx) {
+              dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === activeIdx));
+              lastActiveIdx = activeIdx;
+            }
           }
         };
 
@@ -458,6 +466,7 @@ export default function ViralInteractions() {
         const onResize = () => {
           cachedTotal = totalSlide();
           cachedSpacerTop = spacer.offsetTop;
+          cachedInnerWidth = window.innerWidth;
           benSection.style.height = `${window.innerHeight}px`;
           panels.forEach(p => {
             p.style.height = `${window.innerHeight}px`;
@@ -509,12 +518,30 @@ export default function ViralInteractions() {
     // ════════════════════════════════════════════════════════════════════════
     const progressBar = document.querySelector<HTMLElement>('.progress-bar');
     if (progressBar) {
+      let pbRafId = 0;
+      let cachedMaxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      
       const syncProgress = () => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+        if (pbRafId) return;
+        pbRafId = requestAnimationFrame(() => {
+          pbRafId = 0;
+          progressBar.style.transform = `scaleX(${cachedMaxScroll > 0 ? window.scrollY / cachedMaxScroll : 0})`;
+        });
       };
+      
+      const onPbResize = () => {
+        cachedMaxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        syncProgress();
+      };
+      
       window.addEventListener('scroll', syncProgress, { passive: true });
-      cleanups.push(() => window.removeEventListener('scroll', syncProgress));
+      window.addEventListener('resize', onPbResize, { passive: true });
+      
+      cleanups.push(() => {
+        window.removeEventListener('scroll', syncProgress);
+        window.removeEventListener('resize', onPbResize);
+        if (pbRafId) cancelAnimationFrame(pbRafId);
+      });
     }
 
     // ════════════════════════════════════════════════════════════════════════
