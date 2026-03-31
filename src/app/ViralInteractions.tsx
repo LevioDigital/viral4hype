@@ -396,46 +396,69 @@ export default function ViralInteractions() {
           width: ${numPanels * 100}vw;
           height: 100%;
           will-change: transform;
-          transform: translateX(0);
+          transform: translate3d(0,0,0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         `;
         panels.forEach(p => {
           p.style.width = '100vw';
           p.style.flexShrink = '0';
+          p.style.willChange = 'transform';
         });
+
+        // Promote benSection to its own compositor layer
+        benSection.style.transform = 'translateZ(0)';
 
         // Sync dots
         const dots = Array.from(document.querySelectorAll<HTMLElement>('.ben-dot'));
 
-        const syncSlider = () => {
-          const scrolledIn = -spacer.getBoundingClientRect().top;
+        let rafId = 0;
+        let lastTx = 0;
+        let cachedTotal = totalSlide();
+
+        const applySlider = () => {
+          const scrolledIn = window.scrollY - spacer.offsetTop;
           if (scrolledIn <= 0) {
-            benTrack.style.transform = 'translateX(0)';
-            dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
+            if (lastTx !== 0) {
+              benTrack.style.transform = 'translate3d(0,0,0)';
+              lastTx = 0;
+              dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
+            }
             return;
           }
-          const progress = Math.min(scrolledIn / totalSlide(), 1);
+          const progress = Math.min(scrolledIn / cachedTotal, 1);
           const tx = -(progress * (numPanels - 1) * window.innerWidth);
-          benTrack.style.transform = `translateX(${tx}px)`;
+          if (Math.abs(tx - lastTx) > 0.1) {
+            benTrack.style.transform = `translate3d(${tx}px,0,0)`;
+            lastTx = tx;
+            const activeIdx = Math.min(Math.round(progress * (numPanels - 1)), numPanels - 1);
+            dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === activeIdx));
+          }
+        };
 
-          const activeIdx = Math.min(Math.round(progress * (numPanels - 1)), numPanels - 1);
-          dots.forEach((d, i) => {
-            d.classList.toggle('slider-dot--active', i === activeIdx);
+        const syncSlider = () => {
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            rafId = 0;
+            applySlider();
           });
         };
 
         window.addEventListener('scroll', syncSlider, { passive: true });
-        syncSlider();
+        applySlider();
 
         const onResize = () => {
-          spacer.style.height = `${totalSlide() + window.innerHeight}px`;
+          cachedTotal = totalSlide();
+          spacer.style.height = `${cachedTotal + window.innerHeight}px`;
           benTrack.style.width = `${numPanels * 100}vw`;
-          syncSlider();
+          applySlider();
         };
         window.addEventListener('resize', onResize, { passive: true });
 
         cleanups.push(() => {
           window.removeEventListener('scroll', syncSlider);
           window.removeEventListener('resize', onResize);
+          if (rafId) cancelAnimationFrame(rafId);
         });
       }
     }

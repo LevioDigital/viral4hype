@@ -103,6 +103,7 @@ export default function Home() {
         </a>{" "}
         <button
           className="burger hidden max-lg:flex flex-col gap-1.5 p-1 z-[1001]"
+          style={{ marginRight: '20px' }}
           id="burger"
           aria-label="Menu"
         >
