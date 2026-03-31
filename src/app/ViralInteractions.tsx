@@ -404,6 +404,7 @@ export default function ViralInteractions() {
           transform: translate3d(0,0,0);
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
+          transition: transform 0.05s linear;
         `;
         panels.forEach(p => {
           p.style.width = '100vw';
@@ -439,7 +440,8 @@ export default function ViralInteractions() {
             return;
           }
           const progress = Math.min(scrolledIn / cachedTotal, 1);
-          const tx = -(progress * (numPanels - 1) * cachedInnerWidth);
+          const rawTx = -(progress * (numPanels - 1) * cachedInnerWidth);
+          const tx = Math.round(rawTx * 10) / 10;
           if (Math.abs(tx - lastTx) > 0.1) {
             benTrack.style.transform = `translate3d(${tx}px,0,0)`;
             lastTx = tx;
