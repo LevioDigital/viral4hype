@@ -253,8 +253,12 @@ export default function ViralInteractions() {
       lastMx = mx; lastMy = my;
       raf = requestAnimationFrame(tic);
     };
-    raf = requestAnimationFrame(tic);
-    cleanups.push(() => cancelAnimationFrame(raf));
+    // Only run mouse/canvas loop on true pointer devices (not mobile touch)
+    const isPointerDevice = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (isPointerDevice) {
+      raf = requestAnimationFrame(tic);
+      cleanups.push(() => cancelAnimationFrame(raf));
+    }
 
     // ════════════════════════════════════════════════════════════════════════
     // 2. SCROLL-AWARE NAV
@@ -376,6 +380,7 @@ export default function ViralInteractions() {
         spacer.style.cssText = `
           position: relative;
           height: ${totalSlide() + window.innerHeight}px;
+          touch-action: pan-y;
         `;
         benSection.parentNode!.insertBefore(spacer, benSection);
         spacer.appendChild(benSection);
@@ -408,6 +413,7 @@ export default function ViralInteractions() {
 
         // Promote benSection to its own compositor layer
         benSection.style.transform = 'translateZ(0)';
+        benSection.style.contain = 'layout paint';
 
         // Sync dots
         const dots = Array.from(document.querySelectorAll<HTMLElement>('.ben-dot'));
@@ -415,9 +421,10 @@ export default function ViralInteractions() {
         let rafId = 0;
         let lastTx = 0;
         let cachedTotal = totalSlide();
+        let cachedSpacerTop = spacer.offsetTop;
 
         const applySlider = () => {
-          const scrolledIn = window.scrollY - spacer.offsetTop;
+          const scrolledIn = window.scrollY - cachedSpacerTop;
           if (scrolledIn <= 0) {
             if (lastTx !== 0) {
               benTrack.style.transform = 'translate3d(0,0,0)';
@@ -449,6 +456,7 @@ export default function ViralInteractions() {
 
         const onResize = () => {
           cachedTotal = totalSlide();
+          cachedSpacerTop = spacer.offsetTop;
           spacer.style.height = `${cachedTotal + window.innerHeight}px`;
           benTrack.style.width = `${numPanels * 100}vw`;
           applySlider();
