@@ -39,6 +39,20 @@ export default function ViralInteractions() {
     window.addEventListener('mousemove', updateMouse);
     cleanups.push(() => window.removeEventListener('mousemove', updateMouse));
 
+    const updateTouch = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mx = e.touches[0].clientX;
+        my = e.touches[0].clientY;
+        if (!initialized) {
+          curX = mx;
+          curY = my;
+          initialized = true;
+        }
+      }
+    };
+    window.addEventListener('touchmove', updateTouch, { passive: true });
+    cleanups.push(() => window.removeEventListener('touchmove', updateTouch));
+
     // Cursor interactions
     const onEnter = () => { if (ringEl) { ringEl.style.width = '72px'; ringEl.style.height = '72px'; ringEl.style.opacity = '0.5'; } };
     const onLeave = () => { if (ringEl) { ringEl.style.width = '36px'; ringEl.style.height = '36px'; ringEl.style.opacity = '1'; } };
@@ -253,12 +267,10 @@ export default function ViralInteractions() {
       lastMx = mx; lastMy = my;
       raf = requestAnimationFrame(tic);
     };
-    // Only run mouse/canvas loop on true pointer devices (not mobile touch)
-    const isPointerDevice = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (isPointerDevice) {
-      raf = requestAnimationFrame(tic);
-      cleanups.push(() => cancelAnimationFrame(raf));
-    }
+    
+    // Run canvas loop unconditionally for both pointer and touch devices
+    raf = requestAnimationFrame(tic);
+    cleanups.push(() => cancelAnimationFrame(raf));
 
     // ════════════════════════════════════════════════════════════════════════
     // 2. SCROLL-AWARE NAV
@@ -350,10 +362,14 @@ export default function ViralInteractions() {
       };
 
       hero.addEventListener('mouseenter', onEnterHero);
+      hero.addEventListener('touchstart', onEnterHero, { passive: true });
       hero.addEventListener('mouseleave', onLeaveHero);
+      hero.addEventListener('touchend', onLeaveHero, { passive: true });
       cleanups.push(() => {
         hero.removeEventListener('mouseenter', onEnterHero);
+        hero.removeEventListener('touchstart', onEnterHero);
         hero.removeEventListener('mouseleave', onLeaveHero);
+        hero.removeEventListener('touchend', onLeaveHero);
         if (colorCanvas.parentNode) colorCanvas.parentNode.removeChild(colorCanvas);
       });
     }
@@ -497,6 +513,8 @@ export default function ViralInteractions() {
       el.style.transform = 'translateY(32px)';
       el.style.transition = 'opacity 0.85s ease, transform 0.85s cubic-bezier(0.16,1,0.3,1)';
     });
+
+
 
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
