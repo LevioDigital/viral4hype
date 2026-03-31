@@ -1343,7 +1343,7 @@ export default function Home() {
                 className="ben-ghost absolute right-[3%] bottom-[-2%] font-display font-black text-[clamp(9rem,20vw,20rem)] leading-none tracking-[-0.03em] whitespace-nowrap pointer-events-none select-none text-white/[0.04] max-lg:hidden"
                 aria-hidden="true"
               >
-                Smart
+                Growth
               </div>{" "}
               <div className="ben-content shrink-0 max-w-[500px] relative z-[1]">
                 {" "}
@@ -1353,90 +1353,17 @@ export default function Home() {
                     04
                   </span>{" "}
                   <span className="ben-tag text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-white/55">
-                    The Extra Edge
-                  </span>{" "}
-                </div>{" "}
-                <h2 className="ben-heading font-display font-black text-[clamp(2.2rem,4.5vw,4rem)] leading-[1.1] tracking-[-0.025em] mb-6 text-white">
-                  Supercharged
-                  <br />
-                  <em className="ben-serif block font-serif italic font-normal text-gradient">
-                    by AI
-                  </em>
-                </h2>{" "}
-                <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-white/50">
-                  We use AI to audit SEO foundations, refine code quality, and
-                  write copy using proven marketing frameworks. It catches what
-                  the human eye misses and sharpens every detail. Over 4 years of
-                  experience guides the strategy. AI makes the execution
-                  precise.
-                </p>{" "}
-              </div>{" "}
-              <div className="ben-visual flex-1 flex flex-col items-center max-lg:items-start justify-center relative z-[1]">
-                {" "}
-                <svg
-                  className="w-[clamp(130px,16vw,210px)] h-auto mb-[0.8rem]"
-                  viewBox="0 0 120 140"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M60 8L14 28V72C14 98 34 120 60 132C86 120 106 98 106 72V28L60 8Z"
-                    stroke="url(#sgrd)"
-                    strokeWidth="3"
-                  ></path>
-                  <path
-                    d="M42 70L55 83L80 57"
-                    stroke="url(#sgrd)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                  <defs>
-                    <linearGradient
-                      id="sgrd"
-                      x1="14"
-                      y1="8"
-                      x2="106"
-                      y2="132"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" stopColor="#F26622"></stop>
-                      <stop offset="100%" stopColor="#F26622"></stop>
-                    </linearGradient>
-                  </defs>
-                </svg>{" "}
-                <div className="ben-visual-label slider-vlabel text-[0.78rem] font-semibold tracking-[0.12em] uppercase mt-[0.8rem] flex items-center gap-2 text-white/55">
-                  AI refined
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="ben-panel ben-panel--light w-screen max-lg:w-full max-lg:min-h-auto min-h-screen flex max-lg:flex-col items-center px-[clamp(3rem,8vw,9rem)] max-lg:px-6 py-[clamp(3rem,8vh,7rem)] max-lg:py-20 gap-[clamp(3rem,6vw,7rem)] max-lg:gap-12 relative overflow-hidden bg-off-white text-text-dark">
-              {" "}
-              <div
-                className="ben-ghost absolute right-[3%] bottom-[-2%] font-display font-black text-[clamp(9rem,20vw,20rem)] leading-none tracking-[-0.03em] whitespace-nowrap pointer-events-none select-none text-dark/5 max-lg:hidden"
-                aria-hidden="true"
-              >
-                Growth
-              </div>{" "}
-              <div className="ben-content shrink-0 max-w-[500px] relative z-[1]">
-                {" "}
-                <div className="ben-label flex items-center gap-[0.6rem] mb-6">
-                  {" "}
-                  <span className="ben-num text-[0.78rem] font-bold tracking-[0.1em] text-gradient">
-                    05
-                  </span>{" "}
-                  <span className="ben-tag text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-text-sec-dark">
                     Free Offer
                   </span>{" "}
                 </div>{" "}
-                <h2 className="ben-heading font-display font-black text-[clamp(2.2rem,4.5vw,4rem)] leading-[1.1] tracking-[-0.025em] mb-6 text-text-dark">
+                <h2 className="ben-heading font-display font-black text-[clamp(2.2rem,4.5vw,4rem)] leading-[1.1] tracking-[-0.025em] mb-6 text-white">
                   Book a Free Call,
                   <br />
                   <em className="ben-serif block font-serif italic font-normal text-gradient">
                     Get a Free Audit.
                   </em>
                 </h2>{" "}
-                <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-text-sec-dark">
+                <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-white/50">
                   Schedule a free strategy call and we'll include a full PPC
                   &amp; SEO audit for your website — no strings attached. See
                   exactly where your ad spend is leaking and how to fix it.
@@ -1444,14 +1371,14 @@ export default function Home() {
               </div>{" "}
               <div className="ben-visual flex-1 flex flex-col items-center max-lg:items-start justify-center relative z-[1]">
                 {" "}
-                <div className="ben-big-num font-display font-black text-[clamp(6rem,13vw,12rem)] leading-none tracking-[-0.03em] text-text-dark">
+                <div className="ben-big-num font-display font-black text-[clamp(6rem,13vw,12rem)] leading-none tracking-[-0.03em] text-white">
                   Start
                 </div>{" "}
-                <div className="ben-visual-label slider-vlabel text-[0.78rem] font-semibold tracking-[0.12em] uppercase mt-[0.8rem] flex items-center gap-2 text-text-sec-dark">
+                <div className="ben-visual-label slider-vlabel text-[0.78rem] font-semibold tracking-[0.12em] uppercase mt-[0.8rem] flex items-center gap-2 text-white/55">
                   PPC &amp; SEO audit
                 </div>{" "}
               </div>{" "}
-            </div>{" "}
+            </div>
           </div>{" "}
           <div
             className="ben-dots absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20 max-lg:hidden"
@@ -1459,7 +1386,6 @@ export default function Home() {
           >
             {" "}
             <span className="ben-dot slider-dot ben-dot--active slider-dot--active"></span>
-            <span className="ben-dot slider-dot "></span>
             <span className="ben-dot slider-dot "></span>
             <span className="ben-dot slider-dot "></span>
             <span className="ben-dot slider-dot "></span>{" "}
