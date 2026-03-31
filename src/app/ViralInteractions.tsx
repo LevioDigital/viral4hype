@@ -361,8 +361,8 @@ export default function ViralInteractions() {
 
     // ════════════════════════════════════════════════════════════════════════
     // 6. HORIZONTAL PINNED SLIDER (ben-section)
-    //    Desktop (>1024px): Scroll-linked JS translation
-    //    Mobile  (<1024px): 100% Native Horizontal CSS Scroll Snapping (zero lag)
+    //    Replicates the GSAP ScrollTrigger pin effect from viral4hype.com
+    //    using a pure-JS sticky + translateX approach
     // ════════════════════════════════════════════════════════════════════════
     const benSection = document.querySelector<HTMLElement>('.ben-section');
     const benTrack = document.querySelector<HTMLElement>('.ben-track');
@@ -371,175 +371,115 @@ export default function ViralInteractions() {
       const panels = Array.from(benTrack.querySelectorAll<HTMLElement>('.ben-panel'));
       const numPanels = panels.length;
       if (numPanels > 1) {
+        // Total horizontal distance to travel = (numPanels-1) × 100vw
+        const totalSlide = () => (numPanels - 1) * window.innerWidth;
+
+        // Wrap benSection in a spacer div that provides the vertical scroll space
+        const spacer = document.createElement('div');
+        spacer.className = 'ben-spacer';
+        spacer.style.cssText = `
+          position: relative;
+          height: ${totalSlide() + window.innerHeight}px;
+          touch-action: pan-y;
+        `;
+        benSection.parentNode!.insertBefore(spacer, benSection);
+        spacer.appendChild(benSection);
+
+        // Make benSection sticky
+        benSection.style.cssText = `
+          position: sticky;
+          top: 0;
+          overflow: hidden;
+          height: ${window.innerHeight}px;
+          width: 100%;
+        `;
+
+        // Make benTrack lay out horizontally
+        benTrack.style.cssText = `
+          display: flex;
+          flex-direction: row;
+          width: ${numPanels * 100}vw;
+          height: 100%;
+          will-change: transform;
+          transform: translate3d(0,0,0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          transition: transform 0.05s linear;
+        `;
+        panels.forEach(p => {
+          p.style.width = '100vw';
+          p.style.height = `${window.innerHeight}px`;
+          p.style.flexShrink = '0';
+          p.style.willChange = 'transform';
+        });
+
+        // Promote benSection to its own compositor layer
+        benSection.style.transform = 'translateZ(0)';
+        benSection.style.contain = 'layout paint';
+
+        // Sync dots
         const dots = Array.from(document.querySelectorAll<HTMLElement>('.ben-dot'));
-        const isDesktop = window.innerWidth >= 1024;
 
-        if (isDesktop) {
-          // --- DESKTOP: JS Sticky Scroll ---
-          const totalSlide = () => (numPanels - 1) * window.innerWidth;
+        let lastTx = 0;
+        let lastActiveIdx = -1;
+        let cachedTotal = totalSlide();
+        let cachedSpacerTop = spacer.offsetTop;
+        let cachedInnerWidth = window.innerWidth;
 
-          const spacer = document.createElement('div');
-          spacer.className = 'ben-spacer';
-          spacer.style.cssText = `
-            position: relative;
-            height: ${totalSlide() + window.innerHeight}px;
-            touch-action: pan-y;
-          `;
-          benSection.parentNode!.insertBefore(spacer, benSection);
-          spacer.appendChild(benSection);
-
-          benSection.style.cssText = `
-            position: sticky;
-            top: 0;
-            overflow: hidden;
-            height: ${window.innerHeight}px;
-            width: 100%;
-          `;
-
-          benTrack.style.cssText = `
-            display: flex;
-            flex-direction: row;
-            width: ${numPanels * 100}vw;
-            height: 100%;
-            will-change: transform;
-            transform: translate3d(0,0,0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            transition: transform 0.05s linear;
-          `;
-          
-          panels.forEach(p => {
-            p.style.width = '100vw';
-            p.style.height = `${window.innerHeight}px`;
-            p.style.flexShrink = '0';
-            p.style.willChange = 'transform';
-          });
-
-          benSection.style.transform = 'translateZ(0)';
-          benSection.style.contain = 'layout paint';
-
-          let lastTx = 0;
-          let lastActiveIdx = -1;
-          let cachedTotal = totalSlide();
-          let cachedSpacerTop = spacer.offsetTop;
-          let cachedInnerWidth = window.innerWidth;
-
-          const applySlider = () => {
-            const scrolledIn = window.scrollY - cachedSpacerTop;
-            if (scrolledIn <= 0) {
-              if (lastTx !== 0) {
-                benTrack.style.transform = 'translate3d(0,0,0)';
-                lastTx = 0;
-                if (lastActiveIdx !== 0) {
-                  dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
-                  lastActiveIdx = 0;
-                }
-              }
-              return;
-            }
-            const progress = Math.min(scrolledIn / cachedTotal, 1);
-            const rawTx = -(progress * (numPanels - 1) * cachedInnerWidth);
-            const tx = Math.round(rawTx * 10) / 10;
-            if (Math.abs(tx - lastTx) > 0.1) {
-              benTrack.style.transform = `translate3d(${tx}px,0,0)`;
-              lastTx = tx;
-              const activeIdx = Math.min(Math.round(progress * (numPanels - 1)), numPanels - 1);
-              if (activeIdx !== lastActiveIdx) {
-                dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === activeIdx));
-                lastActiveIdx = activeIdx;
+        const applySlider = () => {
+          const scrolledIn = window.scrollY - cachedSpacerTop;
+          if (scrolledIn <= 0) {
+            if (lastTx !== 0) {
+              benTrack.style.transform = 'translate3d(0,0,0)';
+              lastTx = 0;
+              if (lastActiveIdx !== 0) {
+                dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === 0));
+                lastActiveIdx = 0;
               }
             }
-          };
+            return;
+          }
+          const progress = Math.min(scrolledIn / cachedTotal, 1);
+          const rawTx = -(progress * (numPanels - 1) * cachedInnerWidth);
+          const tx = Math.round(rawTx * 10) / 10;
+          if (Math.abs(tx - lastTx) > 0.1) {
+            benTrack.style.transform = `translate3d(${tx}px,0,0)`;
+            lastTx = tx;
+            const activeIdx = Math.min(Math.round(progress * (numPanels - 1)), numPanels - 1);
+            if (activeIdx !== lastActiveIdx) {
+              dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === activeIdx));
+              lastActiveIdx = activeIdx;
+            }
+          }
+        };
 
-          const syncSlider = () => applySlider();
-          window.addEventListener('scroll', syncSlider, { passive: true });
+        const syncSlider = () => {
           applySlider();
+        };
 
-          const onResize = () => {
-            if (window.innerWidth < 1024) return window.location.reload(); // Hard reset for device rotation
-            cachedTotal = totalSlide();
-            cachedSpacerTop = spacer.offsetTop;
-            cachedInnerWidth = window.innerWidth;
-            benSection.style.height = `${window.innerHeight}px`;
-            panels.forEach(p => p.style.height = `${window.innerHeight}px`);
-            spacer.style.height = `${cachedTotal + window.innerHeight}px`;
-            benTrack.style.width = `${numPanels * 100}vw`;
-            applySlider();
-          };
-          window.addEventListener('resize', onResize, { passive: true });
+        window.addEventListener('scroll', syncSlider, { passive: true });
+        applySlider();
 
-          cleanups.push(() => {
-            window.removeEventListener('scroll', syncSlider);
-            window.removeEventListener('resize', onResize);
+        const onResize = () => {
+          cachedTotal = totalSlide();
+          cachedSpacerTop = spacer.offsetTop;
+          cachedInnerWidth = window.innerWidth;
+          benSection.style.height = `${window.innerHeight}px`;
+          panels.forEach(p => {
+            p.style.height = `${window.innerHeight}px`;
           });
+          spacer.style.height = `${cachedTotal + window.innerHeight}px`;
+          benTrack.style.width = `${numPanels * 100}vw`;
+          applySlider();
+        };
+        window.addEventListener('resize', onResize, { passive: true });
 
-        } else {
-          // --- MOBILE: Native High-Performance CSS Snap Scrolling ---
-          benSection.style.cssText = `
-            position: relative;
-            overflow: hidden;
-            width: 100vw;
-            height: ${window.innerHeight}px;
-          `;
-          
-          benTrack.style.cssText = `
-            display: flex;
-            flex-direction: row;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            width: 100vw;
-            height: 100%;
-            -webkit-overflow-scrolling: touch;
-          `;
-          
-          // Hide scrollbar inline
-          benTrack.classList.add('hide-scrollbar-dynamic');
-          const style = document.createElement('style');
-          style.innerHTML = `.hide-scrollbar-dynamic::-webkit-scrollbar { display: none; } .hide-scrollbar-dynamic { scrollbar-width: none; -ms-overflow-style: none; }`;
-          document.head.appendChild(style);
-          cleanups.push(() => style.remove());
-
-          panels.forEach((p, index) => {
-            p.style.cssText = `
-              width: 100vw;
-              height: ${window.innerHeight}px;
-              flex-shrink: 0;
-              scroll-snap-align: start;
-              scroll-snap-stop: always;
-            `;
-          });
-
-          // Sync dots natively using Intersection Observer on the panels
-          const panelObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const visibleIndex = panels.indexOf(entry.target as HTMLElement);
-                if (visibleIndex !== -1) {
-                  dots.forEach((d, i) => d.classList.toggle('slider-dot--active', i === visibleIndex));
-                }
-              }
-            });
-          }, { root: benTrack, threshold: 0.6 });
-          
-          panels.forEach(p => panelObserver.observe(p));
-          
-          const onResize = () => {
-            if (window.innerWidth >= 1024) return window.location.reload(); // Hard reset if moving to desktop
-            benSection.style.height = `${window.innerHeight}px`;
-            panels.forEach(p => p.style.height = `${window.innerHeight}px`);
-          };
-          window.addEventListener('resize', onResize, { passive: true });
-
-          cleanups.push(() => {
-            panelObserver.disconnect();
-            window.removeEventListener('resize', onResize);
-          });
-        }
+        cleanups.push(() => {
+          window.removeEventListener('scroll', syncSlider);
+          window.removeEventListener('resize', onResize);
+        });
       }
     }
-
 
     // ════════════════════════════════════════════════════════════════════════
     // 7. SCROLL-REVEAL — sections fade + translateY as they enter viewport
