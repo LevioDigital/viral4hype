@@ -367,7 +367,10 @@ export default function ViralInteractions() {
     const benSection = document.querySelector<HTMLElement>('.ben-section');
     const benTrack = document.querySelector<HTMLElement>('.ben-track');
 
-    if (benSection && benTrack) {
+    // Disable horizontal scroll effect on mobile to allow native vertical stacking
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+
+    if (benSection && benTrack && !isMobile) {
       const panels = Array.from(benTrack.querySelectorAll<HTMLElement>('.ben-panel'));
       const numPanels = panels.length;
       if (numPanels > 1) {
