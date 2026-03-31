@@ -390,7 +390,7 @@ export default function ViralInteractions() {
           position: sticky;
           top: 0;
           overflow: hidden;
-          height: 100dvh;
+          height: ${window.innerHeight}px;
           width: 100%;
         `;
 
@@ -407,7 +407,7 @@ export default function ViralInteractions() {
         `;
         panels.forEach(p => {
           p.style.width = '100vw';
-          p.style.height = '100dvh';
+          p.style.height = `${window.innerHeight}px`;
           p.style.flexShrink = '0';
           p.style.willChange = 'transform';
         });
@@ -458,6 +458,10 @@ export default function ViralInteractions() {
         const onResize = () => {
           cachedTotal = totalSlide();
           cachedSpacerTop = spacer.offsetTop;
+          benSection.style.height = `${window.innerHeight}px`;
+          panels.forEach(p => {
+            p.style.height = `${window.innerHeight}px`;
+          });
           spacer.style.height = `${cachedTotal + window.innerHeight}px`;
           benTrack.style.width = `${numPanels * 100}vw`;
           applySlider();
