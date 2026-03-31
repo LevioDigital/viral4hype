@@ -390,7 +390,7 @@ export default function ViralInteractions() {
           position: sticky;
           top: 0;
           overflow: hidden;
-          height: 100svh;
+          height: 100dvh;
           width: 100%;
         `;
 
@@ -407,6 +407,7 @@ export default function ViralInteractions() {
         `;
         panels.forEach(p => {
           p.style.width = '100vw';
+          p.style.height = '100dvh';
           p.style.flexShrink = '0';
           p.style.willChange = 'transform';
         });
