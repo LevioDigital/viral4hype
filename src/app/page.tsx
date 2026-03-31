@@ -384,11 +384,11 @@ export default function Home() {
           {/*  Canvases  */}{" "}
           <canvas
             id="hero-reveal-canvas"
-            className="hero-reveal-canvas absolute inset-0 z-[2] pointer-events-none hidden lg:block"
+            className="hero-reveal-canvas absolute inset-0 z-[2] pointer-events-none"
             aria-hidden="true"
           ></canvas>{" "}
           <canvas
-            className="hero-dots absolute inset-0 z-[1] pointer-events-none hidden lg:block"
+            className="hero-dots absolute inset-0 z-[1] pointer-events-none"
             id="hero-dots"
             aria-hidden="true"
           ></canvas>{" "}
