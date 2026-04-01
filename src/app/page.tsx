@@ -1536,7 +1536,7 @@ export default function Home() {
                   </span>{" "}
                 </a>{" "}
                 <a
-                  href="https://maps.app.goo.gl/X14XqwStQ1Tmb6kh7"
+                  href="https://www.google.com/maps/place/Viral+4+Hype/@45.8281953,19.7350693,6z/data=!3m1!4b1!4m6!3m5!1s0x239561cbf0276647:0x754560d0bd4dc421!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11y1bk0xpw?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="clink flex justify-between items-baseline py-4 border-b border-white/[0.06] transition-[padding-left] duration-300 ease-out-expo hover:pl-2"
@@ -1928,7 +1928,7 @@ export default function Home() {
                   contact@viral4hype.com
                 </a>{" "}
                 <a
-                  href="https://maps.app.goo.gl/X14XqwStQ1Tmb6kh7"
+                  href="https://www.google.com/maps/place/Viral+4+Hype/@45.8281953,19.7350693,6z/data=!3m1!4b1!4m6!3m5!1s0x239561cbf0276647:0x754560d0bd4dc421!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11y1bk0xpw?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white/65"
