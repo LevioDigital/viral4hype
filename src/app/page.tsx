@@ -68,7 +68,14 @@ export default function Home() {
             className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white"
             data-cursor="link"
           >
-            Google Ads
+            Marketing
+          </a>
+          <a
+            href="/about-us"
+            className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white"
+            data-cursor="link"
+          >
+            Shopify Stores
           </a>
           <a
             href="/our-work"
@@ -83,13 +90,6 @@ export default function Home() {
             data-cursor="link"
           >
             Blog
-          </a>
-          <a
-            href="/about-us"
-            className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white"
-            data-cursor="link"
-          >
-            About
           </a>{" "}
         </div>{" "}
         <a
@@ -165,7 +165,14 @@ export default function Home() {
                 className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white"
               >
                 {" "}
-                Google Ads{" "}
+                Marketing{" "}
+              </a>
+              <a
+                href="/about-us"
+                className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white"
+              >
+                {" "}
+                Shopify Stores{" "}
               </a>
               <a
                 href="/our-work"
@@ -180,13 +187,6 @@ export default function Home() {
               >
                 {" "}
                 Blog{" "}
-              </a>
-              <a
-                href="/about-us"
-                className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white"
-              >
-                {" "}
-                About{" "}
               </a>
               <a
                 href="/contact"
@@ -616,7 +616,7 @@ export default function Home() {
               </span>{" "}
               <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                Website Support
+                Digital Marketing
               </span>{" "}
               <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
@@ -653,7 +653,7 @@ export default function Home() {
               </span>{" "}
               <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                Website Support
+                Digital Marketing
               </span>{" "}
               <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
@@ -1105,13 +1105,47 @@ export default function Home() {
                 </span>{" "}
               </a>
               <a
-                href="/shopify-agency"
+                href="/contact"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
                 {" "}
                 <span className="srv-num font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] transition-all duration-700 relative z-[1]">
                   02
+                </span>{" "}
+                <div className="srv-info flex-1 relative z-[1]">
+                  {" "}
+                  <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
+                    Digital Marketing
+                  </h3>{" "}
+                  <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
+                    Grow your business online with targeted digital marketing
+                    strategies. From Google Ads and SEO to social media
+                    campaigns, we drive the right traffic and turn it into
+                    real results.
+                  </p>{" "}
+                </div>{" "}
+                <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
+                  {" "}
+                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M6 14L14 6M14 6H6M14 6V14"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>{" "}
+                </span>{" "}
+              </a>
+              <a
+                href="/shopify-agency"
+                className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
+                data-cursor="link"
+              >
+                {" "}
+                <span className="srv-num font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] transition-all duration-700 relative z-[1]">
+                  03
                 </span>{" "}
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
@@ -1143,52 +1177,18 @@ export default function Home() {
                 data-cursor="link"
               >
                 {" "}
-                <span className="srv-num font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] transition-all duration-700 relative z-[1]">
-                  03
+                <span className="srv-num font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] transition-all duration-700 relative z-[1]" style={{ color: '#F26622' }}>
+                  →
                 </span>{" "}
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
                   <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Website Support
+                    Let's Talk
                   </h3>{" "}
                   <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
-                    Need something changed on your site? Whether it&#39;s
-                    regular content updates and new pages or a one-off tweak,
-                    we&#39;re here when you need us. No retainer required.
-                  </p>{" "}
-                </div>{" "}
-                <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
-                  {" "}
-                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M6 14L14 6M14 6H6M14 6V14"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></path>
-                  </svg>{" "}
-                </span>{" "}
-              </a>
-              <a
-                href="/google-ads"
-                className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
-                data-cursor="link"
-              >
-                {" "}
-                <span className="srv-num font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] transition-all duration-700 relative z-[1]">
-                  04
-                </span>{" "}
-                <div className="srv-info flex-1 relative z-[1]">
-                  {" "}
-                  <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Google Ads Management
-                  </h3>{" "}
-                  <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
-                    Put your business in front of people already searching for
-                    what you offer. We build, manage, and optimise your
-                    campaigns so you get more enquiries from every pound you
-                    spend.
+                    Got a project in mind? Whether you have a clear brief or
+                    just an idea, we'd love to hear about it. A quick chat
+                    could be the first step to growing your business online.
                   </p>{" "}
                 </div>{" "}
                 <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
@@ -1864,7 +1864,7 @@ export default function Home() {
                   className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white"
                   data-cursor="link"
                 >
-                  Website Support
+                  Digital Marketing
                 </a>
                 <a
                   href="/google-ads"
