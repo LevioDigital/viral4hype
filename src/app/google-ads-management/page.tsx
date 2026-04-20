@@ -1,0 +1,174 @@
+import type { Metadata } from "next";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import CTABanner from "../components/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Google Ads & Digital Marketing | viral4hype",
+  description: "Data-driven Google Ads and Meta Ads campaigns with transparent ROI. 340% average ROAS across our clients.",
+};
+
+const services = [
+  { icon: "◎", title: "Google Search Ads", desc: "Appear at the top of Google when your customers are actively searching for what you offer." },
+  { icon: "◈", title: "Google Display Ads", desc: "Visual banner campaigns across millions of websites to build brand awareness and drive traffic." },
+  { icon: "✦", title: "Meta Ads (FB & IG)", desc: "Precision-targeted campaigns on Facebook and Instagram reaching the right audience at the right time." },
+  { icon: "⬡", title: "Remarketing", desc: "Bring back visitors who didn't convert the first time with smart retargeting sequences." },
+  { icon: "◉", title: "A/B Testing", desc: "Continuous creative and copy testing so your budget always flows to what works best." },
+  { icon: "◌", title: "Monthly Reports", desc: "Clear, jargon-free monthly reports showing exactly where your money goes and what it returns." },
+];
+
+const steps = [
+  { num: "01", title: "Account Audit", desc: "We audit your existing ads accounts (or start fresh) to identify quick wins and gaps." },
+  { num: "02", title: "Strategy", desc: "We build a campaign strategy aligned to your goals — leads, sales, brand, or all three." },
+  { num: "03", title: "Launch", desc: "Campaigns go live with precise targeting, compelling creative, and conversion tracking in place." },
+  { num: "04", title: "Optimize", desc: "We optimize weekly — adjusting bids, pausing underperformers, scaling what converts." },
+  { num: "05", title: "Scale", desc: "Once profitable, we scale your budget intelligently to compound your returns over time." },
+];
+
+export default function MarketingPage() {
+  return (
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm">
+        Skip to main content
+      </a>
+      <Nav />
+
+      <main id="main-content">
+        {/* Hero */}
+        <section className="relative overflow-hidden pt-[clamp(7rem,14vh,11rem)] pb-section-y px-container-x" style={{ background: '#180A03' }}>
+          <div className="absolute top-[-20%] right-[-10%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] rounded-full pointer-events-none hidden lg:block"
+            style={{ background: 'radial-gradient(circle, rgba(242,102,34,0.10) 0%, transparent 65%)' }}
+          />
+          <div className="absolute bottom-[10%] left-[-8%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full pointer-events-none hidden lg:block"
+            style={{ background: 'radial-gradient(circle, rgba(131,9,238,0.06) 0%, transparent 65%)' }}
+          />
+
+          <div className="max-w-[1200px] mx-auto relative z-[1]">
+            <div className="inline-flex items-center gap-2 text-[0.8rem] font-medium tracking-[0.08em] text-white/50 border border-white/10 rounded-[40px] py-[0.35rem] px-4 mb-[clamp(1.5rem,3vh,2.5rem)] backdrop-blur-[8px]">
+              <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: '#F26622' }}></span>
+              Digital Marketing
+            </div>
+
+            <h1 className="font-display font-black text-[clamp(2.8rem,6.5vw,7.5rem)] leading-[0.93] tracking-[-0.03em] text-white mb-[clamp(1.5rem,3vh,2.5rem)]">
+              Marketing that<br />
+              <em className="font-serif italic font-normal text-[1.05em]">drives real ROI</em>
+            </h1>
+
+            <p className="text-[clamp(0.9rem,1.3vw,1.05rem)] text-white/65 leading-[1.7] max-w-[500px] mb-[clamp(2rem,4vh,3rem)]">
+              Google Ads and Meta campaigns managed daily by a team obsessed with your return on investment. No vanity metrics, no guesswork — just revenue you can measure.
+            </p>
+
+            <div className="flex items-center gap-8 pt-6 border-t border-white/[0.06] flex-wrap mb-[clamp(2.5rem,5vh,4rem)]">
+              <div className="flex flex-col gap-[0.15rem]">
+                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">340%</span>
+                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Avg. ROAS</span>
+              </div>
+              <div className="w-px h-10 bg-white/[0.08]"></div>
+              <div className="flex flex-col gap-[0.15rem]">
+                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">50+</span>
+                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Active Clients</span>
+              </div>
+              <div className="w-px h-10 bg-white/[0.08]"></div>
+              <div className="flex flex-col gap-[0.15rem]">
+                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">Daily</span>
+                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Optimization</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 flex-wrap">
+              <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo" data-cursor="link">
+                Get a Free Audit
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Services grid */}
+        <section className="py-section-y px-container-x bg-off-white">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="mb-[clamp(2.5rem,5vh,4rem)]">
+              <div className="flex items-center gap-1.5 text-[0.8rem] font-semibold tracking-[0.12em] uppercase text-text-sec-dark mb-4">
+                <span className="shrink-0 inline-block w-[5px] h-[5px] rounded-full" style={{ backgroundColor: '#F26622' }}></span>
+                What We Manage
+              </div>
+              <h2 className="font-display text-[clamp(2rem,4.5vw,3.8rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-text-dark">
+                Full-funnel coverage,<br />
+                <em className="font-serif italic font-normal text-[1.02em] text-gradient">top to bottom</em>
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((s) => (
+                <div key={s.title} className="bg-white rounded-[20px] p-8 border border-black/[0.05] transition-shadow duration-300 hover:shadow-card">
+                  <div className="text-2xl mb-5" style={{ color: '#F26622' }}>{s.icon}</div>
+                  <h3 className="font-display text-[1.05rem] font-bold text-text-dark mb-2 tracking-[-0.01em]">{s.title}</h3>
+                  <p className="text-[0.88rem] text-text-sec-dark leading-[1.65]">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Results */}
+        <section className="py-section-y px-container-x" style={{ background: '#180A03' }}>
+          <div className="max-w-[1200px] mx-auto">
+            <div className="mb-[clamp(2.5rem,5vh,4rem)]">
+              <div className="flex items-center gap-1.5 text-[0.8rem] font-semibold tracking-[0.12em] uppercase text-white/40 mb-4">
+                <span className="shrink-0 inline-block w-[5px] h-[5px] rounded-full" style={{ backgroundColor: '#F26622' }}></span>
+                Real Results
+              </div>
+              <h2 className="font-display text-[clamp(2rem,4.5vw,3.8rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
+                Numbers that<br />
+                <em className="font-serif italic font-normal text-[1.02em]" style={{ color: '#F26622' }}>speak for themselves</em>
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { metric: "340%", label: "Average ROAS", context: "Return on ad spend across all active Google Ads clients." },
+                { metric: "62%", label: "Lower CPA", context: "Average reduction in cost-per-acquisition after 90 days of optimization." },
+                { metric: "4.8×", label: "Lead Volume", context: "Average increase in qualified leads after switching to our managed campaigns." },
+              ].map((r) => (
+                <div key={r.label} className="p-8 rounded-[20px] border border-white/[0.07]" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                  <div className="font-display text-[clamp(2.5rem,4vw,4rem)] font-black tracking-[-0.03em] mb-2" style={{ color: '#F26622' }}>{r.metric}</div>
+                  <div className="text-[1rem] font-bold text-white mb-3">{r.label}</div>
+                  <p className="text-[0.85rem] text-white/50 leading-[1.65]">{r.context}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="py-section-y px-container-x bg-off-white">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="mb-[clamp(2.5rem,5vh,4rem)]">
+              <div className="flex items-center gap-1.5 text-[0.8rem] font-semibold tracking-[0.12em] uppercase text-text-sec-dark mb-4">
+                <span className="shrink-0 inline-block w-[5px] h-[5px] rounded-full" style={{ backgroundColor: '#F26622' }}></span>
+                Our Process
+              </div>
+              <h2 className="font-display text-[clamp(2rem,4.5vw,3.8rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-text-dark">
+                From audit to<br />
+                <em className="font-serif italic font-normal text-[1.02em] text-gradient">scaling profits</em>
+              </h2>
+            </div>
+            <div className="flex flex-col gap-4">
+              {steps.map((s) => (
+                <div key={s.num} className="flex items-start gap-8 p-8 bg-white rounded-[20px] border border-black/[0.05]">
+                  <div className="text-[2rem] font-extrabold tracking-[-0.02em] shrink-0" style={{ color: 'rgba(242,102,34,0.3)' }}>{s.num}</div>
+                  <div>
+                    <h3 className="font-display text-[1.05rem] font-bold text-text-dark mb-1">{s.title}</h3>
+                    <p className="text-[0.88rem] text-text-sec-dark leading-[1.65]">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <CTABanner />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
