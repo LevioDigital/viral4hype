@@ -1,0 +1,111 @@
+import type { Metadata } from "next";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | viral4hype",
+  description: "Privacy Policy for viral4hype.com — how we collect, use, and protect your personal information.",
+};
+
+const sections = [
+  {
+    title: "Introduction",
+    content: `Viral4Hype operates viral4hype.com. This page informs you of our policies regarding the collection, use, and disclosure of Personal Information we receive from users of the Site. We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance with this policy.`,
+  },
+  {
+    title: "Information Collection and Use",
+    content: `While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your name ("Personal Information").`,
+  },
+  {
+    title: "Log Data",
+    content: `Like many site operators, we collect information that your browser sends whenever you visit our Site ("Log Data"). This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, and other statistics.`,
+  },
+  {
+    title: "Cookies",
+    content: `Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your computer's hard drive. Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.`,
+  },
+  {
+    title: "Security",
+    content: `The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.`,
+  },
+  {
+    title: "Changes to This Privacy Policy",
+    content: `This Privacy Policy is effective as of February 14, 2024 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page. We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications constitutes your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy. If we make any material changes, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website.`,
+  },
+];
+
+export default function PrivacyPage() {
+  return (
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm">
+        Skip to main content
+      </a>
+      <Nav />
+      <main id="main-content" style={{ background: "#180A03" }}>
+        {/* Hero */}
+        <section
+          className="px-container-x pb-[clamp(3rem,6vh,5rem)]"
+          style={{
+            background: "#180A03",
+            backgroundImage:
+              "radial-gradient(circle 600px at 80% 0%, rgba(242,102,34,0.12) 0%, transparent 70%)",
+            paddingTop: "clamp(9rem, 18vh, 13rem)",
+          }}
+        >
+          <div className="max-w-[760px] mx-auto">
+            <p
+              className="text-[0.7rem] font-bold uppercase tracking-[0.18em] mb-5"
+              style={{ color: "#F26622" }}
+            >
+              Legal
+            </p>
+            <h1 className="font-display font-black text-white leading-[1.05] tracking-[-0.02em] mb-5" style={{ fontSize: "clamp(2.4rem,5vw,4rem)" }}>
+              Privacy Policy
+            </h1>
+            <p className="text-white/40 text-sm">Last updated: February 14, 2024</p>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="px-container-x">
+          <div className="max-w-[760px] mx-auto border-t border-white/8" />
+        </div>
+
+        {/* Content */}
+        <section className="px-container-x py-[clamp(4rem,8vh,7rem)]" style={{ background: "#180A03" }}>
+          <div className="max-w-[760px] mx-auto space-y-14">
+            {sections.map((s) => (
+              <div key={s.title}>
+                <h2
+                  className="text-[0.68rem] font-bold uppercase tracking-[0.18em] mb-5"
+                  style={{ color: "#F26622" }}
+                >
+                  {s.title}
+                </h2>
+                <p className="text-white/85 text-[1rem] leading-[1.85]">{s.content}</p>
+              </div>
+            ))}
+
+            {/* Contact */}
+            <div>
+              <h2 className="text-[0.68rem] font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#F26622" }}>
+                Contact Us
+              </h2>
+              <p className="text-white/85 text-[1rem] leading-[1.85]">
+                If you have any questions about this Privacy Policy, please contact us at:{" "}
+                <a
+                  href="mailto:contact@viral4hype.com"
+                  className="underline underline-offset-4 transition-colors hover:text-white"
+                  style={{ color: "#F26622" }}
+                >
+                  contact@viral4hype.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

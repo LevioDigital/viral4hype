@@ -128,11 +128,16 @@ export default function ViralInteractions() {
           while (node && node !== document.documentElement) {
             const bg = getComputedStyle(node).backgroundColor;
             if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
-              const m = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+              const m = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
               if (m) {
-                lum = 0.2126 * +m[1] / 255 + 0.7152 * +m[2] / 255 + 0.0722 * +m[3] / 255;
+                const alpha = m[4] !== undefined ? parseFloat(m[4]) : 1;
+                if (alpha > 0.15) {
+                  lum = 0.2126 * +m[1] / 255 + 0.7152 * +m[2] / 255 + 0.0722 * +m[3] / 255;
+                  break;
+                }
+              } else {
+                break;
               }
-              break;
             }
             node = node.parentElement;
           }

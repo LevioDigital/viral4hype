@@ -35,51 +35,57 @@ export default function MarketingPage() {
 
       <main id="main-content">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-[clamp(7rem,14vh,11rem)] pb-section-y px-container-x" style={{ background: '#180A03' }}>
-          <div className="absolute top-[-20%] right-[-10%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] rounded-full pointer-events-none hidden lg:block"
-            style={{ background: 'radial-gradient(circle, rgba(242,102,34,0.10) 0%, transparent 65%)' }}
-          />
-          <div className="absolute bottom-[10%] left-[-8%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full pointer-events-none hidden lg:block"
-            style={{ background: 'radial-gradient(circle, rgba(131,9,238,0.06) 0%, transparent 65%)' }}
-          />
+        <section className="relative overflow-hidden min-h-svh flex flex-col justify-end pt-[120px] pb-[clamp(3rem,6vh,5rem)] px-container-x" style={{ backgroundColor: '#180A03', backgroundImage: 'radial-gradient(circle 700px at 95% 0%, rgba(242,102,34,0.30) 0%, transparent 70%), radial-gradient(circle 520px at -5% 100%, rgba(131,9,238,0.14) 0%, transparent 70%), radial-gradient(circle 380px at 55% 60%, rgba(8,117,233,0.14) 0%, transparent 70%)' }}>
 
-          <div className="max-w-[1200px] mx-auto relative z-[1]">
-            <div className="inline-flex items-center gap-2 text-[0.8rem] font-medium tracking-[0.08em] text-white/50 border border-white/10 rounded-[40px] py-[0.35rem] px-4 mb-[clamp(1.5rem,3vh,2.5rem)] backdrop-blur-[8px]">
-              <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: '#F26622' }}></span>
+          <div className="max-w-[1200px] mx-auto relative z-[1] w-full">
+            <div className="inline-flex items-center gap-2 text-[0.8rem] font-medium tracking-[0.08em] text-white/50 border border-white/10 rounded-[40px] py-[0.35rem] px-4 mb-[clamp(2rem,4vh,3.5rem)] backdrop-blur-[8px]">
+              <span className="w-[6px] h-[6px] rounded-full animate-badge-pulse" style={{ backgroundColor: '#F26622' }}></span>
               Digital Marketing
             </div>
 
-            <h1 className="font-display font-black text-[clamp(2.8rem,6.5vw,7.5rem)] leading-[0.93] tracking-[-0.03em] text-white mb-[clamp(1.5rem,3vh,2.5rem)]">
-              Marketing that<br />
-              <em className="font-serif italic font-normal text-[1.05em]">drives real ROI</em>
+            <h1 className="font-display leading-[0.92] tracking-[-0.02em] mb-[clamp(2.5rem,5vh,4rem)]">
+              <span className="block font-black text-[clamp(3rem,8.5vw,9.5rem)] tracking-[-0.03em] text-white leading-[0.95] mb-[0.2em]">Marketing that</span>
+              <em className="font-serif italic font-normal text-[clamp(3.5rem,10vw,11rem)] text-gradient leading-[0.95]">drives real ROI</em>
             </h1>
 
-            <p className="text-[clamp(0.9rem,1.3vw,1.05rem)] text-white/65 leading-[1.7] max-w-[500px] mb-[clamp(2rem,4vh,3rem)]">
-              Google Ads and Meta campaigns managed daily by a team obsessed with your return on investment. No vanity metrics, no guesswork — just revenue you can measure.
-            </p>
-
-            <div className="flex items-center gap-8 pt-6 border-t border-white/[0.06] flex-wrap mb-[clamp(2.5rem,5vh,4rem)]">
-              <div className="flex flex-col gap-[0.15rem]">
-                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">340%</span>
-                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Avg. ROAS</span>
-              </div>
-              <div className="w-px h-10 bg-white/[0.08]"></div>
-              <div className="flex flex-col gap-[0.15rem]">
-                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">50+</span>
-                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Active Clients</span>
-              </div>
-              <div className="w-px h-10 bg-white/[0.08]"></div>
-              <div className="flex flex-col gap-[0.15rem]">
-                <span className="text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">Daily</span>
-                <span className="text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Optimization</span>
+            <div className="flex items-start justify-between gap-[clamp(2rem,4vw,5rem)] flex-wrap mb-[clamp(2.5rem,5vh,4rem)]">
+              <p className="text-[clamp(0.9rem,1.3vw,1.05rem)] text-white/70 leading-[1.7] max-w-[440px]">
+                Google Ads and Meta campaigns managed daily by a team obsessed with your return on investment. No vanity metrics, no guesswork — just revenue you can measure.
+              </p>
+              <div className="flex items-center gap-6 shrink-0 flex-wrap pt-[0.4rem]">
+                <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                  <span className="btn-text relative z-[1]">Get a Free Audit</span>
+                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
+                </a>
+                <a href="/our-work" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">
+                  See Case Studies
+                </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-6 flex-wrap">
-              <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo" data-cursor="link">
-                Get a Free Audit
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
+            <div className="hero-stats flex items-center gap-8 pt-6 border-t border-white/[0.06] flex-wrap">
+              <div className="stat flex flex-col gap-[0.15rem]">
+                <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">10x</span>
+                <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Avg. ROAS</span>
+              </div>
+              <div className="stat-div w-px h-10 bg-white/[0.08]"></div>
+              <div className="stat flex flex-col gap-[0.15rem]">
+                <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">95%</span>
+                <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Beat Benchmark</span>
+              </div>
+              <div className="stat-div w-px h-10 bg-white/[0.08]"></div>
+              <div className="stat flex flex-col gap-[0.15rem]">
+                <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">Daily</span>
+                <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Optimization</span>
+              </div>
+              <div className="hero-scroll opacity-0 ml-auto flex items-center gap-[0.7rem] text-[0.7rem] font-medium tracking-[0.15em] uppercase text-white/55 max-lg:hidden">
+                <div className="scroll-track w-[1.5px] h-10 bg-white/20 relative overflow-hidden rounded-sm">
+                  <div className="scroll-fill w-full h-[14px] bg-white/70 rounded-sm animate-scroll-fill"></div>
+                </div>
+                <span>Scroll</span>
+              </div>
             </div>
           </div>
         </section>
@@ -99,8 +105,14 @@ export default function MarketingPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
-                <div key={s.title} className="bg-white rounded-[20px] p-8 border border-black/[0.05] transition-shadow duration-300 hover:shadow-card">
-                  <div className="text-2xl mb-5" style={{ color: '#F26622' }}>{s.icon}</div>
+                <div key={s.title} className="bg-white rounded-[20px] p-8 border border-black/[0.05] transition-shadow duration-300 hover:shadow-card relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                    style={{ background: 'linear-gradient(90deg, #F26622, transparent)' }}
+                  />
+                  <div className="w-11 h-11 rounded-full flex items-center justify-center mb-6 border border-black/[0.06]"
+                    style={{ background: 'rgba(242,102,34,0.08)' }}>
+                    <span className="text-lg" style={{ color: '#F26622' }}>{s.icon}</span>
+                  </div>
                   <h3 className="font-display text-[1.05rem] font-bold text-text-dark mb-2 tracking-[-0.01em]">{s.title}</h3>
                   <p className="text-[0.88rem] text-text-sec-dark leading-[1.65]">{s.desc}</p>
                 </div>
@@ -119,19 +131,20 @@ export default function MarketingPage() {
               </div>
               <h2 className="font-display text-[clamp(2rem,4.5vw,3.8rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
                 Numbers that<br />
-                <em className="font-serif italic font-normal text-[1.02em]" style={{ color: '#F26622' }}>speak for themselves</em>
+                <em className="font-serif italic font-normal text-[1.02em] text-gradient">speak for themselves</em>
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.07] rounded-[20px] overflow-hidden border border-white/[0.07]"
+              style={{ background: 'rgba(255,255,255,0.02)' }}>
               {[
-                { metric: "340%", label: "Average ROAS", context: "Return on ad spend across all active Google Ads clients." },
+                { metric: "10x", label: "Average ROAS", context: "Return on ad spend across all active Google Ads clients, consistently beating the national average." },
                 { metric: "62%", label: "Lower CPA", context: "Average reduction in cost-per-acquisition after 90 days of optimization." },
                 { metric: "4.8×", label: "Lead Volume", context: "Average increase in qualified leads after switching to our managed campaigns." },
               ].map((r) => (
-                <div key={r.label} className="p-8 rounded-[20px] border border-white/[0.07]" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                  <div className="font-display text-[clamp(2.5rem,4vw,4rem)] font-black tracking-[-0.03em] mb-2" style={{ color: '#F26622' }}>{r.metric}</div>
-                  <div className="text-[1rem] font-bold text-white mb-3">{r.label}</div>
-                  <p className="text-[0.85rem] text-white/50 leading-[1.65]">{r.context}</p>
+                <div key={r.label} className="p-[clamp(2rem,4vw,3.5rem)] flex flex-col">
+                  <div className="font-display text-[clamp(3.5rem,7vw,6.5rem)] font-black tracking-[-0.03em] leading-none mb-4" style={{ color: '#F26622' }}>{r.metric}</div>
+                  <div className="text-[0.78rem] font-bold text-white/70 uppercase tracking-[0.12em] mb-3">{r.label}</div>
+                  <p className="text-[0.85rem] text-white/45 leading-[1.65] mt-auto">{r.context}</p>
                 </div>
               ))}
             </div>
@@ -151,13 +164,15 @@ export default function MarketingPage() {
                 <em className="font-serif italic font-normal text-[1.02em] text-gradient">scaling profits</em>
               </h2>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="border-t border-black/[0.06]">
               {steps.map((s) => (
-                <div key={s.num} className="flex items-start gap-8 p-8 bg-white rounded-[20px] border border-black/[0.05]">
-                  <div className="text-[2rem] font-extrabold tracking-[-0.02em] shrink-0" style={{ color: 'rgba(242,102,34,0.3)' }}>{s.num}</div>
-                  <div>
-                    <h3 className="font-display text-[1.05rem] font-bold text-text-dark mb-1">{s.title}</h3>
-                    <p className="text-[0.88rem] text-text-sec-dark leading-[1.65]">{s.desc}</p>
+                <div key={s.num} className="flex items-start gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,2.8rem)] border-b border-black/[0.06]">
+                  <span className="font-display text-[clamp(2rem,5vw,4rem)] font-black leading-none shrink-0 w-[clamp(60px,8vw,110px)] tracking-[-0.02em]"
+                    style={{ color: 'rgba(242,102,34,0.22)' }}
+                  >{s.num}</span>
+                  <div className="flex-1 pt-[0.3rem]">
+                    <h3 className="font-display text-[clamp(1.1rem,2.2vw,1.6rem)] font-bold text-text-dark mb-2 tracking-[-0.01em]">{s.title}</h3>
+                    <p className="text-[0.9rem] text-text-sec-dark leading-[1.65] max-w-[520px]">{s.desc}</p>
                   </div>
                 </div>
               ))}

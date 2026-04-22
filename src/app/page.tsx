@@ -161,7 +161,7 @@ export default function Home() {
             {/*  Badge  */}{" "}
             <div className="inline-flex items-center gap-2 text-[0.8rem] font-medium tracking-[0.08em] text-white/50 border border-white/10 rounded-[40px] py-[0.35rem] px-4 mb-[clamp(2rem,4vh,3.5rem)] backdrop-blur-[8px] hero-badge opacity-0">
               <span className="badge-dot w-[6px] h-[6px] rounded-full animate-badge-pulse" style={{ backgroundColor: '#F26622' }}></span>
-              Websites &amp; Google Ads
+              Websites &amp; Online Ads
             </div>{" "}
             {/*  H1  */}{" "}
             <h1 className="hero-title font-display leading-[0.92] tracking-[-0.02em] mb-[clamp(2.5rem,5vh,4rem)]">
@@ -819,7 +819,7 @@ export default function Home() {
                 </span>{" "}
               </a>
               <a
-                href="/shopify-agency"
+                href="/online-shops"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
