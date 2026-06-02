@@ -8,11 +8,11 @@ import CTABanner from "../components/CTABanner";
 type Category = "All" | "Website" | "Shopify" | "Marketing";
 
 const projects = [
-  { slug: "alumgates", title: "AlumGates", image: "/images/alumgates.png", category: "Website" as Category, tags: ["Web Design", "Web Development"] },
+  { slug: "alumgates", title: "AlumGates", image: "/images/alumgates.png", category: "Website" as Category, tags: ["Web Development", "Content Creation", "Social Media Management", "Google Ads", "Meta Ads"] },
   { slug: "magazinul-de-interfoane", title: "Magazinul de Interfoane", image: "/images/magazinuldeinterfoane.png", category: "Website" as Category, tags: ["Web Design", "Web Development"] },
-  { slug: "daimara", title: "Daimara", image: "/images/daimara.png", category: "Shopify" as Category, tags: ["Shopify"] },
+  { slug: "daimara", title: "Daimara", image: "/images/daimara.png", category: "Shopify" as Category, tags: ["Shopify", "Google Ads", "Meta Ads", "Content Creation", "Email Marketing"] },
   { slug: "pc-doc", title: "PC Doc", image: "/images/pc-doc.png", category: "Shopify" as Category, tags: ["Shopify"] },
-  { slug: "greystone-heritage", title: "Epok", image: "/images/epok.png", category: "Shopify" as Category, tags: ["Shopify"] },
+  { slug: "greystone-heritage", title: "Epok", image: "/images/epok.png", category: "Shopify" as Category, tags: ["Shopify", "Meta Ads", "Email Marketing"] },
   { slug: "lc-computers", title: "€18K → €367K", image: "/images/google_ads.png", category: "Marketing" as Category, tags: ["Case Study", "Google Ads"] },
 ];
 
@@ -69,7 +69,7 @@ export default function OurWorkPage() {
               </div>
               <div className="stat-div w-px h-10 bg-white/[0.08]"></div>
               <div className="stat flex flex-col gap-[0.15rem]">
-                <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">4+ Years</span>
+                <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">6+ Years</span>
                 <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">Experience</span>
               </div>
               <div className="stat-div w-px h-10 bg-white/[0.08]"></div>

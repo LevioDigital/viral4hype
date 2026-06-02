@@ -439,11 +439,20 @@ export default function Home() {
                   <div className="flex gap-[0.4rem] flex-wrap">
                     {" "}
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Web Design
-                    </span>
-                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Web Development
                     </span>{" "}
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Content Creation
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Social Media Management
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Google Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Meta Ads
+                    </span>
                   </div>{" "}
                 </div>{" "}
               </a>
@@ -556,6 +565,18 @@ export default function Home() {
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Shopify
                     </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Google Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Meta Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Content Creation
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Email Marketing
+                    </span>
                   </div>{" "}
                 </div>{" "}
               </a>
@@ -664,7 +685,13 @@ export default function Home() {
                     {" "}
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Shopify
-                    </span>{" "}
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Meta Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Email Marketing
+                    </span>
                   </div>{" "}
                 </div>{" "}
               </a>
@@ -918,9 +945,9 @@ export default function Home() {
                   </em>
                 </h2>{" "}
                 <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-text-sec-dark">
-                  Generic websites don&#39;t convert. Over 4 years of design
-                  and marketing experience means every website we build has one
-                  goal: growing your business.
+                  Either e-commerce stores or custom websites, we build assets that
+                  produce real value for your business. 6 years mastery in building
+                  websites and e-commerce stores.
                 </p>{" "}
               </div>{" "}
               <div className="ben-visual flex-1 flex flex-col items-center max-lg:items-start justify-center relative z-[1]">
@@ -960,18 +987,17 @@ export default function Home() {
                   </em>
                 </h2>{" "}
                 <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-white/50">
-                  The average ROAS in Romania sits between 6–7x. We&#39;ve
-                  beaten that benchmark in 95% of our campaigns — not as a
-                  fluke, but as a standard.
+                  We follow simple protocols and build custom strategies based on key
+                  data in every industry.
                 </p>{" "}
               </div>{" "}
               <div className="ben-visual flex-1 flex flex-col items-center max-lg:items-start justify-center relative z-[1]">
                 {" "}
                 <div className="ben-big-num font-display font-black text-[clamp(6rem,13vw,12rem)] leading-none tracking-[-0.03em] text-white">
-                  10<span className="text-[0.45em] text-gradient" style={{ verticalAlign: 'baseline', marginLeft: '0.05em' }}>x</span>
+                  5-8<span className="text-[0.45em] text-gradient" style={{ verticalAlign: 'baseline', marginLeft: '0.05em' }}>x</span>
                 </div>{" "}
                 <div className="ben-visual-label slider-vlabel text-[0.78rem] font-semibold tracking-[0.12em] uppercase mt-[0.8rem] flex items-center gap-2 text-white/55">
-                  average ROAS
+                  ROAS in a large variety of industries
                 </div>{" "}
               </div>{" "}
             </div>
@@ -1119,7 +1145,7 @@ export default function Home() {
               <div className="about-stat flex flex-col gap-[0.15rem]">
                 {" "}
                 <span className="astat-num text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-gradient tracking-[-0.02em]">
-                  4+
+                  6+
                 </span>{" "}
                 <span className="astat-label text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-text-sec-dark">
                   Years of Experience
