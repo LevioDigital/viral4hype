@@ -69,6 +69,26 @@ const marqueeItems = [
 
 const eyebrowDot = { width: 5, height: 5, borderRadius: 999, backgroundColor: ACCENT, flexShrink: 0, display: "inline-block" as const };
 
+/* layout CSS — globals.css is a precompiled Tailwind build, so responsive grid
+   variants (lg:grid-cols-*, sm:grid-cols-*) and arbitrary fr-templates silently
+   don't render. We define the responsive grids we rely on here as plain CSS. */
+const layoutCss = `
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center;}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.04fr minmax(0,520px);}}
+@media(min-width:640px){.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}.sm\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(min-width:1024px){.lg\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}.lg\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}}
+`;
+
+/* Marketing-style eyebrow — accent number + uppercase label (no pill). */
+function Eyebrow({ num, label, center = false, dark = false }: { num: string; label: string; center?: boolean; dark?: boolean }) {
+  return (
+    <div className={`flex items-center ${center ? "justify-center" : ""}`} style={{ gap: "0.62rem", marginBottom: center ? "1.1rem" : "1rem" }}>
+      <span className="font-display font-bold" style={{ fontSize: "0.8rem", letterSpacing: "0.05em", color: ACCENT }}>{num}</span>
+      <span style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: dark ? "rgba(255,255,255,0.45)" : "rgba(5,15,30,0.5)" }}>{label}</span>
+    </div>
+  );
+}
+
 // Orange check in a circle (works on dark + light)
 function Check() {
   return (
@@ -148,6 +168,7 @@ function IconBadge({ glyph, dark = true }: { glyph: string; dark?: boolean }) {
 export default function ShopifyPage() {
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: layoutCss }} />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm">
         Skip to main content
       </a>
@@ -159,32 +180,25 @@ export default function ShopifyPage() {
         <section className="relative overflow-hidden min-h-svh flex flex-col justify-center px-container-x" style={{ background: DARK, paddingTop: "clamp(130px,18vh,190px)", paddingBottom: "clamp(3rem,8vh,6rem)" }}>
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle 640px at 88% 4%, rgba(242,102,34,0.18), transparent 64%), radial-gradient(circle 520px at 2% 100%, rgba(149,191,71,0.06), transparent 70%)" }} />
           <div className="absolute select-none pointer-events-none max-lg:hidden font-display font-black leading-none" aria-hidden="true" style={{ right: "1.5%", bottom: "-6%", fontSize: "clamp(10rem,20vw,22rem)", color: "rgba(255,255,255,0.025)", letterSpacing: "-0.03em", whiteSpace: "nowrap" }}>Shopify</div>
+          {/* dot pattern */}
+          <div className="absolute pointer-events-none" aria-hidden="true" style={{ top: "22%", right: "2%", width: 200, height: 170, opacity: 0.55, backgroundImage: "radial-gradient(rgba(242,102,34,0.55) 1px, transparent 1.4px)", backgroundSize: "15px 15px", WebkitMaskImage: "radial-gradient(circle at center, black, transparent 75%)", maskImage: "radial-gradient(circle at center, black, transparent 75%)" }} />
 
           <div className="max-w-[1200px] mx-auto relative w-full" style={{ zIndex: 1 }}>
-            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-center" style={{ gap: "clamp(2.5rem,5vw,4.5rem)" }}>
+            <div className="hero-grid">
               {/* Left copy */}
               <div>
-                <div className="inline-flex items-center gap-2 border border-white/10 rounded-full" style={{ fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)", padding: "0.42rem 1rem", marginBottom: "clamp(1.4rem,3vh,2.2rem)", backdropFilter: "blur(8px)" }}>
-                  <span className="animate-badge-pulse" style={{ width: 6, height: 6, borderRadius: 999, backgroundColor: ACCENT }}></span>
-                  01 — Shopify Development
-                </div>
+                <Eyebrow num="01" label="Shopify Development" dark />
 
-                <h1 className="font-display" style={{ letterSpacing: "-0.02em", marginBottom: "clamp(1.4rem,3vh,2rem)" }}>
-                  <span className="block font-display font-black text-white" style={{ fontSize: "clamp(2.6rem,5.5vw,5.4rem)", letterSpacing: "-0.03em", lineHeight: 1 }}>Shopify Stores</span>
-                  <span className="block font-serif italic text-gradient" style={{ fontSize: "clamp(2.9rem,6.5vw,6.2rem)", lineHeight: 1.04, marginTop: "0.05em" }}>Built To Scale</span>
+                <h1 className="font-display" style={{ letterSpacing: "-0.02em", marginBottom: "clamp(1.3rem,2.6vh,1.8rem)" }}>
+                  <span className="block font-display font-black text-white" style={{ fontSize: "clamp(2.6rem,5.5vw,5.4rem)", letterSpacing: "-0.035em", lineHeight: 0.98 }}>Shopify Stores</span>
+                  <span className="block font-serif italic text-gradient" style={{ fontSize: "clamp(2.9rem,6.5vw,6.2rem)", lineHeight: 1.02, marginTop: "0.02em" }}>Built To Scale</span>
                 </h1>
 
-                <p className="text-white/70" style={{ fontSize: "clamp(0.95rem,1.3vw,1.08rem)", lineHeight: 1.7, maxWidth: "500px", marginBottom: "1.4rem" }}>
+                <p className="text-white/70" style={{ fontSize: "clamp(1rem,1.3vw,1.12rem)", lineHeight: 1.7, maxWidth: "470px", marginBottom: "clamp(1.8rem,3.5vh,2.4rem)" }}>
                   At <strong className="text-white/90">Viral 4 Hype</strong> we don&apos;t just build an online store. We build the complete infrastructure of a modern ecommerce business — ready for real performance and scaling.
                 </p>
 
-                <div className="flex flex-wrap gap-2" style={{ marginBottom: "1.8rem" }}>
-                  {heroPoints.map((p) => (
-                    <span key={p} className="border border-white/10 text-white/70" style={{ fontSize: "0.72rem", fontWeight: 600, padding: "0.4rem 0.85rem", borderRadius: 999, background: "rgba(255,255,255,0.03)" }}>{p}</span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-5 flex-wrap">
+                <div className="flex items-center flex-wrap" style={{ gap: "1.25rem", marginBottom: "clamp(1.5rem,3vh,2rem)" }}>
                   <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
                     <span className="btn-text relative z-[1]">Book A Call</span>
                     <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
@@ -195,11 +209,22 @@ export default function ShopifyPage() {
                     Let&apos;s Talk
                   </a>
                 </div>
+
+                <div className="flex items-center flex-wrap" style={{ gap: "0.75rem", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
+                  {heroPoints.map((p, i) => (
+                    <span key={p} className="inline-flex items-center" style={{ gap: "0.75rem" }}>
+                      {i > 0 && <span style={{ color: ACCENT }}>·</span>}
+                      <span>{p}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* Right: dashboard mock */}
               <div className="relative">
-                <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 22, padding: "1.5rem", position: "relative", overflow: "hidden", backdropFilter: "blur(6px)" }}>
+                <div className="absolute pointer-events-none" aria-hidden="true" style={{ inset: "-16% -10% -18% -4%", borderRadius: 999, background: "radial-gradient(circle at 60% 42%, rgba(242,102,34,0.24), transparent 60%)" }} />
+                <div className="absolute pointer-events-none" aria-hidden="true" style={{ top: "-24%", right: "-12%", width: 300, height: 300, borderRadius: 999, background: "radial-gradient(circle at 32% 32%, rgba(255,255,255,0.04), rgba(242,102,34,0.10) 42%, transparent 62%)", border: "1px solid rgba(242,102,34,0.12)" }} />
+                <div className="relative overflow-hidden" style={{ borderRadius: 18, padding: "clamp(1.1rem,1.8vw,1.5rem)", background: "linear-gradient(160deg, rgba(30,17,9,0.97), rgba(13,8,6,0.97))", border: "1px solid rgba(255,255,255,0.10)", boxShadow: "0 34px 90px -34px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
                   <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg, #F26622, transparent)" }}></div>
                   <div className="flex items-center justify-between" style={{ marginBottom: "1.4rem" }}>
                     <span className="text-white/45" style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>Sales Overview</span>
@@ -470,9 +495,6 @@ export default function ShopifyPage() {
                 <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" data-cursor="link">
                   Book A Call
                   <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </a>
-                <a href="/contact" className="inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] hover:text-white hover:border-white/60" data-cursor="link">
-                  Let&apos;s Talk
                 </a>
               </div>
             </div>

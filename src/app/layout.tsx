@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ViralInteractions from "./ViralInteractions";
+import StartProjectModal from "./components/StartProjectModal";
 
 export const metadata: Metadata = {
   title: "viral4hype | Website-ul Afacerii Tale",
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <StartProjectModal />
         <ViralInteractions />
       </body>
     </html>

@@ -16,7 +16,7 @@ export default function Footer() {
               <img src="/images/logo_v4h.png" alt="viral4hype" width="140" height="44" style={{ height: '32px', width: 'auto' }} className="opacity-80 mb-4 hover:opacity-100 transition-opacity block" />
             </a>
             <p className="text-[0.85rem] text-white/50 leading-[1.65]">
-              Agenție de web design și marketing digital cu sediul în România. Lucrăm cu clienți din București, Constanța, Brașov, Cluj-Napoca, Iași, Timișoara și din toată țara.
+              Web design and digital marketing agency based in Romania. We work with clients across all of Europe.
             </p>
             <div className="ft-social flex gap-[0.7rem] mt-6">
               <a href="https://www.facebook.com/viral4hype/" target="_blank" rel="noopener noreferrer" className="ft-soc flex items-center justify-center w-9 h-9 rounded-full border border-white/10 text-white/55 transition-all duration-300 hover:text-white hover:-translate-y-0.5" data-cursor="link" aria-label="Facebook">
@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="ft-cols grid grid-cols-3 max-xs:grid-cols-1 max-md:grid-cols-2 gap-8 max-md:gap-6">
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Services</p>
-              <a href="/websites" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Business Websites</a>
+              <a href="/websites" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Custom Websites</a>
               <a href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Shopify Stores</a>
               <a href="/marketing" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Google Ads</a>
               <a href="/marketing" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Digital Marketing</a>
@@ -42,7 +42,6 @@ export default function Footer() {
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Company</p>
               <a href="/our-work" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Our Work</a>
-              <a href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">About Us</a>
               <a href="/contact" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Contact Us</a>
             </div>
             <div>

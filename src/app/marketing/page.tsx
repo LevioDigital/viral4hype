@@ -42,7 +42,7 @@ const heroMetrics = [
   { label: "Revenue", value: "$48,500", delta: "+27%" },
 ];
 
-const marqueeBase = ["Google Ads", "Meta Ads", "TikTok Ads", "Lead Generation", "Ecommerce Scaling", "Performance Max", "Advantage+", "ROAS 5-8x", "Conversions API", "Data-Driven"];
+const marqueeBase = ["Google Ads", "Meta Ads", "TikTok Ads", "Lead Generation", "Ecommerce Scaling", "Performance Max", "Advantage+", "ROAS 5-8x", "Data-Driven"];
 const marqueeItems = [...marqueeBase, ...marqueeBase];
 
 const leadPoints = ["Meta Ads & Google Ads", "Static Creatives Included", "Short-Form Content (On Demand)", "Long-Term Impact & Real Results", "Any Service Niche — We Adapt Fast"];
@@ -350,7 +350,6 @@ export default function MarketingPage() {
                 <a href="/contact" className="mk-link inline-flex items-center text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" style={{ gap: "0.5rem" }} data-cursor="link">
                   Book A Call <span className="mk-arrow flex">{arrowSvg}</span>
                 </a>
-                <a href="/contact" className="inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] hover:text-white hover:border-white/60" data-cursor="link">Let&apos;s Talk</a>
               </div>
             </div>
           </div>

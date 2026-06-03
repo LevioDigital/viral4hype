@@ -95,6 +95,14 @@ const ctaButtons = (
   </div>
 );
 
+const ctaButtonsSolo = (
+  <div className="flex items-center flex-wrap" style={{ gap: "1.25rem" }}>
+    <a href="/contact" className="lg-link inline-flex items-center text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" style={{ gap: "0.5rem" }} data-cursor="link">
+      Book A Call <span className="lg-arrow flex">{arrowSvg}</span>
+    </a>
+  </div>
+);
+
 export default function LeadGenerationPage() {
   return (
     <>
@@ -352,7 +360,7 @@ export default function LeadGenerationPage() {
               <h2 className="font-display font-extrabold text-white" style={{ fontSize: "clamp(1.8rem,3.8vw,3rem)", lineHeight: 1.08, letterSpacing: "-0.02em" }}>
                 Ready To Generate <em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>Better Leads?</em>
               </h2>
-              {ctaButtons}
+              {ctaButtonsSolo}
             </div>
           </div>
         </section>

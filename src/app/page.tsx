@@ -1,6 +1,7 @@
 import ViralInteractions from "./ViralInteractions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -242,10 +243,10 @@ export default function Home() {
               <div className="stat flex flex-col gap-[0.15rem]">
                 {" "}
                 <span className="stat-num text-[clamp(1.1rem,1.8vw,1.5rem)] font-extrabold text-white tracking-[-0.02em]">
-                  ROMANIA
+                  EUROPE
                 </span>{" "}
                 <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">
-                  Local Agency
+                  Agency
                 </span>{" "}
               </div>{" "}
               {/*  Scroll cue  */}{" "}
@@ -267,14 +268,6 @@ export default function Home() {
             <div className="marquee-inner flex items-center whitespace-nowrap w-max animate-marquee">
               {" "}
               {/*  Set 1  */}{" "}
-              <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                CONSTANTA, ROMANIA
-              </span>{" "}
-              <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
-              <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                BUCURESTI, ROMANIA
-              </span>{" "}
-              <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
                 Web Design
               </span>{" "}
@@ -304,14 +297,6 @@ export default function Home() {
               </span>{" "}
               <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               {/*  Set 2 — identical for seamless loop  */}{" "}
-              <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                CONSTANTA, ROMANIA
-              </span>{" "}
-              <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
-              <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
-                BUCURESTI, ROMANIA
-              </span>{" "}
-              <span className="mq-dot text-[0.7rem]" style={{ color: '#F26622' }}>●</span>{" "}
               <span className="mq-item font-sans text-[clamp(0.85rem,1.2vw,1rem)] font-bold uppercase tracking-[0.1em] text-text-dark px-6">
                 Web Design
               </span>{" "}
@@ -390,9 +375,12 @@ export default function Home() {
             >
               {" "}
               <a
-                href="/our-work/alumgates"
+                href="https://alumgates.ro/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 1 }}
               >
                 {" "}
                 <div
@@ -457,9 +445,12 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="/our-work/magazinul-de-interfoane"
+                href="https://magazinuldeinterfoane.ro/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 5 }}
               >
                 {" "}
                 <div
@@ -515,9 +506,12 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="/our-work/daimara"
+                href="https://daimara.ro/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 6 }}
               >
                 {" "}
                 <div
@@ -531,6 +525,7 @@ export default function Home() {
                     width="1440"
                     height="1080"
                     loading="lazy"
+                    style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
                   <div
@@ -581,9 +576,12 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="/our-work/pc-doc"
+                href="https://pc-doc.ro/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 4 }}
               >
                 {" "}
                 <div
@@ -636,9 +634,12 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="/our-work/greystone-heritage"
+                href="https://epok.ro/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 2 }}
               >
                 {" "}
                 <div
@@ -696,9 +697,12 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="/our-work/lc-computers"
+                href="https://easyequipment.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
                 data-cursor="link"
+                style={{ order: 3 }}
               >
                 {" "}
                 <div
@@ -707,8 +711,8 @@ export default function Home() {
                 >
                   {" "}
                   <img
-                    src="/images/google_ads.png"
-                    alt="From €18,000 to €367,800"
+                    src="/images/easy_equipment.jpeg"
+                    alt="Easy Equipment"
                     width="1440"
                     height="1080"
                     loading="lazy"
@@ -739,12 +743,12 @@ export default function Home() {
                 <div className="pt-4 px-2">
                   {" "}
                   <h3 className="font-display text-[clamp(0.95rem,1.5vw,1.2rem)] font-bold text-text-dark mb-[0.4rem] tracking-[-0.01em]">
-                    From €18,000 to €367,800
+                    Easy Equipment
                   </h3>{" "}
                   <div className="flex gap-[0.4rem] flex-wrap">
                     {" "}
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Case Study
+                      Google Ads
                     </span>{" "}
                   </div>{" "}
                 </div>{" "}
@@ -1122,13 +1126,14 @@ export default function Home() {
               </em>
             </h2>{" "}
             <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
-              We&#39;re a small, results-driven digital agency based in Romania.
-              Led by Robert, everything we do is focused on creating websites and
-              marketing campaigns that actually get results.
+              We&#39;re a small, results-driven digital agency serving clients
+              across Europe. Led by Robert, everything we do is focused on
+              creating websites and marketing campaigns that actually get
+              results.
             </p>
             <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
               From bespoke website design and development to Google Ads
-              campaigns, we help businesses across Romania grow online through
+              campaigns, we help businesses across Europe grow online through
               clear strategy, clean design, and a personal touch.
             </p>
             <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
@@ -1151,20 +1156,20 @@ export default function Home() {
               <div className="about-stat flex flex-col gap-[0.15rem]">
                 {" "}
                 <span className="astat-num text-[clamp(1.4rem,2.5vw,2rem)] font-extrabold text-gradient tracking-[-0.02em]">
-                  RO
+                  EU
                 </span>{" "}
                 <span className="astat-label text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-text-sec-dark">
-                  Based Agency
+                  Focused Agency
                 </span>{" "}
               </div>{" "}
             </div>{" "}
             <a
-              href="/about"
+              href="/our-work"
               className="btn-outline inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-transparent text-text-dark border border-dark/[0.18] transition-[background-color,color,border-color,box-shadow] duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap max-w-[680px] w-fit"
               data-cursor="link"
             >
               <span className="btn-text relative z-[1]">
-                Learn more about us
+                Our Work
               </span>
               <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
                 <svg
@@ -1261,172 +1266,7 @@ export default function Home() {
             </div>{" "}
             <div className="contact-right">
               {" "}
-              <form
-                action="https://api.formspark.io/6mvKi3vTd"
-                method="post"
-                className="cform flex flex-col"
-              >
-                {" "}
-                <div className="cf-row grid grid-cols-2 max-md:grid-cols-1 gap-x-8">
-                  {" "}
-                  <div className="cf-field relative mb-6">
-                    {" "}
-                    <input
-                      type="text"
-                      name="Name"
-                      required
-                      placeholder=" "
-                      id="v4-name"
-                      autoComplete="name"
-                      className="w-full pt-[1.3rem] pb-[0.6rem] text-[0.95rem] text-white/85 bg-transparent border-0 border-b-[1.5px] border-white/10 outline-none transition-colors duration-300 focus:border-[#F26622]/70"
-                    />{" "}
-                    <label
-                      htmlFor="v4-name"
-                      className="absolute left-0 top-[1.3rem] text-[0.88rem] text-white/50 pointer-events-none transition-all duration-300 ease-out-expo"
-                    >
-                      Your Name *
-                    </label>{" "}
-                  </div>{" "}
-                  <div className="cf-field relative mb-6">
-                    {" "}
-                    <input
-                      type="text"
-                      name="Company-Name"
-                      placeholder=" "
-                      id="v4-company"
-                      autoComplete="organization"
-                      className="w-full pt-[1.3rem] pb-[0.6rem] text-[0.95rem] text-white/85 bg-transparent border-0 border-b-[1.5px] border-white/10 outline-none transition-colors duration-300 focus:border-[#F26622]/70"
-                    />{" "}
-                    <label
-                      htmlFor="v4-company"
-                      className="absolute left-0 top-[1.3rem] text-[0.88rem] text-white/50 pointer-events-none transition-all duration-300 ease-out-expo"
-                    >
-                      Company
-                    </label>{" "}
-                  </div>{" "}
-                </div>{" "}
-                <div className="cf-row grid grid-cols-2 max-md:grid-cols-1 gap-x-8">
-                  {" "}
-                  <div className="cf-field relative mb-6">
-                    {" "}
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder=" "
-                      id="v4-email"
-                      autoComplete="email"
-                      className="w-full pt-[1.3rem] pb-[0.6rem] text-[0.95rem] text-white/85 bg-transparent border-0 border-b-[1.5px] border-white/10 outline-none transition-colors duration-300 focus:border-[#F26622]/70"
-                    />{" "}
-                    <label
-                      htmlFor="v4-email"
-                      className="absolute left-0 top-[1.3rem] text-[0.88rem] text-white/50 pointer-events-none transition-all duration-300 ease-out-expo"
-                    >
-                      Email Address *
-                    </label>{" "}
-                  </div>{" "}
-                  <div className="cf-field relative mb-6">
-                    {" "}
-                    <input
-                      type="tel"
-                      name="Phone-Number"
-                      placeholder=" "
-                      id="v4-phone"
-                      autoComplete="tel"
-                      className="w-full pt-[1.3rem] pb-[0.6rem] text-[0.95rem] text-white/85 bg-transparent border-0 border-b-[1.5px] border-white/10 outline-none transition-colors duration-300 focus:border-[#F26622]/70"
-                    />{" "}
-                    <label
-                      htmlFor="v4-phone"
-                      className="absolute left-0 top-[1.3rem] text-[0.88rem] text-white/50 pointer-events-none transition-all duration-300 ease-out-expo"
-                    >
-                      Phone Number
-                    </label>{" "}
-                  </div>{" "}
-                </div>{" "}
-                <div className="cf-field relative mb-6">
-                  {" "}
-                  <textarea
-                    name="How-can-we-help"
-                    required
-                    placeholder=" "
-                    id="v4-msg"
-                    rows={4}
-                    className="w-full pt-[1.3rem] pb-[0.6rem] text-[0.95rem] text-white/85 bg-transparent border-0 border-b-[1.5px] border-white/10 outline-none transition-colors duration-300 resize-y min-h-[100px] focus:border-[#F26622]/70"
-                  ></textarea>{" "}
-                  <label
-                    htmlFor="v4-msg"
-                    className="absolute left-0 top-[1.3rem] text-[0.88rem] text-white/50 pointer-events-none transition-all duration-300 ease-out-expo"
-                  >
-                    How can we help? *
-                  </label>{" "}
-                </div>{" "}
-                <label className="cf-gdpr flex items-start gap-[0.7rem] text-[0.8rem] text-white/50 leading-[1.5] mb-6 cursor-pointer">
-                  {" "}
-                  <input
-                    type="checkbox"
-                    name="gdpr"
-                    required
-                    className="sr-only peer"
-                    id="gdpr-consent"
-                  />{" "}
-                  <span className="cf-chk w-4 h-4 rounded-input shrink-0 mt-0.5 border-[1.5px] border-white/15 transition-all duration-300 relative peer-focus-visible:ring-2 peer-focus-visible:ring-[#F26622] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-dark"></span>{" "}
-                  <span>
-                    I&apos;m happy for this website to store my info so they can
-                    respond to my enquiry.
-                  </span>{" "}
-                </label>{" "}
-                <input
-                  type="checkbox"
-                  name="_honeypot"
-                  style={{ display: "none" }}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />{" "}
-                <input
-                  type="hidden"
-                  name="_email.from"
-                  value="viral4hype"
-                />{" "}
-                <input
-                  type="hidden"
-                  name="_email.subject"
-                  value="New submission - Website Contact Form"
-                />{" "}
-                <input
-                  type="hidden"
-                  name="_redirect"
-                  value="https://viral4hype.com/thank-you"
-                />{" "}
-                <div
-                  className="cf-turnstile"
-                  data-sitekey="0x4AAAAAAAD0O5FDXA3NbD7f"
-                  data-size="invisible"
-                ></div>{" "}
-                <button
-                  type="submit"
-                  className="btn-submit inline-flex items-center gap-2 text-[0.95rem] font-semibold py-4 px-[2.2rem] rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap mt-2 w-fit"
-                  data-cursor="link"
-                >
-                  <span className="btn-text relative z-[1]">Send Message</span>
-                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M4 10H16M16 10L11 5M16 10L11 15"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </span>
-                </button>{" "}
-              </form>{" "}
+              <ContactForm />{" "}
             </div>{" "}
           </div>{" "}
         </section>{" "}
