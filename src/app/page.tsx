@@ -778,7 +778,7 @@ export default function Home() {
             <div className="srv-rows border-t border-white/[0.07]">
               {" "}
               <a
-                href="/google-ads-management"
+                href="/marketing"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
