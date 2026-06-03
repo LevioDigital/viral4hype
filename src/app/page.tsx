@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ViralInteractions from "./ViralInteractions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -388,12 +389,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/alumgates.png"
                     alt="AlumGates"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
@@ -458,12 +460,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/magazinuldeinterfoane.png"
                     alt="Magazinul de Interfoane"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
@@ -519,12 +522,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/daimara.png"
                     alt="Daimara"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
@@ -589,12 +593,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/pc-doc.png"
                     alt="PC Doc"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
@@ -647,12 +652,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/epok.png"
                     alt="Epok"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
                   <div
@@ -710,12 +716,13 @@ export default function Home() {
                   style={{ background: "rgba(0,0,0,0.03)" }}
                 >
                   {" "}
-                  <img
+                  <Image
                     src="/images/easy_equipment.jpeg"
                     alt="Easy Equipment"
-                    width="1440"
-                    height="1080"
+                    width={1440}
+                    height={1080}
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
                   <div
@@ -1102,12 +1109,13 @@ export default function Home() {
           {" "}
           <div className="about-img-col lg:flex lg:items-center lg:justify-center lg:py-12 lg:pl-16 lg:pr-8 max-lg:self-stretch max-lg:h-[60vw] max-lg:overflow-hidden">
             {" "}
-            <img
+            <Image
               src="/images/viral4hype_romania.png"
               alt="Viral4Hype Romania"
               loading="lazy"
-              width="1600"
-              height="1067"
+              width={1600}
+              height={1067}
+              sizes="(max-width: 1024px) 100vw, 840px"
               className="about-img lg:w-full lg:max-w-[840px] lg:h-auto lg:rounded-2xl max-lg:w-full max-lg:h-full max-lg:object-cover"
             />{" "}
           </div>{" "}

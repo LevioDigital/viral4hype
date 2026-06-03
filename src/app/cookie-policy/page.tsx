@@ -10,23 +10,31 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "What Are Cookies?",
-    content: `Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the Site or a third-party to recognize you and make your next visit easier and the Site more useful to you.`,
+    content: `Cookies are small pieces of text stored in your web browser by a website you visit. They allow the Site, or a third party, to recognize your browser and make your visit easier or the Site more useful. We also use similar technologies such as tracking pixels, which work in the same way.`,
   },
   {
-    title: "Essential Cookies",
-    content: `These cookies are essential to provide you with services available through our Site and to enable you to use some of its features. Without these cookies, the services that you have asked for cannot be provided, and we only use these cookies to provide you with those services.`,
+    title: "Your Consent",
+    content: `When you first visit the Site, a cookie banner lets you accept all cookies, reject all non-essential cookies, or choose which categories you allow. Non-essential cookies (analytics and marketing) are not loaded until you give consent. Your choice is stored on your device, and analytics and advertising tags stay disabled by default through Google Consent Mode until you opt in.`,
+  },
+  {
+    title: "Necessary Cookies",
+    content: `These cookies are essential for the Site to function — for example, enabling page navigation, submitting forms, and keeping the Site secure. The Site cannot work properly without them, so they are always active and do not require consent.`,
   },
   {
     title: "Analytics Cookies",
-    content: `These cookies allow us to analyze your use of the Site and track website performance so we can improve the quality and effectiveness of our services. These cookies may collect information such as your IP address, browser type, and pages visited on the Site. This information is anonymous and aggregated, and it is only used to help us understand how the Site is being used.`,
+    content: `With your consent, we use Google Analytics to understand how visitors use the Site so we can improve it. This may involve information such as your approximate location, browser type, and pages visited. The data is used in aggregate to measure traffic and performance.`,
   },
   {
-    title: "Managing Cookies",
-    content: `You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer, and you can set most browsers to prevent them from being placed. If you do this, however, you may have to manually adjust some preferences every time you visit a site, and some services and functionalities may not work.`,
+    title: "Marketing Cookies",
+    content: `With your consent, we use Google Ads and the Meta (Facebook) Pixel to measure the effectiveness of our advertising, track conversions, and show you relevant ads on other platforms. These cookies are only set if you accept the Marketing category.`,
+  },
+  {
+    title: "Withdrawing or Changing Your Consent",
+    content: `You can change or withdraw your consent at any time by clicking "Cookie Settings" in the footer of any page, which reopens the preferences panel. You can also delete or block cookies through your browser settings, though some features may stop working. Withdrawing consent does not affect data already processed before your change.`,
   },
   {
     title: "Changes to This Cookie Policy",
-    content: `We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page.`,
+    content: `We may update this Cookie Policy from time to time. We will post any changes on this page and, where the update is material, ask for your consent again.`,
   },
 ];
 
@@ -58,7 +66,7 @@ export default function CookiePolicyPage() {
             <h1 className="font-display font-black text-white leading-[1.05] tracking-[-0.02em] mb-5" style={{ fontSize: "clamp(2.4rem,5vw,4rem)" }}>
               Cookie Policy
             </h1>
-            <p className="text-white/40 text-sm">Last updated: February 14, 2024</p>
+            <p className="text-white/40 text-sm">Last updated: June 3, 2026</p>
           </div>
         </section>
 

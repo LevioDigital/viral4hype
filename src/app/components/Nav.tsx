@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Nav() {
   return (
     <>
@@ -26,11 +28,13 @@ export default function Nav() {
         id="nav"
       >
         <a href="/" className="nav-logo flex items-center" style={{ marginLeft: 'clamp(1rem, 5vw, 100px)' }} data-cursor="link">
-          <img
+          <Image
             src="/images/logo_v4h.png"
             alt="viral4hype"
-            width="120"
-            height="38"
+            width={120}
+            height={38}
+            fetchPriority="high"
+            loading="eager"
             style={{ height: '30px', width: 'auto', display: 'block' }}
             className="transition-opacity hover:opacity-80"
           />

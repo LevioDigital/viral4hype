@@ -366,37 +366,12 @@ export default function WebsitesPage() {
           </div>
         </section>
 
-        {/* ── 04 WHAT'S INCLUDED · LIGHT ────────────────────────────────────── */}
-        <section className="px-container-x bg-off-white text-text-dark" style={{ paddingTop: "clamp(3.5rem,8vh,7rem)", paddingBottom: "clamp(3.5rem,8vh,7rem)" }}>
-          <div className="max-w-[1200px] mx-auto">
-            <div className="text-center" style={{ marginBottom: "clamp(2.5rem,5vh,3.5rem)" }}>
-              <div className="inline-flex items-center gap-1.5 text-text-sec-dark" style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                <span style={eyebrowDot}></span>04 — What&apos;s Included
-              </div>
-              <h2 className="font-display font-extrabold text-text-dark" style={{ fontSize: "clamp(1.7rem,3.6vw,3rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-                Everything You Need <em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>To Launch Professionally.</em>
-              </h2>
-            </div>
-            <div className="flex flex-wrap" style={{ gap: "0.9rem" }}>
-              {included.map((f) => (
-                <div key={f.title} className="group transition-all duration-300 hover:-translate-y-1" style={{ flex: "1 1 240px", padding: "1.7rem 1.4rem", borderRadius: 18, background: "#fff", border: "1px solid rgba(5,15,30,0.05)", boxShadow: "0 2px 14px rgba(5,15,30,0.05)", position: "relative", overflow: "hidden" }}>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-400" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg, #F26622, transparent)" }} />
-                  <span style={{ display: "inline-block", marginBottom: "1rem" }}><IconBadge glyph={f.icon} dark={false} /></span>
-                  <h3 className="font-display text-text-dark" style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.45rem", letterSpacing: "-0.01em" }}>{f.title}</h3>
-                  <p className="text-text-sec-dark" style={{ fontSize: "0.85rem", lineHeight: 1.6 }}>{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 05 PERFECT FOR · DARK ─────────────────────────────────────────── */}
+        {/* ── 04 PERFECT FOR · DARK ─────────────────────────────────────────── */}
         <section className="px-container-x relative overflow-hidden" style={{ background: DARK, paddingTop: "clamp(3.5rem,8vh,7rem)", paddingBottom: "clamp(3.5rem,8vh,7rem)" }}>
-          <div className="absolute pointer-events-none" aria-hidden="true" style={{ top: "-30%", left: "-6%", width: "50vw", height: "50vw", maxWidth: 520, maxHeight: 520, borderRadius: 999, background: "radial-gradient(circle, rgba(242,102,34,0.1), transparent 62%)" }} />
           <div className="max-w-[1200px] mx-auto relative grid grid-cols-1 lg:grid-cols-2 items-center" style={{ zIndex: 1, gap: "clamp(2rem,4vw,3.5rem)" }}>
             <div>
               <div className="flex items-center gap-1.5 text-white/45" style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                <span style={eyebrowDot}></span>05 — Perfect For
+                <span style={eyebrowDot}></span>04 — Perfect For
               </div>
               <h2 className="font-display font-extrabold text-white" style={{ fontSize: "clamp(1.8rem,3.6vw,3rem)", lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: "1.2rem" }}>
                 Built For <em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>Growing Businesses</em>
@@ -415,12 +390,12 @@ export default function WebsitesPage() {
           </div>
         </section>
 
-        {/* ── 06 OUR PROCESS · LIGHT ────────────────────────────────────────── */}
+        {/* ── 05 OUR PROCESS · LIGHT ────────────────────────────────────────── */}
         <section className="px-container-x bg-off-white text-text-dark" style={{ paddingTop: "clamp(3.5rem,8vh,7rem)", paddingBottom: "clamp(3.5rem,8vh,7rem)" }}>
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center" style={{ marginBottom: "clamp(2.5rem,5vh,3.5rem)" }}>
               <div className="inline-flex items-center gap-1.5 text-text-sec-dark" style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                <span style={eyebrowDot}></span>06 — Our Process
+                <span style={eyebrowDot}></span>05 — Our Process
               </div>
               <h2 className="font-display font-extrabold text-text-dark" style={{ fontSize: "clamp(1.7rem,3.6vw,3rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
                 From Idea <em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>To Launch.</em>
@@ -433,6 +408,30 @@ export default function WebsitesPage() {
                   <span className="flex items-center justify-center font-display font-black" style={{ width: 46, height: 46, borderRadius: 999, border: "1px solid rgba(242,102,34,0.25)", background: "rgba(242,102,34,0.1)", color: ACCENT, fontSize: "0.95rem", marginBottom: "0.9rem" }}>{s.num}</span>
                   <h3 className="font-display text-text-dark" style={{ fontSize: "0.9rem", fontWeight: 700, marginBottom: "0.35rem" }}>{s.title}</h3>
                   <p className="text-text-sec-dark" style={{ fontSize: "0.78rem", lineHeight: 1.5 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 06 WHAT'S INCLUDED · LIGHT ────────────────────────────────────── */}
+        <section className="px-container-x bg-off-white text-text-dark" style={{ paddingTop: "clamp(3.5rem,8vh,7rem)", paddingBottom: "clamp(3.5rem,8vh,7rem)" }}>
+          <div className="max-w-[1200px] mx-auto">
+            <div className="text-center" style={{ marginBottom: "clamp(2.5rem,5vh,3.5rem)" }}>
+              <div className="inline-flex items-center gap-1.5 text-text-sec-dark" style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1rem" }}>
+                <span style={eyebrowDot}></span>06 — What&apos;s Included
+              </div>
+              <h2 className="font-display font-extrabold text-text-dark" style={{ fontSize: "clamp(1.7rem,3.6vw,3rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                Everything You Need <em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>To Launch Professionally.</em>
+              </h2>
+            </div>
+            <div className="flex flex-wrap" style={{ gap: "0.9rem" }}>
+              {included.map((f) => (
+                <div key={f.title} className="group transition-all duration-300 hover:-translate-y-1" style={{ flex: "1 1 240px", padding: "1.7rem 1.4rem", borderRadius: 18, background: "#fff", border: "1px solid rgba(5,15,30,0.05)", boxShadow: "0 2px 14px rgba(5,15,30,0.05)", position: "relative", overflow: "hidden" }}>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-400" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg, #F26622, transparent)" }} />
+                  <span style={{ display: "inline-block", marginBottom: "1rem" }}><IconBadge glyph={f.icon} dark={false} /></span>
+                  <h3 className="font-display text-text-dark" style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.45rem", letterSpacing: "-0.01em" }}>{f.title}</h3>
+                  <p className="text-text-sec-dark" style={{ fontSize: "0.85rem", lineHeight: 1.6 }}>{f.desc}</p>
                 </div>
               ))}
             </div>

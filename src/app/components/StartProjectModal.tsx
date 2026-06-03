@@ -121,11 +121,35 @@ export default function StartProjectModal() {
       if (e.key === "Escape") close();
     }
     document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+
+    // Blocheaza scroll-ul din spate — inclusiv iOS Safari, unde overflow:hidden
+    // singur nu opreste touch-scroll. Fixam body si pastram pozitia.
+    const { body } = document;
+    const scrollY = window.scrollY;
+    const prev = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+    };
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      body.style.overflow = prev.overflow;
+      body.style.position = prev.position;
+      body.style.top = prev.top;
+      body.style.left = prev.left;
+      body.style.right = prev.right;
+      body.style.width = prev.width;
+      window.scrollTo(0, scrollY);
     };
   }, [open, close]);
 
@@ -345,7 +369,8 @@ const STYLES = `
   animation: spmOverlayIn 0.4s cubic-bezier(.16,1,.3,1) both;
 }
 .spm-panel {
-  position: relative; width: 100%; max-width: 600px; max-height: 92vh;
+  position: relative; width: 100%; max-width: 600px;
+  max-height: 92vh; max-height: 92dvh;
   overflow: hidden; border-radius: 26px;
   background:
     radial-gradient(110% 80% at 85% -10%, rgba(242,102,34,0.10) 0%, transparent 55%),
@@ -376,7 +401,9 @@ const STYLES = `
 .spm-body {
   position: relative; z-index: 2;
   padding: clamp(1.8rem, 4vw, 2.8rem);
-  max-height: 92vh; overflow-y: auto; overflow-x: hidden;
+  max-height: 92vh; max-height: 92dvh;
+  overflow-y: auto; overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: rgba(242,102,34,0.35) transparent;
 }
@@ -536,11 +563,42 @@ const STYLES = `
 @keyframes spmCheck { to { stroke-dashoffset: 0; } }
 @keyframes spmPop { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
 
-@media (max-width: 560px) {
-  .spm-cards { grid-template-columns: 1fr; }
-  .spm-field-row { flex-direction: column; gap: 1.4rem; }
-  .spm-overlay { padding: 0.9rem; }
+/* Touch devices: arrow-urile nu au hover, asa ca le aratam discret. */
+@media (hover: none) {
+  .spm-card-arrow, .spm-row-arrow { opacity: 0.55; transform: none; }
 }
+
+@media (max-width: 560px) {
+  /* Bottom-sheet: urca de jos, ocupa toata latimea. */
+  .spm-overlay { padding: 0; align-items: flex-end; }
+  .spm-panel {
+    max-width: 100%;
+    max-height: 92vh; max-height: 92dvh;
+    border-radius: 24px 24px 0 0;
+    border-bottom: 0;
+    animation: spmSheetIn 0.55s cubic-bezier(.16,1,.3,1) both;
+  }
+  /* Maner de tip drag pentru afordanta vizuala. */
+  .spm-panel::before {
+    content: ""; position: absolute; z-index: 4; top: 0.7rem; left: 50%;
+    transform: translateX(-50%); width: 38px; height: 4px; border-radius: 9999px;
+    background: rgba(255,255,255,0.22);
+  }
+  .spm-body {
+    max-height: 92vh; max-height: 92dvh;
+    padding: 2.3rem 1.4rem calc(1.6rem + env(safe-area-inset-bottom, 0px));
+  }
+  .spm-close { top: 0.85rem; right: 0.9rem; width: 2rem; height: 2rem; }
+  .spm-header { margin-bottom: 1.5rem; }
+  .spm-title { margin-bottom: 1.1rem; }
+  .spm-cards { grid-template-columns: 1fr; gap: 0.65rem; }
+  .spm-card { padding: 1.1rem 1.15rem; }
+  .spm-field-row { flex-direction: column; gap: 1.4rem; }
+  .spm-actions { gap: 0.8rem; }
+  .spm-submit { padding: 0.95rem 1.6rem; }
+}
+@keyframes spmSheetIn { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   .spm-overlay, .spm-panel, .spm-step, .spm-card, .spm-row, .spm-success-icon, .spm-check, .spm-dot, .spm-glow { animation: none !important; }
   .spm-card, .spm-row, .spm-submit, .spm-close { transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease; }

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="footer relative overflow-hidden py-[clamp(4rem,8vh,7rem)] px-container-x pb-8 border-t border-white/5" style={{ background: '#180A03' }}>
@@ -13,7 +15,7 @@ export default function Footer() {
         <div className="ft-top grid grid-cols-[1fr_2fr] max-lg:grid-cols-1 gap-16 max-lg:gap-10 mb-16">
           <div className="ft-brand-col max-w-[300px] max-lg:max-w-full">
             <a href="/">
-              <img src="/images/logo_v4h.png" alt="viral4hype" width="140" height="44" style={{ height: '32px', width: 'auto' }} className="opacity-80 mb-4 hover:opacity-100 transition-opacity block" />
+              <Image src="/images/logo_v4h.png" alt="viral4hype" width={140} height={44} style={{ height: '32px', width: 'auto' }} className="opacity-80 mb-4 hover:opacity-100 transition-opacity block" />
             </a>
             <p className="text-[0.85rem] text-white/50 leading-[1.65]">
               Web design and digital marketing agency based in Romania. We work with clients across all of Europe.
@@ -57,11 +59,15 @@ export default function Footer() {
           <p>&copy; 2026 viral4hype. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="https://anpc.ro/utilizatori/" target="_blank" rel="noopener noreferrer" aria-label="ANPC" data-cursor="link" className="opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <img src="/images/ANPC-logo_final.png" alt="ANPC" width="80" height="40" style={{ height: '32px', width: 'auto' }} />
+              <Image src="/images/ANPC-logo_final.png" alt="ANPC" width={80} height={40} style={{ height: '32px', width: 'auto' }} />
+            </a>
+            <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" aria-label="ANPC SOL" data-cursor="link" className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <img src="/images/anpc-sol-mare.png.avif" alt="ANPC SOL" width="160" height="40" style={{ height: '32px', width: 'auto' }} />
             </a>
             <a href="/terms-and-conditions" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Terms</a>
             <a href="/privacy-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Privacy</a>
             <a href="/cookie-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Cookies</a>
+            <button type="button" data-cookie-settings className="text-link text-white/55 transition-colors duration-300 hover:text-white/70 bg-transparent border-0 cursor-pointer p-0" data-cursor="link">Cookie Settings</button>
           </div>
         </div>
       </div>

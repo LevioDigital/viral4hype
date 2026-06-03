@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -13,6 +14,8 @@ const projects = [
   { slug: "pc-doc", title: "PC Doc", image: "/images/pc-doc.png", category: "Shopify" as Category, tags: ["Shopify"], url: "https://pc-doc.ro/" },
   { slug: "magazinul-de-interfoane", title: "Magazinul de Interfoane", image: "/images/magazinuldeinterfoane.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://magazinuldeinterfoane.ro/" },
   { slug: "daimara", title: "Daimara", image: "/images/daimara.png", category: "Shopify" as Category, tags: ["Shopify", "Google Ads", "Meta Ads", "Content Creation", "Email Marketing"], url: "https://daimara.ro/" },
+  { slug: "din-munte", title: "Din Munte", image: "/images/dinmunte.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://dinmunte.ro/" },
+  { slug: "british-football-school", title: "British Football School", image: "/images/britishfotbal.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://www.britishfootballschool.com/" },
 ];
 
 const marqueeItems = [
@@ -69,7 +72,6 @@ const layoutCss = `
 @media(min-width:1024px){.ow-hero{grid-template-columns:1.04fr minmax(0,500px);}}
 .ow-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
 @media(min-width:640px){.ow-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(min-width:1024px){.ow-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
 .ow-cards{display:grid;grid-template-columns:1fr;gap:1.25rem;}
 @media(min-width:768px){.ow-cards{grid-template-columns:repeat(3,minmax(0,1fr));}}
 .ow-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.5rem;}
@@ -241,12 +243,13 @@ export default function OurWorkPage() {
                   data-cursor="link"
                 >
                   <div className="relative rounded-card overflow-hidden aspect-[4/3]" style={{ background: "rgba(0,0,0,0.03)" }}>
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      width="1440"
-                      height="1080"
+                      width={1440}
+                      height={1080}
                       loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                     />
                     <div
@@ -319,9 +322,6 @@ export default function OurWorkPage() {
               <div className="relative flex items-center gap-5 flex-wrap" style={{ zIndex: 1 }}>
                 <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" data-cursor="link">
                   Start a Project {arrowSvg}
-                </a>
-                <a href="tel:+40752221510" className="inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] hover:text-white hover:border-white/60" data-cursor="link">
-                  or call +40 752 221 510
                 </a>
               </div>
             </div>
