@@ -39,9 +39,8 @@ export default function Nav() {
         <div className="nav-links flex gap-[2.2rem] max-lg:hidden">
           <a href="/websites" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Websites</a>
           <a href="/google-ads-management" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Marketing</a>
-          <a href="/online-shops" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Online Shops</a>
+          <a href="/shopify" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Shopify</a>
           <a href="/our-work" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Our Work</a>
-          <a href="/blog" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Blog</a>
         </div>
 
         <a
@@ -84,19 +83,18 @@ export default function Nav() {
               <a href="/" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Home</a>
               <a href="/websites" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Websites</a>
               <a href="/google-ads-management" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Marketing</a>
-              <a href="/online-shops" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Online Shops</a>
+              <a href="/shopify" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Shopify</a>
               <a href="/our-work" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Our Work</a>
-              <a href="/blog" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Blog</a>
               <a href="/contact" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-gradient">Contact Us</a>
 
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent my-[clamp(1.2rem,3.5vh,2.5rem)]"></div>
 
               <div className="flex flex-col items-center gap-3 mb-[clamp(1.2rem,3.5vh,2rem)]">
-                <a href="tel:0752221510" className="flex items-center gap-2 text-[0.85rem] text-white/55 hover:text-white/80 transition-colors duration-300">
+                <a href="tel:+40752221510" className="flex items-center gap-2 text-[0.85rem] text-white/55 hover:text-white/80 transition-colors duration-300">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  0752 221 510
+                  +40 752 221 510
                 </a>
                 <a href="mailto:contact@viral4hype.com" className="flex items-center gap-2 text-[0.85rem] text-white/55 hover:text-white/80 transition-colors duration-300">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">

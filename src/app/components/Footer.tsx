@@ -35,20 +35,19 @@ export default function Footer() {
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Services</p>
               <a href="/websites" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Business Websites</a>
-              <a href="/online-shops" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Shopify Stores</a>
+              <a href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Shopify Stores</a>
               <a href="/google-ads-management" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Google Ads</a>
               <a href="/google-ads-management" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Digital Marketing</a>
             </div>
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Company</p>
               <a href="/our-work" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Our Work</a>
-              <a href="/blog" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Blog</a>
-              <a href="/online-shops" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">About Us</a>
+              <a href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">About Us</a>
               <a href="/contact" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Contact Us</a>
             </div>
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Contact</p>
-              <a href="tel:0752221510" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">0752 221 510</a>
+              <a href="tel:+40752221510" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">+40 752 221 510</a>
               <a href="mailto:contact@viral4hype.com" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">contact@viral4hype.com</a>
               <a href="https://www.google.com/maps/place/Viral+4+Hype/@45.8281953,19.7350693,6z/data=!3m1!4b1!4m6!3m5!1s0x239561cbf0276647:0x754560d0bd4dc421!8m2!3d45.9425072!4d25.0201084!16s%2Fg%2F11y1bk0xpw" target="_blank" rel="noopener noreferrer" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white/65" data-cursor="link">Bucuresti, Constanta, Romania</a>
             </div>

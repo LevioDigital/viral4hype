@@ -37,11 +37,11 @@ export default function CTABanner() {
                 </svg>
               </a>
               <a
-                href="tel:0752221510"
+                href="tel:+40752221510"
                 className="text-[0.9rem] font-medium text-white/60 hover:text-white transition-colors duration-300 whitespace-nowrap"
                 data-cursor="link"
               >
-                or call 0752 221 510
+                or call +40 752 221 510
               </a>
             </div>
           </div>

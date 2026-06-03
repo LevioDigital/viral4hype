@@ -778,7 +778,7 @@ export default function Home() {
             <div className="srv-rows border-t border-white/[0.07]">
               {" "}
               <a
-                href="/websites"
+                href="/google-ads-management"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
@@ -789,13 +789,12 @@ export default function Home() {
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
                   <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Business Websites
+                    Digital Marketing
                   </h3>{" "}
                   <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
-                    A website built to win you customers, not just look good on
-                    a screen. Clean design, sharp copy, and a clear marketing
-                    strategy behind every page. Built around your business, your
-                    audience, and your goals.
+                    Online Ads (Google Ads, Meta Ads, TikTok Ads), Mail
+                    Marketing, Content Creation, everything you need to scale
+                    your business online.
                   </p>{" "}
                 </div>{" "}
                 <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
@@ -812,7 +811,7 @@ export default function Home() {
                 </span>{" "}
               </a>
               <a
-                href="/contact"
+                href="/shopify"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
@@ -823,13 +822,12 @@ export default function Home() {
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
                   <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Digital Marketing
+                    Shopify Online Shop Development
                   </h3>{" "}
                   <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
-                    Grow your business online with targeted digital marketing
-                    strategies. From Google Ads and SEO to social media
-                    campaigns, we drive the right traffic and turn it into
-                    real results.
+                    Shopify is a scalable ecommerce solution, confirmed in
+                    practice by our clients. Invest in a reliable and scalable
+                    ecommerce infrastructure.
                   </p>{" "}
                 </div>{" "}
                 <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
@@ -846,7 +844,7 @@ export default function Home() {
                 </span>{" "}
               </a>
               <a
-                href="/online-shops"
+                href="/websites"
                 className="srv-row flex items-center gap-[clamp(1.5rem,3vw,3rem)] py-[clamp(1.8rem,4vh,3rem)] border-b border-white/[0.07] transition-[padding] duration-400 rounded-input relative"
                 data-cursor="link"
               >
@@ -857,12 +855,11 @@ export default function Home() {
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
                   <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Online Shops
+                    Web Development &amp; Design
                   </h3>{" "}
                   <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
-                    Sell your products online with a shop designed to convert
-                    browsers into buyers. Fast, mobile-friendly, and easy for
-                    you to manage day to day.
+                    Developing custom websites for our clients based on their
+                    needs.
                   </p>{" "}
                 </div>{" "}
                 <span className="srv-arrow text-white/25 shrink-0 transition-all duration-400 ease-out-expo relative z-[1]">
@@ -1216,7 +1213,7 @@ export default function Home() {
               <div className="contact-links flex flex-col">
                 {" "}
                 <a
-                  href="tel:0752221510"
+                  href="tel:+40752221510"
                   className="clink flex justify-between items-baseline py-4 border-b border-white/[0.06] border-t border-white/[0.06] transition-[padding-left] duration-300 ease-out-expo hover:pl-2"
                   data-cursor="link"
                 >
@@ -1225,7 +1222,7 @@ export default function Home() {
                     Call us
                   </span>{" "}
                   <span className="clink-val text-base font-medium text-white/70">
-                    0752 221 510
+                    +40 752 221 510
                   </span>{" "}
                 </a>{" "}
                 <a
