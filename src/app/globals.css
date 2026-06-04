@@ -6168,3 +6168,42 @@ html:not(.cursor-active) select {
 }
 
 /* Local font overrides — files are now present in /public/fonts/ */
+
+/* ── Hero entrance reveal — CSS-driven (was JS-driven) ─────────────────────
+   Previously ViralInteractions §4 revealed the hero (word slide-up + staggered
+   fades) from JS, which only runs AFTER the client bundle downloads and
+   hydrates. On throttled mobile that pushed the hero paragraph's Largest
+   Contentful Paint to ~4.7s (90% "render delay"). Running the exact same
+   choreography as CSS animations makes it begin at first paint instead, with no
+   JS dependency — identical visuals, much earlier LCP. The global
+   prefers-reduced-motion rule above collapses these durations to ~0. Transform/
+   opacity only, so no layout shift (CLS stays 0). */
+@keyframes v4h-hero-rise {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes v4h-hero-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes v4h-hero-fade-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero .ht-word {
+  animation: v4h-hero-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero .ht-row:nth-child(1) .ht-word { animation-delay: 80ms; }
+.hero .ht-row:nth-child(2) .ht-word { animation-delay: 240ms; }
+.hero .hero-badge {
+  animation: v4h-hero-fade 0.9s ease 300ms both;
+}
+.hero .hero-bottom {
+  animation: v4h-hero-fade-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 600ms both;
+}
+.hero .hero-stats {
+  animation: v4h-hero-fade 0.9s ease 900ms both;
+}
+.hero .hero-scroll {
+  animation: v4h-hero-fade 0.9s ease 1100ms both;
+}

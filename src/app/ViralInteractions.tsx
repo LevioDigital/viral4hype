@@ -381,31 +381,12 @@ export default function ViralInteractions() {
     }
 
     // ════════════════════════════════════════════════════════════════════════
-    // 4. HERO TEXT WORD REVEAL (Mask slide-up)
+    // 4. HERO TEXT WORD REVEAL (Mask slide-up) + staggered fades
     // ════════════════════════════════════════════════════════════════════════
-    const words = document.querySelectorAll<HTMLElement>('.ht-word');
-    words.forEach((w, i) => {
-      w.style.transition = `transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${80 + i * 160}ms`;
-      // Force reflow then set
-      requestAnimationFrame(() => { w.style.transform = 'translateY(0%)'; });
-    });
-
-    const heroBadge = document.querySelector<HTMLElement>('.hero-badge');
-    const heroBottom = document.querySelector<HTMLElement>('.hero-bottom');
-    const heroStats = document.querySelector<HTMLElement>('.hero-stats');
-    const heroScroll = document.querySelector<HTMLElement>('.hero-scroll');
-
-    const fadeIn = (el: HTMLElement | null, delay: number, extra?: string) => {
-      if (!el) return;
-      el.style.transition = `opacity 0.9s ease ${delay}ms${extra ? ', ' + extra : ''}`;
-      requestAnimationFrame(() => { el.style.opacity = '1'; });
-    };
-
-    fadeIn(heroBadge, 300);
-    fadeIn(heroBottom, 600, `transform 0.9s cubic-bezier(0.16,1,0.3,1) 600ms`);
-    if (heroBottom) { requestAnimationFrame(() => { heroBottom.style.transform = 'none'; }); }
-    fadeIn(heroStats, 900);
-    fadeIn(heroScroll, 1100);
+    // Now CSS-driven (see globals.css `v4h-hero-*` keyframes) so the reveal
+    // begins at first paint instead of waiting for this bundle to hydrate —
+    // that JS gating was pushing the hero LCP to ~4.7s on mobile. Visuals are
+    // unchanged. Nothing to do here at runtime.
 
     // ════════════════════════════════════════════════════════════════════════
     // 5. HERO SPOTLIGHT ORB CREATION & HOVER EVENTS
