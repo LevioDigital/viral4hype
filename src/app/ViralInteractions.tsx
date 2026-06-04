@@ -1,8 +1,21 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function ViralInteractions() {
+  // This component lives in the root layout (mounted once), but the DOM it
+  // drives — the custom cursor (#cursor), the nav (#nav) and the per-page
+  // hero markup — is rendered inside each page's <Nav /> / hero. On a
+  // client-side route change the App Router keeps the layout (and this
+  // component) mounted while it unmounts the old page subtree and mounts a
+  // fresh one, including a brand-new #cursor. If the effect only ran once
+  // ([] deps) it would keep transforming the now-detached old cursor while
+  // the new cursor stayed frozen at its CSS top-left origin (looked "stuck
+  // in the navbar"), and the hover listeners would be bound to dead nodes.
+  // Re-running on every pathname change re-queries the live DOM; the
+  // `cleanups` teardown below runs first, so there are no leaked listeners.
+  const pathname = usePathname();
 
   useEffect(() => {
     // ─── Guard: run only on client ───────────────────────────────────────────
@@ -581,7 +594,7 @@ export default function ViralInteractions() {
     // CLEANUP on unmount
     // ════════════════════════════════════════════════════════════════════════
     return () => cleanups.forEach(fn => fn());
-  }, []);
+  }, [pathname]);
 
   return null;
 }
