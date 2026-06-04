@@ -6133,4 +6133,38 @@ body.locked {
   }
 }
 
+/* ── Defense-in-depth: don't depend on JS hydration for basic usability ────
+   The custom cursor and the scroll-aware nav background are both added by
+   client JS (ViralInteractions). If that JS is slow to hydrate or fails to
+   run, the page must STILL be usable — never an invisible cursor or an
+   unreadable nav. ViralInteractions adds `cursor-active` on <html> once the
+   custom cursor is live; until then (and if JS never runs) the OS cursor
+   stays visible. This overrides the `cursor: none` rules above. */
+html:not(.cursor-active),
+html:not(.cursor-active) a,
+html:not(.cursor-active) button,
+html:not(.cursor-active) input,
+html:not(.cursor-active) textarea,
+html:not(.cursor-active) select {
+  cursor: auto !important;
+}
+
+/* Always-present faint top scrim so the white nav text stays legible over
+   ANY section, even before/without JS adding `.nav--scrolled`. Imperceptible
+   over the dark hero (#180A03); provides contrast once scrolled over light
+   content. The JS-driven `.nav--scrolled` solid bar still layers on top when
+   hydrated. */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 10, 3, 0.55),
+    rgba(24, 10, 3, 0)
+  );
+}
+
 /* Local font overrides — files are now present in /public/fonts/ */

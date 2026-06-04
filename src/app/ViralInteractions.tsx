@@ -19,6 +19,16 @@ export default function ViralInteractions() {
     const hero = document.querySelector<HTMLElement>('.hero');
     const frags = Array.from(document.querySelectorAll<HTMLElement>('.ht-frag'));
 
+    // Defense-in-depth: only hide the OS cursor once the custom cursor is
+    // actually live (element present + a fine pointer). CSS keeps the native
+    // cursor until this class is set, so a slow/failed hydration never leaves
+    // the user without a visible cursor. See globals.css `html.cursor-active`.
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
+    if (cursorEl && finePointer) {
+      document.documentElement.classList.add('cursor-active');
+      cleanups.push(() => document.documentElement.classList.remove('cursor-active'));
+    }
+
     let mx = -100, my = -100; // Mouse target (viewport)
     let curX = -100, curY = -100; // Smoothed cursor/orb position (viewport)
     let lastMx = -100, lastMy = -100;
