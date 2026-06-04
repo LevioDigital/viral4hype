@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy | viral4hype",
   description: "Cookie Policy for viral4hype.com — how we use cookies and how you can control them.",
-};
+  path: "/cookie-policy",
+});
 
 const sections = [
   {

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Custom Websites Built For Modern Businesses | viral4hype",
   description:
     "We design and develop premium custom websites — fast, modern and performance-focused. Built to generate trust, leads and long-term business growth.",
-};
+  path: "/websites",
+});
 
 const ACCENT = "#F26622";
 const DARK = "#180A03";
@@ -531,8 +533,9 @@ export default function WebsitesPage() {
                 </p>
               </div>
               <div className="relative flex items-center gap-5 flex-wrap" style={{ zIndex: 1 }}>
-                <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" data-cursor="link">
-                  Book A Call {arrowSvg}
+                <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                  <span className="btn-text relative z-[1]">Book A Call</span>
+                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">{arrowSvg}</span>
                 </a>
               </div>
             </div>

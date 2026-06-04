@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Performance Marketing & Digital Growth Systems | viral4hype",
   description:
     "We build complete digital marketing systems — Google Ads, Meta Ads, TikTok Ads — for lead generation and ecommerce scaling. Real, predictable, scalable growth.",
-};
+  path: "/marketing",
+});
 
 const ACCENT = "#F26622";
 const DARK = "#180A03";
@@ -123,11 +125,13 @@ export default function MarketingPage() {
                   We don&apos;t run ads for impressions or vanity metrics. We build complete digital marketing systems that generate qualified leads, sales, and predictable, scalable growth.
                 </p>
                 <div className="flex items-center flex-wrap" style={{ gap: "1.25rem", marginBottom: "clamp(1.5rem,3vh,2rem)" }}>
-                  <a href="/our-work" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
-                    <span className="btn-text relative z-[1]">See Our Work</span>
-                    <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">{arrowSvg}</span>
+                  <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                    <span className="btn-text relative z-[1]">Book A Call</span>
+                    <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </span>
                   </a>
-                  <a href="/contact" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">Let&apos;s Talk</a>
+                  <a href="/our-work" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">See Our Work</a>
                 </div>
                 <div className="flex items-center flex-wrap" style={{ gap: "0.75rem", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
                   <span>Google Ads</span><span style={{ color: ACCENT }}>·</span><span>Meta Ads</span><span style={{ color: ACCENT }}>·</span><span>TikTok Ads</span>
@@ -347,8 +351,11 @@ export default function MarketingPage() {
                 <p className="text-white/55" style={{ fontSize: "0.98rem", lineHeight: 1.6, maxWidth: "480px" }}>Let&apos;s build a marketing system that generates real results and sustainable growth for your business.</p>
               </div>
               <div className="relative flex items-center flex-wrap" style={{ gap: "1.25rem", zIndex: 1 }}>
-                <a href="/contact" className="mk-link inline-flex items-center text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" style={{ gap: "0.5rem" }} data-cursor="link">
-                  Book A Call <span className="mk-arrow flex">{arrowSvg}</span>
+                <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                  <span className="btn-text relative z-[1]">Book A Call</span>
+                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
                 </a>
               </div>
             </div>

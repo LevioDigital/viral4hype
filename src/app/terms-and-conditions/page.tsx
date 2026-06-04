@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms and Conditions | viral4hype",
   description: "Terms and Conditions for using viral4hype.com and our web design and digital marketing services.",
-};
+  path: "/terms-and-conditions",
+});
 
 const sections = [
   {

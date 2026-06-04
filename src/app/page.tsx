@@ -1,12 +1,25 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import ViralInteractions from "./ViralInteractions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
+import { SITE, buildMetadata, localBusinessJsonLd, jsonLdScript } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: SITE.title,
+  description: SITE.description,
+  path: "/",
+});
 
 export default function Home() {
   return (
     <>
+      {/* Business entity (LocalBusiness / ProfessionalService) for rich results. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(localBusinessJsonLd())}
+      />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm"
@@ -1200,7 +1213,7 @@ export default function Home() {
           </div>{" "}
         </section>{" "}
 
-        <section className="contact-section py-section-y px-container-x" style={{ background: '#180A03' }}>
+        <section id="contact" className="contact-section py-section-y px-container-x" style={{ background: '#180A03' }}>
           {" "}
           <div className="contact-inner max-w-[1200px] mx-auto grid grid-cols-[1fr_1.3fr] max-lg:grid-cols-1 gap-[clamp(3rem,6vw,7rem)] items-center">
             {" "}

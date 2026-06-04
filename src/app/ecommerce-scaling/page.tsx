@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Ecommerce Scaling — Data-Driven Advertising | viral4hype",
   description:
     "Scalable, profitable ecommerce ad systems powered by data and machine learning. Meta Ads, Google Ads, Advantage+ and Performance Max — built to scale over time.",
-};
+  path: "/ecommerce-scaling",
+});
 
 const ACCENT = "#F26622";
 const DARK = "#180A03";
@@ -66,10 +68,13 @@ function Eyebrow({ num, label, dark = false }: { num: string; label: string; dar
 
 const ctaButtons = (
   <div className="flex items-center flex-wrap" style={{ gap: "1.25rem" }}>
-    <a href="/contact" className="ec-link inline-flex items-center text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" style={{ gap: "0.5rem" }} data-cursor="link">
-      Book A Call <span className="ec-arrow flex">{arrowSvg}</span>
+    <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+      <span className="btn-text relative z-[1]">Book A Call</span>
+      <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      </span>
     </a>
-    <a href="/contact" className="inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] hover:text-white hover:border-white/60" data-cursor="link">Let&apos;s Talk</a>
+    <a href="/our-work" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">See Our Work</a>
   </div>
 );
 
@@ -112,9 +117,12 @@ export default function EcommerceScalingPage() {
                 <p className="text-white/70" style={{ fontSize: "clamp(1rem,1.3vw,1.12rem)", lineHeight: 1.7, maxWidth: "480px", marginBottom: "1.4rem" }}>
                   In ecommerce, ads alone aren&apos;t enough. We build complete ecommerce ecosystems based on data and real performance — engineered to acquire customers profitably.
                 </p>
-                <div className="flex flex-wrap" style={{ gap: "0.6rem", marginBottom: "clamp(1.8rem,3.5vh,2.4rem)" }}>
-                  {heroNeeds.map((p) => (
-                    <span key={p} className="text-white/70" style={{ fontSize: "0.72rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", padding: "0.45rem 0.9rem", borderRadius: 999, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)" }}>{p}</span>
+                <div className="flex items-center flex-wrap" style={{ gap: "0.75rem", marginBottom: "clamp(1.8rem,3.5vh,2.4rem)", fontSize: "0.74rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
+                  {heroNeeds.map((p, i) => (
+                    <span key={p} className="inline-flex items-center" style={{ gap: "0.75rem" }}>
+                      {i > 0 && <span style={{ color: ACCENT }}>·</span>}
+                      <span>{p}</span>
+                    </span>
                   ))}
                 </div>
                 {ctaButtons}

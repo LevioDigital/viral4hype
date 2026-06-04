@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Our Work — Websites, Shopify Stores & Ad Campaigns | viral4hype",
+  description:
+    "Selected projects from viral4hype — custom websites, Shopify stores and performance marketing campaigns built for businesses across Romania and Europe.",
+  path: "/our-work",
+});
 
 const ACCENT = "#F26622";
 const DARK = "#180A03";
@@ -134,11 +143,8 @@ export default function OurWorkPage() {
 
                 <div className="flex items-center flex-wrap" style={{ gap: "1.25rem", marginBottom: "clamp(1.5rem,3vh,2rem)" }}>
                   <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
-                    <span className="btn-text relative z-[1]">Start a Project</span>
+                    <span className="btn-text relative z-[1]">Book A Call</span>
                     <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">{arrowSvg}</span>
-                  </a>
-                  <a href="/contact" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">
-                    Let&apos;s Talk
                   </a>
                 </div>
 
@@ -320,8 +326,9 @@ export default function OurWorkPage() {
                 </p>
               </div>
               <div className="relative flex items-center gap-5 flex-wrap" style={{ zIndex: 1 }}>
-                <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" data-cursor="link">
-                  Start a Project {arrowSvg}
+                <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                  <span className="btn-text relative z-[1]">Start a Project</span>
+                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">{arrowSvg}</span>
                 </a>
               </div>
             </div>

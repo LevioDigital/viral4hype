@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Shopify Stores Built To Scale | viral4hype",
   description: "Complete Shopify ecommerce systems — store development, migrations, design, automation and performance optimization for brands that want real growth.",
-};
+  path: "/shopify",
+});
 
 const ACCENT = "#F26622";
 const DARK = "#180A03";
@@ -205,8 +207,8 @@ export default function ShopifyPage() {
                       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </span>
                   </a>
-                  <a href="/contact" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">
-                    Let&apos;s Talk
+                  <a href="/our-work" className="btn-ghost inline-flex items-center text-[0.95rem] font-semibold text-white/70 py-[0.9rem] border-b-[2px] border-white/20 transition-all duration-[350ms] relative hover:text-white hover:border-white/60" data-cursor="link">
+                    See Our Work
                   </a>
                 </div>
 
@@ -492,9 +494,11 @@ export default function ShopifyPage() {
                 </p>
               </div>
               <div className="relative flex items-center gap-5 flex-wrap" style={{ zIndex: 1 }}>
-                <a href="/contact" className="inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo whitespace-nowrap" data-cursor="link">
-                  Book A Call
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <a href="/contact" className="btn-dark inline-flex items-center gap-2 text-[0.95rem] font-semibold py-[0.9rem] px-8 rounded-full bg-white text-dark transition-all duration-400 ease-out-expo relative overflow-hidden whitespace-nowrap" data-cursor="link">
+                  <span className="btn-text relative z-[1]">Book A Call</span>
+                  <span className="btn-icon relative z-[1] flex transition-transform duration-300 ease-out-expo">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M14 6H6M14 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
                 </a>
               </div>
             </div>
