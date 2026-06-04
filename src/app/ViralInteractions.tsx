@@ -47,42 +47,52 @@ export default function ViralInteractions() {
     let lastMx = -100, lastMy = -100;
     let trailIntensity = 0; // 0 to 1 based on movement
     let initialized = false;
-    let raf: number;
+    let raf = 0;
 
-    // Track mouse globally
-    const updateMouse = (e: MouseEvent) => {
-      mx = e.clientX;
-      my = e.clientY;
-      if (!initialized) {
-        curX = mx;
-        curY = my;
-        initialized = true;
-      }
-    };
-    window.addEventListener('mousemove', updateMouse);
-    cleanups.push(() => window.removeEventListener('mousemove', updateMouse));
-
-    const updateTouch = (e: TouchEvent) => {
-      if (e.touches.length > 0) {
-        mx = e.touches[0].clientX;
-        my = e.touches[0].clientY;
+    // The custom cursor + the hero spotlight/reveal trail are a pointer-only
+    // effect. On touch/coarse-pointer devices (phones, tablets) there is no
+    // visible cursor, yet the per-frame loop below would still run
+    // `elementFromPoint` + `getComputedStyle` every frame and (on the home
+    // page) repaint the blurred, screen-blended hero canvas 60×/s — which
+    // makes scrolling janky on mobile for zero visual benefit. So we only wire
+    // up pointer tracking, hover interactions and the rAF loop when a fine
+    // pointer is present.
+    if (finePointer) {
+      // Track mouse globally
+      const updateMouse = (e: MouseEvent) => {
+        mx = e.clientX;
+        my = e.clientY;
         if (!initialized) {
           curX = mx;
           curY = my;
           initialized = true;
         }
-      }
-    };
-    window.addEventListener('touchmove', updateTouch, { passive: true });
-    cleanups.push(() => window.removeEventListener('touchmove', updateTouch));
+      };
+      window.addEventListener('mousemove', updateMouse);
+      cleanups.push(() => window.removeEventListener('mousemove', updateMouse));
 
-    // Cursor interactions
-    const onEnter = () => { if (ringEl) { ringEl.style.width = '72px'; ringEl.style.height = '72px'; ringEl.style.opacity = '0.5'; } };
-    const onLeave = () => { if (ringEl) { ringEl.style.width = '36px'; ringEl.style.height = '36px'; ringEl.style.opacity = '1'; } };
-    document.querySelectorAll<HTMLElement>('a,button,[data-cursor="link"]').forEach(el => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
+      const updateTouch = (e: TouchEvent) => {
+        if (e.touches.length > 0) {
+          mx = e.touches[0].clientX;
+          my = e.touches[0].clientY;
+          if (!initialized) {
+            curX = mx;
+            curY = my;
+            initialized = true;
+          }
+        }
+      };
+      window.addEventListener('touchmove', updateTouch, { passive: true });
+      cleanups.push(() => window.removeEventListener('touchmove', updateTouch));
+
+      // Cursor interactions
+      const onEnter = () => { if (ringEl) { ringEl.style.width = '72px'; ringEl.style.height = '72px'; ringEl.style.opacity = '0.5'; } };
+      const onLeave = () => { if (ringEl) { ringEl.style.width = '36px'; ringEl.style.height = '36px'; ringEl.style.opacity = '1'; } };
+      document.querySelectorAll<HTMLElement>('a,button,[data-cursor="link"]').forEach(el => {
+        el.addEventListener('mouseenter', onEnter);
+        el.addEventListener('mouseleave', onLeave);
+      });
+    }
 
     // Spotlight & Cursor Loop
     // ════════════════════════════════════════════════════════════════════════
@@ -291,9 +301,12 @@ export default function ViralInteractions() {
       raf = requestAnimationFrame(tic);
     };
     
-    // Run canvas loop unconditionally for both pointer and touch devices
-    raf = requestAnimationFrame(tic);
-    cleanups.push(() => cancelAnimationFrame(raf));
+    // Pointer-only: the loop drives the custom cursor + hero reveal trail.
+    // Skipped on touch devices (see note above) to keep mobile scrolling smooth.
+    if (finePointer) {
+      raf = requestAnimationFrame(tic);
+      cleanups.push(() => cancelAnimationFrame(raf));
+    }
 
     // ════════════════════════════════════════════════════════════════════════
     // 2. SCROLL-AWARE NAV
@@ -312,15 +325,59 @@ export default function ViralInteractions() {
     const burger = document.getElementById('burger');
     const mobMenu = document.getElementById('mob-menu');
     if (burger && mobMenu) {
-      const toggle = () => {
-        const open = burger.classList.toggle('open');
-        mobMenu.classList.toggle('open', open);
-        document.body.classList.toggle('locked', open);
+      // iOS-safe scroll lock: `overflow:hidden` alone does NOT stop touch
+      // scrolling on iOS Safari (it lets the page scroll behind the overlay),
+      // so we pin <body> with position:fixed and restore the scroll position
+      // on close — the same robust approach used by StartProjectModal.
+      let lockedScrollY = 0;
+      const lockScroll = () => {
+        lockedScrollY = window.scrollY;
+        const b = document.body;
+        b.style.position = 'fixed';
+        b.style.top = `-${lockedScrollY}px`;
+        b.style.left = '0';
+        b.style.right = '0';
+        b.style.width = '100%';
+        b.style.overflow = 'hidden';
       };
-      const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { burger.classList.remove('open'); mobMenu.classList.remove('open'); document.body.classList.remove('locked'); } };
+      const unlockScroll = () => {
+        const b = document.body;
+        b.style.position = '';
+        b.style.top = '';
+        b.style.left = '';
+        b.style.right = '';
+        b.style.width = '';
+        b.style.overflow = '';
+        window.scrollTo(0, lockedScrollY);
+      };
+      const openMenu = () => {
+        if (burger.classList.contains('open')) return;
+        burger.classList.add('open');
+        mobMenu.classList.add('open');
+        lockScroll();
+      };
+      const closeMenu = () => {
+        if (!burger.classList.contains('open')) return;
+        burger.classList.remove('open');
+        mobMenu.classList.remove('open');
+        unlockScroll();
+      };
+      const toggle = () => { if (burger.classList.contains('open')) closeMenu(); else openMenu(); };
+      const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeMenu(); };
+      // Tapping a link inside the menu navigates (App Router soft nav) but does
+      // not by itself close the overlay. Close + unlock here so the next page is
+      // never left with a pinned, unscrollable <body>.
+      const onMenuClick = (e: MouseEvent) => { if ((e.target as HTMLElement).closest('a')) closeMenu(); };
       burger.addEventListener('click', toggle);
       document.addEventListener('keydown', onKey);
-      cleanups.push(() => { burger.removeEventListener('click', toggle); document.removeEventListener('keydown', onKey); });
+      mobMenu.addEventListener('click', onMenuClick);
+      cleanups.push(() => {
+        burger.removeEventListener('click', toggle);
+        document.removeEventListener('keydown', onKey);
+        mobMenu.removeEventListener('click', onMenuClick);
+        // Safety net: never leave the scroll lock applied across a navigation.
+        if (burger.classList.contains('open')) unlockScroll();
+      });
     }
 
     // ════════════════════════════════════════════════════════════════════════
@@ -353,7 +410,10 @@ export default function ViralInteractions() {
     // ════════════════════════════════════════════════════════════════════════
     // 5. HERO SPOTLIGHT ORB CREATION & HOVER EVENTS
     // ════════════════════════════════════════════════════════════════════════
-    if (hero && frags.length > 0) {
+    // Pointer-only effect (the reveal trail follows the cursor). On touch
+    // devices the rAF loop above is disabled, so this would only attach dead
+    // listeners and an invisible blurred canvas — skip it.
+    if (finePointer && hero && frags.length > 0) {
       colorCanvas.style.cssText = `
         position: absolute;
         pointer-events: none;
