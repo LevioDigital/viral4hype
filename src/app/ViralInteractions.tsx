@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function ViralInteractions() {
@@ -16,6 +16,11 @@ export default function ViralInteractions() {
   // Re-running on every pathname change re-queries the live DOM; the
   // `cleanups` teardown below runs first, so there are no leaked listeners.
   const pathname = usePathname();
+  // Last known pointer position, persisted across the per-route effect
+  // re-inits (this component never unmounts, so the ref survives). Lets a
+  // freshly-mounted cursor appear at the real pointer spot after navigation
+  // instead of off-screen until the next mouse move.
+  const lastPointer = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     // ─── Guard: run only on client ───────────────────────────────────────────
@@ -42,11 +47,16 @@ export default function ViralInteractions() {
       cleanups.push(() => document.documentElement.classList.remove('cursor-active'));
     }
 
-    let mx = -100, my = -100; // Mouse target (viewport)
-    let curX = -100, curY = -100; // Smoothed cursor/orb position (viewport)
+    // Seed from the last known pointer position so the cursor shows up at the
+    // real spot immediately after a client-side navigation (otherwise it would
+    // sit off-screen at -100,-100 until the first mousemove — looked like "no
+    // cursor until I move it" when landing on a secondary page).
+    const seed = lastPointer.current;
+    let mx = seed ? seed.x : -100, my = seed ? seed.y : -100; // Mouse target (viewport)
+    let curX = mx, curY = my; // Smoothed cursor/orb position (viewport)
     let lastMx = -100, lastMy = -100;
     let trailIntensity = 0; // 0 to 1 based on movement
-    let initialized = false;
+    let initialized = seed != null;
     let raf = 0;
 
     // The custom cursor + the hero spotlight/reveal trail are a pointer-only
@@ -58,10 +68,16 @@ export default function ViralInteractions() {
     // up pointer tracking, hover interactions and the rAF loop when a fine
     // pointer is present.
     if (finePointer) {
+      // Paint the cursor at the seeded position synchronously so there's no
+      // 1-frame flash at the CSS top-left origin before the first rAF tick.
+      if (dotEl) dotEl.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      if (ringEl) ringEl.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+
       // Track mouse globally
       const updateMouse = (e: MouseEvent) => {
         mx = e.clientX;
         my = e.clientY;
+        lastPointer.current = { x: mx, y: my };
         if (!initialized) {
           curX = mx;
           curY = my;
@@ -75,6 +91,7 @@ export default function ViralInteractions() {
         if (e.touches.length > 0) {
           mx = e.touches[0].clientX;
           my = e.touches[0].clientY;
+          lastPointer.current = { x: mx, y: my };
           if (!initialized) {
             curX = mx;
             curY = my;
