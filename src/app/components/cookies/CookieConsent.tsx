@@ -192,7 +192,7 @@ function CookieBanner({
               We use cookies to run the site and, with your consent, for analytics
               and marketing.{" "}
               <a href="/cookie-policy" className="ck-link">
-                Learn more
+                Read our cookie policy
               </a>
               .
             </p>
