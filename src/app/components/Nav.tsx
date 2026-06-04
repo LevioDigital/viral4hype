@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   return (
@@ -27,7 +28,7 @@ export default function Nav() {
         className="nav fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between py-[1.4rem] px-[1.5rem] lg:px-container-x transition-all duration-500 ease-out-expo"
         id="nav"
       >
-        <a href="/" className="nav-logo flex items-center" style={{ marginLeft: 'clamp(1rem, 5vw, 100px)' }} data-cursor="link">
+        <Link href="/" className="nav-logo flex items-center" style={{ marginLeft: 'clamp(1rem, 5vw, 100px)' }} data-cursor="link">
           <Image
             src="/images/logo_v4h.png"
             alt="viral4hype"
@@ -38,15 +39,19 @@ export default function Nav() {
             style={{ height: '30px', width: 'auto', display: 'block' }}
             className="transition-opacity hover:opacity-80"
           />
-        </a>
+        </Link>
 
         <div className="nav-links flex gap-[2.2rem] max-lg:hidden">
-          <a href="/websites" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Custom Websites</a>
-          <a href="/marketing" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Marketing</a>
-          <a href="/shopify" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Shopify</a>
-          <a href="/our-work" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Our Work</a>
+          <Link href="/websites" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Custom Websites</Link>
+          <Link href="/marketing" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Marketing</Link>
+          <Link href="/shopify" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Shopify</Link>
+          <Link href="/our-work" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Our Work</Link>
         </div>
 
+        {/* Opens the "Start a Project" modal client-side (intercepted in
+            StartProjectModal). Kept as a plain <a> so the modal's document
+            click handler can preventDefault; /contact also has a no-JS
+            redirect fallback (see next.config.ts). */}
         <a
           href="/contact"
           className="nav-cta text-[0.85rem] font-semibold py-[0.6rem] px-6 rounded-full transition-all duration-400 ease-out-expo relative overflow-hidden max-lg:hidden bg-white text-dark"
@@ -84,11 +89,11 @@ export default function Nav() {
         <div className="absolute inset-0 flex flex-col overflow-y-auto">
           <div className="flex flex-col items-center w-full pt-24 pb-12 px-6 my-auto relative z-[1]">
             <nav aria-label="Mobile navigation" className="flex flex-col items-center gap-[clamp(0.4rem,2.5vh,1.2rem)] w-full mb-[clamp(1.5rem,4vh,3rem)]">
-              <a href="/" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Home</a>
-              <a href="/websites" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Custom Websites</a>
-              <a href="/marketing" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Marketing</a>
-              <a href="/shopify" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Shopify</a>
-              <a href="/our-work" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Our Work</a>
+              <Link href="/" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Home</Link>
+              <Link href="/websites" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Custom Websites</Link>
+              <Link href="/marketing" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Marketing</Link>
+              <Link href="/shopify" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Shopify</Link>
+              <Link href="/our-work" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Our Work</Link>
               <a href="/contact" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-gradient">Contact Us</a>
 
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent my-[clamp(1.2rem,3.5vh,2.5rem)]"></div>

@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# viral4hype
 
-## Getting Started
+Marketing website for **viral4hype** — a web design & performance-marketing
+agency. Built with Next.js (App Router) and deployed as a fully static site.
 
-First, run the development server:
+- **Framework:** Next.js 16 (App Router, Turbopack) · React 19 · TypeScript
+- **Styling:** precompiled Tailwind output in `src/app/globals.css` + inline
+  styles. ⚠️ There is no Tailwind build step — see [AGENTS.md](./AGENTS.md)
+  before adding utility classes.
+- **Forms:** React Server Actions → Supabase (REST), with honeypot + GDPR
+  consent + IP rate limiting.
+- **Analytics:** Google Tag (gtag), gated behind Cookie Consent / Consent Mode v2.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command         | Description                                  |
+| --------------- | -------------------------------------------- |
+| `npm run dev`   | Start the dev server                         |
+| `npm run build` | Production build (static prerender)          |
+| `npm run start` | Serve the production build                    |
+| `npm run lint`  | Run ESLint                                    |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Create `.env.local` (git-ignored):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+SUPABASE_URL=https://<project>.supabase.co
+SUPABASE_PUBLISHABLE_KEY=<publishable-key>   # RLS allows INSERT only
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The Supabase table is `contact_submissions`; the publishable key is safe to use
+server-side because row-level security restricts it to inserts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
+```
+src/
+  app/
+    page.tsx              # Homepage
+    layout.tsx            # Root layout, fonts, consent + JSON-LD
+    not-found.tsx         # Branded 404
+    error.tsx             # Branded error boundary
+    <route>/page.tsx      # Service / legal / work pages
+    actions/contact.ts    # Server Action for the contact + project forms
+    components/           # Nav, Footer, forms, modal, cookie consent
+    ViralInteractions.tsx # Client-side canvas/cursor/scroll effects
+  lib/
+    seo.ts                # Metadata + JSON-LD helpers (single source of truth)
+    supabase.ts           # REST insert helper
+    rate-limit.ts         # In-memory form throttle
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **SEO:** every page builds its metadata via `buildMetadata()` in
+  `src/lib/seo.ts`. Update `SITE` there for global copy/URLs.
+- **Routing:** internal navigation uses `next/link`. `/contact` is intercepted
+  client-side to open the "Start a Project" modal (with a no-JS redirect
+  fallback in `next.config.ts`).
+- **Images:** use `next/image`; keep source assets reasonably sized (AVIF/WebP
+  are served automatically).
+- **Security headers / CSP:** configured in `next.config.ts`.

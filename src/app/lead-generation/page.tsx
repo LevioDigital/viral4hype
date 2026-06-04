@@ -344,7 +344,7 @@ export default function LeadGenerationPage() {
               </h2>
             </div>
             <div className="gx gx-3">
-              {pillars.map((p, i) => (
+              {pillars.map((p) => (
                 <div key={p} className="flex items-center" style={{ gap: "0.9rem", background: "rgba(255,255,255,0.025)", borderRadius: 16, padding: "1.3rem 1.4rem", border: "1px solid rgba(255,255,255,0.07)" }}>
                   <span className="flex items-center justify-center" style={{ width: 30, height: 30, borderRadius: 999, flexShrink: 0, background: "rgba(242,102,34,0.12)", border: "1px solid rgba(242,102,34,0.25)" }}>{checkSvg}</span>
                   <span className="text-white/85" style={{ fontSize: "0.92rem", fontWeight: 500 }}>{p}</span>

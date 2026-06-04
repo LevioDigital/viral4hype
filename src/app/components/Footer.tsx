@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,9 +15,9 @@ export default function Footer() {
       <div className="ft-inner relative z-[1] max-w-[1200px] mx-auto">
         <div className="ft-top grid grid-cols-[1fr_2fr] max-lg:grid-cols-1 gap-16 max-lg:gap-10 mb-16">
           <div className="ft-brand-col max-w-[300px] max-lg:max-w-full">
-            <a href="/">
+            <Link href="/">
               <Image src="/images/logo_v4h.png" alt="viral4hype" width={140} height={44} style={{ height: '32px', width: 'auto' }} className="opacity-80 mb-4 hover:opacity-100 transition-opacity block" />
-            </a>
+            </Link>
             <p className="text-[0.85rem] text-white/50 leading-[1.65]">
               Web design and digital marketing agency based in Romania. We work with clients across all of Europe.
             </p>
@@ -36,15 +37,15 @@ export default function Footer() {
           <div className="ft-cols grid grid-cols-3 max-xs:grid-cols-1 max-md:grid-cols-2 gap-8 max-md:gap-6">
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Services</p>
-              <a href="/websites" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Custom Websites</a>
-              <a href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Shopify Stores</a>
-              <a href="/marketing" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Digital Marketing</a>
-              <a href="/lead-generation" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Lead Generation</a>
-              <a href="/ecommerce-scaling" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">eCommerce Scaling</a>
+              <Link href="/websites" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Custom Websites</Link>
+              <Link href="/shopify" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Shopify Stores</Link>
+              <Link href="/marketing" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Digital Marketing</Link>
+              <Link href="/lead-generation" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Lead Generation</Link>
+              <Link href="/ecommerce-scaling" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">eCommerce Scaling</Link>
             </div>
             <div>
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/50 mb-5">Company</p>
-              <a href="/our-work" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Our Work</a>
+              <Link href="/our-work" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Our Work</Link>
               <a href="/contact" className="text-link block w-fit text-[0.88rem] text-white/55 py-[0.3rem] transition-colors duration-300 hover:text-white" data-cursor="link">Contact Us</a>
             </div>
             <div>
@@ -63,11 +64,11 @@ export default function Footer() {
               <Image src="/images/ANPC-logo_final.png" alt="ANPC" width={80} height={40} style={{ height: '32px', width: 'auto' }} />
             </a>
             <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" aria-label="ANPC SOL" data-cursor="link" className="opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <img src="/images/anpc-sol-mare.png.avif" alt="ANPC SOL" width="160" height="40" style={{ height: '32px', width: 'auto' }} />
+              <Image src="/images/anpc-sol-mare.png.avif" alt="ANPC SOL" width={160} height={40} style={{ height: '32px', width: 'auto' }} />
             </a>
-            <a href="/terms-and-conditions" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Terms</a>
-            <a href="/privacy-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Privacy</a>
-            <a href="/cookie-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Cookies</a>
+            <Link href="/terms-and-conditions" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Terms</Link>
+            <Link href="/privacy-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Privacy</Link>
+            <Link href="/cookie-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Cookies</Link>
             <button type="button" data-cookie-settings className="text-link text-white/55 transition-colors duration-300 hover:text-white/70 bg-transparent border-0 cursor-pointer p-0" data-cursor="link">Cookie Settings</button>
           </div>
         </div>

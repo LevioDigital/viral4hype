@@ -72,8 +72,6 @@ export default function ViralInteractions() {
 
     if (dotsCanvas && revealCanvas && hero) {
       const dCtx = dotsCanvas.getContext('2d');
-      const rCtx = revealCanvas.getContext('2d');
-      const cCtx = colorCanvas.getContext('2d');
 
       const resizeCanvases = () => {
         const hr = hero.getBoundingClientRect();
@@ -181,9 +179,6 @@ export default function ViralInteractions() {
         }
 
         const isHeroVisible = hr.bottom > 0 && hr.top < window.innerHeight;
-
-        const relX = mx - hr.left;
-        const relY = my - hr.top;
 
         // Update Text Fragments (Hero Title)
         frags.forEach(frag => {

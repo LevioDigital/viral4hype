@@ -42,3 +42,8 @@ next-env.d.ts
 
 # Claude Code superpowers
 .superpowers/
+
+# scratch / one-off transform scripts & temp dumps (keep out of the repo)
+tmp_*
+*.tmp
+/scratch/

@@ -1,6 +1,8 @@
 "use server";
 
+import { headers } from "next/headers";
 import { insertContactSubmission } from "@/lib/supabase";
+import { rateLimit } from "@/lib/rate-limit";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -8,6 +10,19 @@ export type ContactFormState = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Anti-spam: at most 5 submissions per IP per 10 minutes (on top of the
+// honeypot). See lib/rate-limit for the in-memory caveats.
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60_000;
+
+/** Best-effort client IP from the proxy headers Vercel/most hosts set. */
+async function clientIp(): Promise<string> {
+  const h = await headers();
+  const fwd = h.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0]!.trim();
+  return h.get("x-real-ip") ?? "unknown";
+}
 
 /**
  * Server Action: valideaza si salveaza o submisie de formular in Supabase.
@@ -22,6 +37,15 @@ export async function submitContactForm(
   const honeypot = formData.get("_honeypot");
   if (typeof honeypot === "string" && honeypot.trim() !== "") {
     return { status: "success" };
+  }
+
+  // Throttle by IP before doing any work / hitting the database.
+  const { ok } = rateLimit(await clientIp(), RATE_LIMIT, RATE_WINDOW_MS);
+  if (!ok) {
+    return {
+      status: "error",
+      message: "Too many messages from your network. Please try again later.",
+    };
   }
 
   const name = String(formData.get("Name") ?? "").trim();

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import ViralInteractions from "./ViralInteractions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
@@ -911,11 +910,11 @@ export default function Home() {
                 <div className="srv-info flex-1 relative z-[1]">
                   {" "}
                   <h3 className="srv-name font-display text-[clamp(1.2rem,2.5vw,1.9rem)] font-bold text-white/90 tracking-[-0.01em] mb-2">
-                    Let's Talk
+                    Let’s Talk
                   </h3>{" "}
                   <p className="srv-desc text-base text-white/55 leading-[1.65] max-w-[500px]">
                     Got a project in mind? Whether you have a clear brief or
-                    just an idea, we'd love to hear about it. A quick chat
+                    just an idea, we’d love to hear about it. A quick chat
                     could be the first step to growing your business online.
                   </p>{" "}
                 </div>{" "}
@@ -1091,7 +1090,7 @@ export default function Home() {
                   </em>
                 </h2>{" "}
                 <p className="ben-body text-base leading-[1.75] max-w-[44ch] text-white/50">
-                  Schedule a free strategy call and we'll include a full PPC
+                  Schedule a free strategy call and we’ll include a full PPC
                   &amp; SEO audit for your website — no strings attached. See
                   exactly where your ad spend is leaking and how to fix it.
                 </p>{" "}
