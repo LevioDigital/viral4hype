@@ -42,13 +42,14 @@ const spark = [18, 26, 22, 34, 40, 36, 52, 60, 56, 74, 82];
 
 const buildItems = ["Campaign Structure", "Funnels", "Creatives", "Retargeting", "Full Tracking", "Optimized Feeds", "Scaling Strategies"];
 const monitorKpis = ["ROAS", "CPA", "POAS", "AOV", "Conversion Rate", "Profitability", "CAC"];
+const platforms = ["Magento", "Shopify", "PrestaShop", "WooCommerce", "OpenCart", "& more"];
 
 const realityFactors = ["Margins", "Product Quality", "Branding", "Retention", "Website", "User Experience", "AOV", "Competition", "Content"];
 const failReasons = ["Weak products", "A site that doesn't convert", "No branding", "A wrong ads strategy", "No retention"];
 
 const profitCards = [
   { metric: "10–30%", label: "Margin per sale", title: "Margins Matter", desc: "Healthy margins make scaling profitable. With very small margins it only works when retention is strong, customers return, and lifetime value is high." },
-  { metric: "150 RON", label: "The AOV line", title: "AOV Matters Too", desc: "High-AOV stores reach ROAS, profitability and stable scaling faster. Under ~150 RON / order you need better margins, retention, strong content and careful optimization." },
+  { metric: "30 EUR", label: "The AOV line", title: "AOV Matters Too", desc: "High-AOV stores reach ROAS, profitability and stable scaling faster. Under ~30 EUR / order you need better margins, retention, strong content and careful optimization." },
   { metric: "↗", label: "When profitable", title: "Budgets & Scaling", desc: "Budgets are relevant — but as long as ROAS, CPA, profitability and system parameters stay healthy, we can scale ad spend aggressively." },
 ];
 
@@ -232,6 +233,17 @@ export default function EcommerceScalingPage() {
                   <span key={k} className="font-display text-white" style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.02em", padding: "0.5rem 1rem", borderRadius: 999, background: "rgba(242,102,34,0.1)", border: "1px solid rgba(242,102,34,0.22)" }}>{k}</span>
                 ))}
               </div>
+            </div>
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.8rem", marginTop: "1.8rem" }}>
+              <span className="text-white/35" style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", display: "block", marginBottom: "1rem" }}>We worked with stores that used</span>
+              <div className="flex flex-wrap" style={{ gap: "0.6rem" }}>
+                {platforms.map((p) => (
+                  <span key={p} className="font-display text-white" style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.02em", padding: "0.5rem 1rem", borderRadius: 999, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)" }}>{p}</span>
+                ))}
+              </div>
+              <p className="text-white/55" style={{ fontSize: "0.95rem", lineHeight: 1.7, marginTop: "1.2rem", maxWidth: "640px" }}>
+                We worked with ecommerce stores that had anywhere from tens to tens of thousands of SKUs.
+              </p>
             </div>
           </div>
         </section>

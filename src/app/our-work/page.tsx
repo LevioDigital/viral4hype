@@ -17,14 +17,15 @@ const DARK = "#180A03";
 type Category = "All" | "Website" | "Shopify" | "Marketing";
 
 const projects = [
-  { slug: "alumgates", title: "AlumGates", image: "/images/alumgates.png", category: "Website" as Category, tags: ["Web Development", "Content Creation", "Social Media Management", "Google Ads", "Meta Ads"], url: "https://alumgates.ro/" },
+  { slug: "alumgates", title: "AlumGates", image: "/images/alumgates.png", category: "Website" as Category, tags: ["Web Development", "Content Creation", "Social Media Management", "Google Ads", "Meta Ads", "Lead Generation"], url: "https://alumgates.ro/" },
   { slug: "greystone-heritage", title: "Epok", image: "/images/epok.png", category: "Shopify" as Category, tags: ["Shopify", "Meta Ads", "Email Marketing"], url: "https://epok.ro/" },
   { slug: "lc-computers", title: "Easy Equipment", image: "/images/easy_equipment.jpeg", category: "Marketing" as Category, tags: ["Google Ads"], url: "https://easyequipment.com/" },
-  { slug: "pc-doc", title: "PC Doc", image: "/images/pc-doc.png", category: "Shopify" as Category, tags: ["Shopify"], url: "https://pc-doc.ro/" },
+  { slug: "pc-doc", title: "PC Doc", image: "/images/pc-doc.png", category: "Shopify" as Category, tags: ["Shopify", "Meta Ads", "Google Ads", "Email Marketing", "Content Creation"], url: "https://pc-doc.ro/" },
   { slug: "magazinul-de-interfoane", title: "Magazinul de Interfoane", image: "/images/magazinuldeinterfoane.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://magazinuldeinterfoane.ro/" },
   { slug: "daimara", title: "Daimara", image: "/images/daimara.png", category: "Shopify" as Category, tags: ["Shopify", "Google Ads", "Meta Ads", "Content Creation", "Email Marketing"], url: "https://daimara.ro/" },
-  { slug: "din-munte", title: "Din Munte", image: "/images/dinmunte.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://dinmunte.ro/" },
-  { slug: "british-football-school", title: "British Football School", image: "/images/britishfotbal.png", category: "Website" as Category, tags: ["Web Design", "Web Development"], url: "https://www.britishfootballschool.com/" },
+  { slug: "din-munte", title: "Din Munte", image: "/images/dinmunte.png", category: "Marketing" as Category, tags: ["Meta Ads", "Google Ads", "TikTok Ads", "Email Marketing"], url: "https://dinmunte.ro/" },
+  { slug: "british-football-school", title: "British Football School", image: "/images/britishfotbal.png", category: "Marketing" as Category, tags: ["Meta Ads", "Lead Generation"], url: "https://www.britishfootballschool.com/" },
+  { slug: "izocor", title: "Izocor", image: "/images/izocor.png", category: "Marketing" as Category, tags: ["Meta Ads", "Google Ads", "E-commerce"], url: "https://www.izocor.ro/" },
 ];
 
 const marqueeItems = [

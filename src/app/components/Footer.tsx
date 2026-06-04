@@ -66,6 +66,9 @@ export default function Footer() {
             <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" aria-label="ANPC SOL" data-cursor="link" className="opacity-60 hover:opacity-100 transition-opacity duration-300">
               <Image src="/images/anpc-sol-mare.png.avif" alt="ANPC SOL" width={160} height={40} style={{ height: '32px', width: 'auto' }} />
             </a>
+            <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" aria-label="ANPC SAL" data-cursor="link" className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <Image src="/images/anpc-sal-mare.png" alt="ANPC SAL" width={160} height={40} style={{ height: '32px', width: 'auto' }} />
+            </a>
             <Link href="/terms-and-conditions" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Terms</Link>
             <Link href="/privacy-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Privacy</Link>
             <Link href="/cookie-policy" className="text-link text-white/55 transition-colors duration-300 hover:text-white/70" data-cursor="link">Cookies</Link>

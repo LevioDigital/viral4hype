@@ -5644,8 +5644,8 @@ body.locked {
 }
 
 .ht-frag-1 {
-  top: 16%;
-  left: 54%
+  top: 14%;
+  left: 50%
 }
 
 .ht-frag-2 {
@@ -5654,7 +5654,7 @@ body.locked {
 }
 
 .ht-frag-3 {
-  top: 8%;
+  top: 13%;
   right: 10%
 }
 
@@ -5669,8 +5669,13 @@ body.locked {
 }
 
 .ht-frag-6 {
-  top: 34%;
-  left: 53%
+  top: 15%;
+  left: 65%
+}
+
+.ht-frag-7 {
+  top: 50%;
+  left: 36%
 }
 
 @media(max-width:1650px) {
@@ -5684,17 +5689,17 @@ body.locked {
   }
 
   .ht-frag-1 {
-    top: 14%;
-    left: 54%
+    top: 13%;
+    left: 50%
   }
 
   .ht-frag-6 {
-    top: 28%;
-    left: 58%
+    top: 14%;
+    left: 65%
   }
 
   .ht-frag-3 {
-    top: 7%;
+    top: 12%;
     right: 6%
   }
 
@@ -5707,6 +5712,11 @@ body.locked {
     top: 54%;
     right: 6%
   }
+
+  .ht-frag-7 {
+    top: 48%;
+    left: 38%
+  }
 }
 
 @media(max-width:1350px) {
@@ -5718,18 +5728,28 @@ body.locked {
     font-size: .82rem
   }
 
-  .ht-frag-1,
-  .ht-frag-6 {
-    display: none
-  }
-
   .ht-frag-4 {
     top: 14%;
     left: 30%
   }
 
+  .ht-frag-1 {
+    top: 14%;
+    left: 46%
+  }
+
+  .ht-frag-6 {
+    top: 14%;
+    left: 65%
+  }
+
+  .ht-frag-7 {
+    top: 62%;
+    left: 26%
+  }
+
   .ht-frag-3 {
-    top: 8%;
+    top: 13%;
     right: 4%
   }
 

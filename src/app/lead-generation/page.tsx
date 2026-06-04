@@ -68,7 +68,7 @@ const steps = [
   { num: "05", title: "Scaling", desc: "We scale the system once performance becomes stable." },
 ];
 
-const niches = ["Clinics", "Dentistry", "Real Estate", "Construction", "Law", "Automotive", "Premium Services", "Local Businesses", "B2B Companies", "Education"];
+const niches = ["Clinics", "Fencing Companies", "Real Estate", "Construction", "Law", "B2C Services", "Premium Services", "Local Businesses", "B2B Companies", "Education"];
 
 const dontPromise = ["Instant results", "“Thousands of leads overnight”", "Vanity metrics", "Numbers without relevance"];
 const focusOn = ["Qualified leads", "Optimised costs", "Sustainable growth", "Stable, long-term systems"];

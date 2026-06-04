@@ -371,7 +371,7 @@ export default function ShopifyPage() {
                 Why We Recommend<br /><em className="font-serif italic text-gradient" style={{ fontWeight: 400 }}>Shopify</em>
               </h2>
               <p className="text-white/55" style={{ fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "1.6rem", maxWidth: "460px" }}>
-                Shopify is one of the most stable and scalable ecommerce platforms in the world — ideal for brands that want real, long-term growth.
+                Shopify is one of the most stable and scalable ecommerce platforms in the world, ideal for brands that want real, long-term growth.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "0.7rem", columnGap: "1.5rem" }}>
                 {whyShopify.map((w) => (

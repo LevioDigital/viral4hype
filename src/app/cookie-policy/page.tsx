@@ -9,36 +9,215 @@ export const metadata: Metadata = buildMetadata({
   path: "/cookie-policy",
 });
 
-const sections = [
+type Block =
+  | { type: "p"; text: string }
+  | { type: "subheading"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "link"; label: string; href: string }
+  | { type: "linklist"; items: { label: string; href: string }[] };
+
+type Section = { title: string; body: Block[] };
+
+const sections: Section[] = [
   {
     title: "What Are Cookies?",
-    content: `Cookies are small pieces of text stored in your web browser by a website you visit. They allow the Site, or a third party, to recognize your browser and make your visit easier or the Site more useful. We also use similar technologies such as tracking pixels, which work in the same way.`,
+    body: [
+      {
+        type: "p",
+        text: "Cookies are small text files stored on your device when you visit a website. They help websites function properly, improve user experience, and provide information about website performance and visitor behavior. We also use similar technologies, such as tracking pixels, which work in the same way.",
+      },
+    ],
   },
   {
     title: "Your Consent",
-    content: `When you first visit the Site, a cookie banner lets you accept all cookies, reject all non-essential cookies, or choose which categories you allow. Non-essential cookies (analytics and marketing) are not loaded until you give consent. Your choice is stored on your device, and analytics and advertising tags stay disabled by default through Google Consent Mode until you opt in.`,
+    body: [
+      {
+        type: "p",
+        text: "When you first visit our website, a cookie banner lets you accept all cookies, reject all non-essential cookies, or choose which categories you allow. Non-essential cookies (analytics and advertising) are not loaded until you give consent. Your choice is stored on your device, and analytics and advertising tags stay disabled by default through Google Consent Mode until you opt in.",
+      },
+    ],
   },
   {
-    title: "Necessary Cookies",
-    content: `These cookies are essential for the Site to function — for example, enabling page navigation, submitting forms, and keeping the Site secure. The Site cannot work properly without them, so they are always active and do not require consent.`,
+    title: "How We Use Cookies",
+    body: [
+      { type: "p", text: "We use cookies for the following purposes:" },
+      { type: "subheading", text: "Essential Cookies" },
+      {
+        type: "p",
+        text: "These cookies are necessary for the website to function properly and cannot be disabled. They may include:",
+      },
+      {
+        type: "list",
+        items: ["Security-related cookies", "Session management cookies", "Website functionality cookies"],
+      },
+      { type: "subheading", text: "Analytics Cookies" },
+      {
+        type: "p",
+        text: "With your consent, we use Google Analytics to better understand how visitors interact with our website. These cookies help us collect information such as:",
+      },
+      {
+        type: "list",
+        items: [
+          "Pages visited",
+          "Time spent on the website",
+          "Traffic sources",
+          "User interactions",
+          "Device and browser information",
+        ],
+      },
+      {
+        type: "p",
+        text: "This information is used solely to improve our website and services.",
+      },
+      { type: "subheading", text: "Advertising Cookies" },
+      {
+        type: "p",
+        text: "With your consent, we use advertising technologies provided by Google and Meta (Facebook) to measure campaign performance and improve advertising effectiveness. These cookies may collect information about:",
+      },
+      {
+        type: "list",
+        items: ["Website visits", "User interactions", "Conversion events", "Advertising performance"],
+      },
+      {
+        type: "p",
+        text: "The data collected helps us understand how our marketing campaigns perform and allows us to improve future advertising efforts.",
+      },
+    ],
   },
   {
-    title: "Analytics Cookies",
-    content: `With your consent, we use Google Analytics to understand how visitors use the Site so we can improve it. This may involve information such as your approximate location, browser type, and pages visited. The data is used in aggregate to measure traffic and performance.`,
+    title: "Third-Party Services",
+    body: [
+      { type: "p", text: "Our website may use the following third-party services:" },
+      { type: "subheading", text: "Google Analytics" },
+      { type: "p", text: "Used for website analytics and performance measurement." },
+      { type: "link", label: "policies.google.com/privacy", href: "https://policies.google.com/privacy" },
+      { type: "subheading", text: "Google Ads" },
+      { type: "p", text: "Used for conversion tracking and advertising performance measurement." },
+      {
+        type: "link",
+        label: "policies.google.com/technologies/ads",
+        href: "https://policies.google.com/technologies/ads",
+      },
+      { type: "subheading", text: "Meta Ads (Facebook Pixel)" },
+      {
+        type: "p",
+        text: "Used for advertising measurement, audience creation, and conversion tracking.",
+      },
+      {
+        type: "link",
+        label: "facebook.com/privacy/policy",
+        href: "https://www.facebook.com/privacy/policy",
+      },
+    ],
   },
   {
-    title: "Marketing Cookies",
-    content: `With your consent, we use Google Ads and the Meta (Facebook) Pixel to measure the effectiveness of our advertising, track conversions, and show you relevant ads on other platforms. These cookies are only set if you accept the Marketing category.`,
+    title: "Managing Cookies",
+    body: [
+      {
+        type: "p",
+        text: "You can change or withdraw your consent at any time by clicking “Cookie Settings” in the footer of any page, which reopens the preferences panel. You can also manage or disable cookies through your browser settings. Please note that disabling certain cookies may affect website functionality and your browsing experience.",
+      },
+      {
+        type: "linklist",
+        items: [
+          { label: "Google Chrome", href: "https://support.google.com/chrome/answer/95647" },
+          {
+            label: "Mozilla Firefox",
+            href: "https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer",
+          },
+          {
+            label: "Microsoft Edge",
+            href: "https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09",
+          },
+          { label: "Safari", href: "https://support.apple.com/en-us/HT201265" },
+        ],
+      },
+      {
+        type: "p",
+        text: "Refer to your browser’s help documentation for detailed instructions.",
+      },
+    ],
   },
   {
-    title: "Withdrawing or Changing Your Consent",
-    content: `You can change or withdraw your consent at any time by clicking "Cookie Settings" in the footer of any page, which reopens the preferences panel. You can also delete or block cookies through your browser settings, though some features may stop working. Withdrawing consent does not affect data already processed before your change.`,
-  },
-  {
-    title: "Changes to This Cookie Policy",
-    content: `We may update this Cookie Policy from time to time. We will post any changes on this page and, where the update is material, ask for your consent again.`,
+    title: "Changes To This Policy",
+    body: [
+      {
+        type: "p",
+        text: "We may update this Cookie Policy from time to time to reflect changes in technology, legal requirements, or our services. Any updates will be published on this page.",
+      },
+    ],
   },
 ];
+
+const paraStyle = { fontSize: "1rem", lineHeight: 1.85 } as const;
+const linkStyle = { color: "#F26622", textUnderlineOffset: "4px" } as const;
+
+function renderBlock(block: Block, i: number) {
+  switch (block.type) {
+    case "p":
+      return (
+        <p key={i} className="text-white/85" style={paraStyle}>
+          {block.text}
+        </p>
+      );
+    case "subheading":
+      return (
+        <h3
+          key={i}
+          className="text-white font-semibold text-[1.05rem]"
+          style={{ marginTop: "1.5rem", marginBottom: "0.5rem" }}
+        >
+          {block.text}
+        </h3>
+      );
+    case "list":
+      return (
+        <ul
+          key={i}
+          className="text-white/70"
+          style={{ listStyleType: "disc", paddingLeft: "1.25rem" }}
+        >
+          {block.items.map((item) => (
+            <li key={item} style={{ marginBottom: "0.5rem", fontSize: "1rem", lineHeight: 1.7 }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    case "link":
+      return (
+        <p key={i} style={{ fontSize: "0.95rem" }}>
+          <a
+            href={block.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline transition-colors hover:text-white"
+            style={linkStyle}
+          >
+            {block.label}
+          </a>
+        </p>
+      );
+    case "linklist":
+      return (
+        <ul key={i} className="text-white/70" style={{ listStyleType: "disc", paddingLeft: "1.25rem" }}>
+          {block.items.map((item) => (
+            <li key={item.href} style={{ marginBottom: "0.5rem", fontSize: "1rem", lineHeight: 1.7 }}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline transition-colors hover:text-white"
+                style={linkStyle}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      );
+  }
+}
 
 export default function CookiePolicyPage() {
   return (
@@ -65,7 +244,9 @@ export default function CookiePolicyPage() {
             <h1 className="font-display font-black text-white leading-[1.05] tracking-[-0.02em] mb-5" style={{ fontSize: "clamp(2.4rem,5vw,4rem)" }}>
               Cookie Policy
             </h1>
-            <p className="text-white/40 text-sm">Last updated: June 3, 2026</p>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Last updated: June 5, 2026
+            </p>
           </div>
         </section>
 
@@ -76,7 +257,10 @@ export default function CookiePolicyPage() {
 
         {/* Content */}
         <section className="px-container-x py-[clamp(4rem,8vh,7rem)]" style={{ background: "#180A03" }}>
-          <div className="max-w-[760px] mx-auto space-y-14">
+          <div
+            className="max-w-[760px] mx-auto"
+            style={{ display: "flex", flexDirection: "column", gap: "3.5rem" }}
+          >
             {sections.map((s) => (
               <div key={s.title}>
                 <h2
@@ -85,7 +269,9 @@ export default function CookiePolicyPage() {
                 >
                   {s.title}
                 </h2>
-                <p className="text-white/85 text-[1rem] leading-[1.85]">{s.content}</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  {s.body.map(renderBlock)}
+                </div>
               </div>
             ))}
 
@@ -94,14 +280,28 @@ export default function CookiePolicyPage() {
               <h2 className="text-[0.68rem] font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#F26622" }}>
                 Contact Us
               </h2>
-              <p className="text-white/85 text-[1rem] leading-[1.85]">
-                If you have any questions about this Cookie Policy, please contact us at:{" "}
+              <p className="text-white/85" style={paraStyle}>
+                If you have any questions regarding this Cookie Policy, please contact us:
+              </p>
+              <p className="text-white/85" style={{ ...paraStyle, marginTop: "1rem" }}>
+                <span className="text-white font-semibold">Viral 4 Hype SRL</span>
+                <br />
+                Email:{" "}
                 <a
                   href="mailto:contact@viral4hype.com"
-                  className="underline underline-offset-4 transition-colors hover:text-white"
-                  style={{ color: "#F26622" }}
+                  className="underline transition-colors hover:text-white"
+                  style={linkStyle}
                 >
                   contact@viral4hype.com
+                </a>
+                <br />
+                Website:{" "}
+                <a
+                  href="https://www.viral4hype.com"
+                  className="underline transition-colors hover:text-white"
+                  style={linkStyle}
+                >
+                  www.viral4hype.com
                 </a>
               </p>
             </div>

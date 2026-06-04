@@ -86,81 +86,81 @@ export default function Home() {
             aria-hidden="true"
           >
             {" "}
-            <div className="ht-frag ht-frag-1 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-1 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
-              </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;If I could have given 6 stars, I would have.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Elene P., verified review
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                Google Ads
               </span>{" "}
             </div>
-            <div className="ht-frag ht-frag-2 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-2 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
-              </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;Alex&#39;s professionalism and creativity were outstanding
-                throughout.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Lee M., verified review
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                Meta Ads
               </span>{" "}
             </div>
-            <div className="ht-frag ht-frag-3 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-3 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
-              </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;This is the second website they&#39;ve built for me.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Katy W., repeat client
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                TikTok Ads
               </span>{" "}
             </div>
-            <div className="ht-frag ht-frag-4 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-4 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
-              </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;This is the second website viral4hype has developed for
-                me, and once again they&#39;ve exceeded my
-                expectations.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Meggan P., verified review
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                Advantage+
               </span>{" "}
             </div>
-            <div className="ht-frag ht-frag-5 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-5 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
-              </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;Everyone who sees the website thinks it&#39;s
-                amazing.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Adam F., dermatology clinic
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                Performance Max
               </span>{" "}
             </div>
-            <div className="ht-frag ht-frag-6 absolute max-w-[280px] font-sans">
+            <div className="ht-frag ht-frag-6 absolute font-sans">
               {" "}
-              <span className="ht-stars text-xs tracking-wide text-[#f5c518]">
-                ★★★★★
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                E-commerce
               </span>{" "}
-              <p className="text-[clamp(0.85rem,1.2vw,1.05rem)] font-semibold text-white/90 leading-[1.4] mt-1 mb-[0.4rem]">
-                &quot;They absolutely delivered to the brief and then exceeded
-                expectations.&quot;
-              </p>{" "}
-              <span className="ht-author text-[0.72rem] text-white/55 font-medium tracking-[0.02em]">
-                — Sarah S., verified review
+            </div>
+            <div className="ht-frag ht-frag-7 absolute font-sans">
+              {" "}
+              <span
+                className="inline-flex items-center gap-2 font-semibold text-white/90"
+                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
+              >
+                {" "}
+                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
+                Scale
               </span>{" "}
             </div>{" "}
           </div>{" "}
@@ -449,6 +449,9 @@ export default function Home() {
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Meta Ads
                     </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Lead Generation
+                    </span>
                   </div>{" "}
                 </div>{" "}
               </a>
@@ -640,6 +643,18 @@ export default function Home() {
                     {" "}
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Shopify
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Meta Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Google Ads
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Email Marketing
+                    </span>
+                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
+                      Content Creation
                     </span>
                   </div>{" "}
                 </div>{" "}
@@ -1133,28 +1148,23 @@ export default function Home() {
               About Us{" "}
             </div>{" "}
             <h2 className="about-heading font-display text-[clamp(2rem,4vw,3.2rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-dark mb-6 max-w-[680px]">
-              A small agency
+              Born in Romania
               <br />
               <em className="font-serif italic font-normal text-[1.05em] text-gradient">
-                big impact
+                built for Europe
               </em>
             </h2>{" "}
             <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
-              We&#39;re a small, results-driven digital agency serving clients
-              across Europe. Led by Robert, everything we do is focused on
-              creating websites and marketing campaigns that actually get
-              results.
+              Since 2021, Viral 4 Hype has been helping businesses across Europe
+              grow through web development and digital marketing. Led by Robert,
+              we&#39;re a small, results-driven team, so every client gets the
+              attention they deserve.
             </p>
             <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
-              From bespoke website design and development to Google Ads
-              campaigns, we help businesses across Europe grow online through
-              clear strategy, clean design, and a personal touch.
-            </p>
-            <p className="text-base text-text-sec-dark leading-[1.75] mb-[0.8rem] max-w-[680px]">
-              Being a small agency means our overheads stay low. We use modern
-              tools, including AI, to work smarter and deliver stronger results.
-              You get quality web design and development at genuinely
-              competitive prices, without the big agency fluff.
+              We build bespoke websites and Shopify stores, and run online ad
+              campaigns across Google, Meta and TikTok that move the needle.
+              Everything we deliver is built to last and to drive real,
+              measurable growth for your business.
             </p>{" "}
             <div className="about-stats flex gap-8 my-8 flex-wrap max-w-[680px]">
               {" "}
@@ -1173,7 +1183,7 @@ export default function Home() {
                   EU
                 </span>{" "}
                 <span className="astat-label text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-text-sec-dark">
-                  Focused Agency
+                  Based Agency
                 </span>{" "}
               </div>{" "}
             </div>{" "}
@@ -1232,13 +1242,15 @@ export default function Home() {
               <div className="contact-links flex flex-col">
                 {" "}
                 <a
-                  href="tel:+40752221510"
+                  href="https://wa.me/40752221510"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="clink flex justify-between items-baseline py-4 border-b border-white/[0.06] border-t border-white/[0.06] transition-[padding-left] duration-300 ease-out-expo hover:pl-2"
                   data-cursor="link"
                 >
                   {" "}
                   <span className="clink-label text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-white/50">
-                    Call us
+                    WhatsApp
                   </span>{" "}
                   <span className="clink-val text-base font-medium text-white/70">
                     +40 752 221 510
@@ -1269,7 +1281,7 @@ export default function Home() {
                     Location
                   </span>{" "}
                   <span className="clink-val text-base font-medium text-white/70">
-                    Bucuresti, Constanta, Romania
+                    Bucharest &amp; Constanta, Romania
                   </span>{" "}
                 </a>{" "}
               </div>{" "}
