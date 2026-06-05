@@ -44,6 +44,8 @@ export default function Nav() {
         <div className="nav-links flex gap-[2.2rem] max-lg:hidden">
           <Link href="/websites" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Custom Websites</Link>
           <Link href="/marketing" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Marketing</Link>
+          <Link href="/lead-generation" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Lead Generation</Link>
+          <Link href="/ecommerce-scaling" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Ecommerce</Link>
           <Link href="/shopify" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Shopify</Link>
           <Link href="/our-work" className="nav-link text-sm font-medium transition-colors duration-300 relative text-white/60 hover:text-white" data-cursor="link">Our Work</Link>
         </div>
@@ -92,6 +94,8 @@ export default function Nav() {
               <Link href="/" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Home</Link>
               <Link href="/websites" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Custom Websites</Link>
               <Link href="/marketing" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Marketing</Link>
+              <Link href="/lead-generation" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Lead Generation</Link>
+              <Link href="/ecommerce-scaling" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Ecommerce</Link>
               <Link href="/shopify" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Shopify</Link>
               <Link href="/our-work" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-white/70 hover:text-white">Our Work</Link>
               <a href="/contact" className="mob-link font-display text-[clamp(1.4rem,4vh,2.4rem)] font-bold transition-colors duration-300 text-gradient">Contact Us</a>

@@ -48,7 +48,7 @@ const realityFactors = ["Margins", "Product Quality", "Branding", "Retention", "
 const failReasons = ["Weak products", "A site that doesn't convert", "No branding", "A wrong ads strategy", "No retention"];
 
 const profitCards = [
-  { metric: "10–30%", label: "Margin per sale", title: "Margins Matter", desc: "Healthy margins make scaling profitable. With very small margins it only works when retention is strong, customers return, and lifetime value is high." },
+  { metric: "10-30%", label: "Margin per sale", title: "Margins Matter", desc: "Healthy margins make scaling profitable. With very small margins it only works when retention is strong, customers return, and lifetime value is high." },
   { metric: "30 EUR", label: "The AOV line", title: "AOV Matters Too", desc: "High-AOV stores reach ROAS, profitability and stable scaling faster. Under ~30 EUR / order you need better margins, retention, strong content and careful optimization." },
   { metric: "↗", label: "When profitable", title: "Budgets & Scaling", desc: "Budgets are relevant — but as long as ROAS, CPA, profitability and system parameters stay healthy, we can scale ad spend aggressively." },
 ];

@@ -242,7 +242,7 @@ export default function Home() {
                   EUROPE
                 </span>{" "}
                 <span className="stat-label text-xs font-medium text-white/55 uppercase tracking-[0.08em]">
-                  Agency
+                  Based Agency
                 </span>{" "}
               </div>{" "}
               {/*  Scroll cue  */}{" "}
