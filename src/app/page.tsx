@@ -507,7 +507,7 @@ export default function Home() {
                 </div>{" "}
               </a>
               <a
-                href="https://daimara.ro/"
+                href="https://www.britishfootballschool.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="proj-card group block rounded-card overflow-visible origin-bottom will-change-transform transition-shadow duration-400"
@@ -521,13 +521,12 @@ export default function Home() {
                 >
                   {" "}
                   <Image
-                    src="/images/daimara.png"
-                    alt="Daimara"
+                    src="/images/britishfotbal.png"
+                    alt="British Football School"
                     width={1440}
                     height={1080}
                     loading="lazy"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    style={{ objectPosition: "0% center" }}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.06]"
                   />{" "}
                   <div
@@ -555,24 +554,15 @@ export default function Home() {
                 <div className="pt-4 px-2">
                   {" "}
                   <h3 className="font-display text-[clamp(0.95rem,1.5vw,1.2rem)] font-bold text-text-dark mb-[0.4rem] tracking-[-0.01em]">
-                    Daimara
+                    British Football School
                   </h3>{" "}
                   <div className="flex gap-[0.4rem] flex-wrap">
                     {" "}
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Shopify
-                    </span>
-                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Google Ads
-                    </span>
-                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
                       Meta Ads
                     </span>
                     <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Content Creation
-                    </span>
-                    <span className="text-[0.72rem] font-medium tracking-[0.04em] py-1 px-[0.7rem] rounded-pill bg-black/5 text-text-sec-dark">
-                      Email Marketing
+                      Lead Generation
                     </span>
                   </div>{" "}
                 </div>{" "}
