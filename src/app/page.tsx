@@ -151,17 +151,6 @@ export default function Home() {
                 <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
                 E-commerce
               </span>{" "}
-            </div>
-            <div className="ht-frag ht-frag-7 absolute font-sans">
-              {" "}
-              <span
-                className="inline-flex items-center gap-2 font-semibold text-white/90"
-                style={{ fontSize: "clamp(1.1rem,1.9vw,1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}
-              >
-                {" "}
-                <span className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: "#F26622" }}></span>{" "}
-                Scale
-              </span>{" "}
             </div>{" "}
           </div>{" "}
           <div className="hero-inner relative z-[3]">

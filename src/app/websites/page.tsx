@@ -315,7 +315,7 @@ export default function WebsitesPage() {
                 For many businesses, a website is the first interaction a potential customer has with the company. In just a few seconds, visitors decide whether they trust you, whether your services look professional, and whether they want to get in touch.
               </p>
               <p className="text-text-sec-dark" style={{ fontSize: "0.98rem", lineHeight: 1.75, maxWidth: "520px" }}>
-                We develop premium custom websites for businesses that want a modern online presence built the right way — no cheap templates, no outdated solutions.
+                We develop premium custom websites for businesses that want a modern online presence built the right way.
               </p>
             </div>
 
