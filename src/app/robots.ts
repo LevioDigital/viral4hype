@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Pagina interna de submisii — nu trebuie crawl-uita/indexata.
+      disallow: "/admin",
     },
     sitemap: `${SITE.url}/sitemap.xml`,
     host: SITE.url,
