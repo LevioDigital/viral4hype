@@ -163,7 +163,8 @@ export default function AdminDashboard({ rows }: { rows: Submission[] }) {
           <p>Try a different search term or filter.</p>
         </div>
       ) : (
-        <div className={styles.tableWrap}>
+        <>
+          <div className={styles.tableWrap}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -197,7 +198,18 @@ export default function AdminDashboard({ rows }: { rows: Submission[] }) {
               })}
             </tbody>
           </table>
-        </div>
+          </div>
+          <div className={styles.cards}>
+            {visible.map((r) => (
+              <MobileCard
+                key={r.id}
+                r={r}
+                isOpen={open.has(r.id)}
+                onToggle={() => toggleRow(r.id)}
+              />
+            ))}
+          </div>
+        </>
       )}
      </div>
     </main>
@@ -265,25 +277,64 @@ function FragmentRow({
       {isOpen && (
         <tr>
           <td className={styles.detailCell} colSpan={7}>
-            <div className={styles.detail}>
-              <Detail label="Company" value={r.company} />
-              <Detail label="Phone" value={r.phone} />
-              <Detail label="Service" value={r.service} />
-              <Detail label="Budget" value={r.budget} />
-              <Detail
-                label="GDPR consent"
-                value={r.gdpr_consent ? "Yes" : "No"}
-              />
-              <Detail label="Received" value={formatFull(r.created_at)} />
-              <div className={styles.detailFull}>
-                <div className={styles.detailLabel}>Message</div>
-                <div className={styles.message}>{r.message}</div>
-              </div>
-            </div>
+            <SubmissionDetail r={r} />
           </td>
         </tr>
       )}
     </>
+  );
+}
+
+/** Detaliile complete ale unei submisii — folosite si in tabel, si in cardul mobil. */
+function SubmissionDetail({ r }: { r: Submission }) {
+  return (
+    <div className={styles.detail}>
+      <Detail label="Company" value={r.company} />
+      <Detail label="Phone" value={r.phone} />
+      <Detail label="Service" value={r.service} />
+      <Detail label="Budget" value={r.budget} />
+      <Detail label="GDPR consent" value={r.gdpr_consent ? "Yes" : "No"} />
+      <Detail label="Received" value={formatFull(r.created_at)} />
+      <div className={styles.detailFull}>
+        <div className={styles.detailLabel}>Message</div>
+        <div className={styles.message}>{r.message}</div>
+      </div>
+    </div>
+  );
+}
+
+/** Vizualizare card pentru ecrane mici (sub 720px) — inlocuieste tabelul. */
+function MobileCard({
+  r,
+  isOpen,
+  onToggle,
+}: {
+  r: Submission;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div
+      className={`${styles.card} ${isOpen ? styles.cardOpen : ""}`}
+      onClick={onToggle}
+    >
+      <div className={styles.cardTop}>
+        <span className={styles.cardName}>{r.name}</span>
+        <SourceBadge source={r.source} />
+      </div>
+      <a
+        className={styles.cardEmail}
+        href={`mailto:${r.email}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {r.email}
+      </a>
+      <div className={styles.cardMeta}>
+        <span>{relativeTime(r.created_at)}</span>
+        <span className={`${styles.chev} ${isOpen ? styles.chevOpen : ""}`}>›</span>
+      </div>
+      {isOpen && <SubmissionDetail r={r} />}
+    </div>
   );
 }
 

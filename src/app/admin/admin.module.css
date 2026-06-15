@@ -333,6 +333,53 @@
   padding: 0.85rem 1rem;
 }
 
+/* --------------------------- Mobile cards ----------------------------- */
+/* Lista de carduri (telefon) inlocuieste tabelul sub 720px; ascunsa pe desktop. */
+.cards { display: none; }
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 0.95rem 1.05rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.card:active { background: rgba(255, 255, 255, 0.05); }
+.cardOpen {
+  border-color: rgba(242, 102, 34, 0.4);
+  background: rgba(242, 102, 34, 0.06);
+}
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+.cardName {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #fff;
+  word-break: break-word;
+}
+.cardEmail {
+  display: inline-block;
+  color: var(--color-blue, #f26622);
+  text-decoration: none;
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* ------------------------- Empty / error states ----------------------- */
 
 .empty {
@@ -455,3 +502,38 @@
 .submit:disabled { opacity: 0.55; cursor: not-allowed; }
 
 .loginError { color: #ff8585; font-size: 0.82rem; margin: 0; }
+
+/* ------------------------------- Mobile ------------------------------- */
+
+@media (max-width: 720px) {
+  .page { padding: 1.25rem 1rem 2.5rem; }
+
+  /* Tabel -> carduri */
+  .tableWrap { display: none; }
+  .cards { display: flex; flex-direction: column; gap: 0.65rem; }
+
+  /* Detaliile se aseaza mai aerisit in interiorul cardului */
+  .detail {
+    padding: 0.85rem 0.1rem 0.15rem;
+    background: transparent;
+    gap: 0.85rem 1.25rem;
+  }
+
+  /* Topbar: butoanele pe toata latimea, usor de atins */
+  .topbar { gap: 0.9rem; }
+  .actions { width: 100%; }
+  .actions form { flex: 1; display: flex; }
+  .actions .btn { flex: 1; justify-content: center; }
+
+  .title { font-size: 1.3rem; }
+  .statValue { font-size: 1.6rem; }
+
+  /* Cautarea pe toata latimea, filtrele dedesubt cu scroll orizontal lin */
+  .search { flex: 1 1 100%; }
+  .filters { width: 100%; }
+}
+
+@media (max-width: 380px) {
+  .stats { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .statCard { padding: 0.9rem 1rem; }
+}
