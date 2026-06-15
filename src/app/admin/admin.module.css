@@ -369,6 +369,7 @@
   background:
     radial-gradient(900px 520px at 50% -12%, rgba(242, 102, 34, 0.16), transparent 60%),
     #180a03;
+  color: #fff;
   font-family: var(--font-sans, system-ui, sans-serif);
 }
 .loginCard {
@@ -393,6 +394,7 @@
   font-family: var(--font-display, sans-serif);
   font-weight: 800;
   letter-spacing: -0.01em;
+  color: #fff;
 }
 .loginTitle {
   font-family: var(--font-display, sans-serif);
